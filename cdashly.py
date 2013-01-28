@@ -59,10 +59,10 @@ def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False
         
         if os.path.exists(dest_file):
             if not force:
-              print("File already exists - Skipping %s" % dest_file)
-              continue
+                print("File already exists - Skipping %s" % dest_file)
+                continue
             else:
-              print("Overwriting file: %s" % dest_file)
+                print("Overwriting file: %s" % dest_file)
       
         # Read file into string, proceed to replacement
         updated_lines = []
