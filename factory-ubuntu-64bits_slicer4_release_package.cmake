@@ -85,5 +85,5 @@ message("coverage: ${WITH_COVERAGE}, memcheck: ${WITH_MEMCHECK}")
 #
 set(url http://svn.slicer.org/Slicer4/trunk/CMake/SlicerDashboardDriverScript.cmake)
 set(dest ${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}.driver)
-downloadFile(${url} ${dest})
+download_file(${url} ${dest})
 INCLUDE(${dest})
