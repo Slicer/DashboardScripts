@@ -8,12 +8,14 @@
 
 Usage:
     cdashly.py clone <src_hostname> <dest_hostname> [--sitename_suffix=<sns>] [--force]
+    cdashly.py replace <wildcard_expression> <old_value> <new_value> [--apply]
     cdashly.py (-h | --help)
     cdashly.py --version
 
 Options:
     -h --help                Show this screen.
-    --version                Show version.
+    --version                Show version.        
+    --apply                  Proceed to the replacement.
     --force                  Overwrite file if it exists.
     --sitename_suffix=<sns>  Script suffix [default: -64bits].
 
@@ -62,29 +64,51 @@ def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False
               print("Overwriting file: %s" % dest_file)
       
         # Read file into string, proceed to replacement
-        lines = open(file, "r")
         updated_lines = []
-        for line in lines:
-            matched_expr = False
-            for expr in expressions:
-                if re.match(expr, line):
-                    updated_line = re.sub(expr, '\\1%s\\3' % dest_hostname, line)
-                    updated_lines.append(updated_line)
-                    matched_expr = True
-            if not matched_expr:
-                updated_lines.append(line)
+        with open(file, 'r') as lines:
+            for line in lines:
+                matched_expr = False
+                for expr in expressions:
+                    if re.match(expr, line):
+                        updated_line = re.sub(expr, '\\1%s\\3' % dest_hostname, line)
+                        updated_lines.append(updated_line)
+                        matched_expr = True
+                if not matched_expr:
+                    updated_lines.append(line)
         
-        # Write updates lines into destination file
+        # Write updated lines into destination file
         with open(dest_file, 'w') as f:
             for line in updated_lines:
                 f.write(line)
         
         dest_files.append(dest_file)
+    return dest_files
 
+def replace(directory, wildcard_expression, old_value, new_value, preview = True):
+    files = recursively_list_file_within_directory(directory, wildcard_expression)
+    for file in files:
+        updated_lines = []
+        matched_lines = []
+        with open(file, 'r') as lines:
+            for linenumber, line in enumerate(lines):
+                if line.find(old_value) >= 0:
+                    matched_lines.append((linenumber, line))
+                updated_lines.append(line.replace(old_value, new_value))
+        if preview:
+            if len(matched_lines) > 0:
+                print("File: %s" % file)
+                for (linenumber, line) in matched_lines:
+                    print("    %d: %s" % (linenumber, line))
+        else:
+            with open(file, 'w') as f:
+                for line in updated_lines:
+                    f.write(line)
 
 if __name__ == '__main__':
       arguments = docopt(__doc__, version='CDashly 0.1')
       directory = '.'
       if arguments['clone']:
           clone(directory, arguments['<src_hostname>'], arguments['<dest_hostname>'], arguments['--sitename_suffix'], arguments['--force'])
+      elif arguments['replace']:
+          replace(directory, arguments['<wildcard_expression>'], arguments['<old_value>'] , arguments['<new_value>'], not arguments['--apply'])
 
