@@ -71,6 +71,8 @@ def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False
                     if re.match(expr, line):
                         line = re.sub(expr, '\\1%s\\3' % dest_hostname, line)
                         break;
+                # Replace <src_hostname><sitename_suffix> with <dest_hostname><sitename_suffix>
+                line = line.replace(src_hostname + sitename_suffix, dest_hostname + sitename_suffix)
                 updated_lines.append(line)
         
         # Write updated lines into destination file
