@@ -48,6 +48,7 @@ def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False
     
     src_files = recursively_list_file_within_directory(directory, src_hostname + sitename_suffix + '*')
     src_files.extend(recursively_list_file_within_directory(directory, src_hostname + '_*'))
+    src_files.extend(recursively_list_file_within_directory(directory, src_hostname + '.*'))
     dest_files = []
     
     for file in src_files:
