@@ -67,14 +67,11 @@ def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False
         updated_lines = []
         with open(file, 'r') as lines:
             for line in lines:
-                matched_expr = False
                 for expr in expressions:
                     if re.match(expr, line):
-                        updated_line = re.sub(expr, '\\1%s\\3' % dest_hostname, line)
-                        updated_lines.append(updated_line)
-                        matched_expr = True
-                if not matched_expr:
-                    updated_lines.append(line)
+                        line = re.sub(expr, '\\1%s\\3' % dest_hostname, line)
+                        break;
+                updated_lines.append(line)
         
         # Write updated lines into destination file
         with open(dest_file, 'w') as f:
