@@ -13,7 +13,7 @@ set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 set(MY_BITNESS            "64")
 
 #find_program(CTEST_GIT_COMMAND NAMES git)
-set(CTEST_GIT_COMMAND "/home/kitware/Dashboards/Support/git-1.7.3.4/git")
+set(CTEST_GIT_COMMAND "/usr/bin/git")
 #find_program(CTEST_SVN_COMMAND NAMES svn)
 set(CTEST_SVN_COMMAND "/usr/bin/svn")
 find_program(CTEST_COVERAGE_COMMAND NAMES gcov)  
