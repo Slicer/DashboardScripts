@@ -4,6 +4,7 @@ include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
  #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
+set(HOSTNAME              "factory")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Continuous/")
 
 set(EXTENSIONS_TRACK_QUALIFIER "4.2.0") # "master", 4.1, ...
