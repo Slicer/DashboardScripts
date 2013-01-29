@@ -12,9 +12,6 @@ export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # Nightly build of slicer extensions
 /home/kitware/Dashboards/Support/cmake-2.8.8-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-ubuntu-64bits_slicerextensions_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-ubuntu-64bits_slicerextensions_release_nightly.log
 
-# Nightly build of slicer 4.1.1 extensions
-#/home/kitware/Dashboards/Support/cmake-2.8.8-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-ubuntu-64bits_slicerextensions_411_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-ubuntu-64bits_slicerextensions_411_release_nightly.log
-
 # Nightly build of slicer 4.2 extensions
 /home/kitware/Dashboards/Support/cmake-2.8.8-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-ubuntu-64bits_slicerextensions_42_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-ubuntu-64bits_slicerextensions_42_release_nightly.log
 

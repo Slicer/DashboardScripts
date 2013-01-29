@@ -12,9 +12,6 @@ REM "C:\D\Support\cmake-2.8.8-win32-x86\bin\ctest.exe" -S "C:\Dashboards\Dashboa
 REM Nightly build of slicer extensions vs2008 32bits
 REM "C:\D\Support\cmake-2.8.8-win32-x86\bin\ctest.exe" -S "C:\Dashboards\DashboardScripts\factory-win7-vs2008-32bits_slicerextensions_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-win7-vs2008-32bits_slicerextensions_release_nightly.txt
 
-REM Nightly build of slicer 4.1.1 extensions vs2008 32bits
-REM "C:\D\Support\cmake-2.8.8-win32-x86\bin\ctest.exe" -S "C:\Dashboards\DashboardScripts\factory-win7-vs2008-32bits_slicerextensions_411_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-win7-vs2008-32bits_slicerextensions_411_release_nightly.txt
-
 REM Nightly build of slicer 4.2 extensions vs2008 32bits
 REM "C:\D\Support\cmake-2.8.8-win32-x86\bin\ctest.exe" -S "C:\Dashboards\DashboardScripts\factory-win7-vs2008-32bits_slicerextensions_42_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-win7-vs2008-32bits_slicerextensions_42_release_nightly.txt
 

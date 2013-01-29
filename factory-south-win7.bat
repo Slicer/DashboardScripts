@@ -27,9 +27,6 @@ REM Nightly build of slicer extensions testing vs2008 64bits
 REM Nightly build of slicer extensions vs2008 64bits
 "C:\D\Support\CMake 2.8.10.2\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2008-64bits_slicerextensions_release_nightly.cmake" -C Release -V -O C:\D\Logs\factory-south-win7-vs2008-64bits_slicerextensions_release_nightly.txt
 
-REM Nightly build of slicer 4.1.1 extensions vs2008 64bits
-REM "C:\D\Support\CMake 2.8.10.2\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2008-64bits_slicerextensions_411_release_nightly.cmake" -C Release -V -O C:\D\Logs\factory-south-win7-vs2008-64bits_slicerextensions_411_release_nightly.txt
-
 REM Nightly build of slicer 4.2 extensions vs2008 64bits
 REM "C:\D\Support\CMake 2.8.10.2\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2008-64bits_slicerextensions_42_release_nightly.cmake" -C Release -V -O C:\D\Logs\factory-south-win7-vs2008-64bits_slicerextensions_42_release_nightly.txt
 
