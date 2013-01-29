@@ -4,6 +4,7 @@ include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
  #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
+set(HOSTNAME              "factory-win7")
 set(MY_COMPILER           "VS2008")
 set(CTEST_DASHBOARD_ROOT  "C:/D/N")
 # Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
