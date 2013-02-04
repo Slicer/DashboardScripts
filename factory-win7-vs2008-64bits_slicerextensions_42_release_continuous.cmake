@@ -11,7 +11,7 @@ set(CTEST_DASHBOARD_ROOT  "C:/D/C")
 set(CTEST_CMAKE_GENERATOR "Visual Studio 9 2008 Win64")
 set(MY_BITNESS            "64")
 
-set(EXTENSIONS_TRACK_QUALIFIER "4.2.0") # "master", 4.1, ...
+set(EXTENSIONS_TRACK_QUALIFIER "4.2") # "master", 4.1, ...
 set(SVN_BRANCH "branches/Slicer-4-2")
 set(package_version "422")
 
