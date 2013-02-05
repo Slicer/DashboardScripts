@@ -8,4 +8,4 @@ LOG_DIR=/Users/kitware/Dashboards/Logs
 PACKAGE_VERSION=420
 
 # Package build of slicer
-/Applications/CMake\ 2.8-8.app/Contents/bin/ctest -S $DASHBOARD_SCRIPTS_DIR/${HOSTNAME}-64bits_slicer_${PACKAGE_VERSION}_release_package.cmake -VV -O $LOG_DIR/${HOSTNAME}-64bits_slicer_${PACKAGE_VERSION}_release_package.txt
+/Applications/CMake\ 2.8-10.app/Contents/bin/ctest -S $DASHBOARD_SCRIPTS_DIR/${HOSTNAME}-64bits_slicer_${PACKAGE_VERSION}_release_package.cmake -VV -O $LOG_DIR/${HOSTNAME}-64bits_slicer_${PACKAGE_VERSION}_release_package.txt
