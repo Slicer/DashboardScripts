@@ -21,7 +21,7 @@ set(WITH_EXTENSIONS FALSE) # Indicates if 'trusted' Slicer extensions should be
                           # built, tested, packaged and uploaded.
 set(CTEST_BUILD_CONFIGURATION "Release")
 #set(CTEST_TEST_TIMEOUT 100)
-set(CTEST_BUILD_FLAGS "-j9") # Use multiple CPU cores to build. For example "-j4" on unix
+set(CTEST_BUILD_FLAGS "-j -l9") # Use multiple CPU cores to build. For example "-j -l4" on unix
 
 set(CTEST_INCLUDED_SCRIPT_NAME ${HOSTNAME}_slicer_common.cmake)
 include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})

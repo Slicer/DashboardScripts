@@ -22,7 +22,7 @@ set(WITH_COVERAGE FALSE)
 set(WITH_DOCUMENTATION FALSE)
 #set(DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY ) # for example: $ENV{HOME}/Projects/Doxygen
 set(CTEST_BUILD_CONFIGURATION "Release")
-set(CTEST_BUILD_FLAGS "-j5") # Use multiple CPU cores to build. For example "-j4" on unix
+set(CTEST_BUILD_FLAGS "-j -l5") # Use multiple CPU cores to build. For example "-j -l4" on unix
 
 #
 # Dashboard type
