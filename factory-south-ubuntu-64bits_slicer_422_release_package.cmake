@@ -25,7 +25,7 @@ set(run_ctest_with_update FALSE)
 set(WITH_EXTENSIONS FALSE) # Indicates if 'trusted' Slicer extensions should be
                           # built, tested, packaged and uploaded.
 set(CTEST_BUILD_CONFIGURATION "Release")
-set(CTEST_BUILD_FLAGS "-j -l5") # Use multiple CPU cores to build. For example "-j -l4" on unix
+set(CTEST_BUILD_FLAGS "-j5 -l4") # Use multiple CPU cores to build. For example "-j4 -l3" on unix
 
 set(CTEST_INCLUDED_SCRIPT_NAME ${HOSTNAME}_slicer_common.cmake)
 include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})
