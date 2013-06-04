@@ -38,6 +38,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
   ADDITIONAL_CXX_FLAGS:STRING=
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
   Slicer_BUILD_CLI:BOOL=ON
+  Slicer_USE_SimpleITK:BOOL=ON
   DOXYGEN_EXECUTABLE:FILEPATH=/home/kitware/Dashboards/Support/doxygen-1.7.4/bin/doxygen
 ")
 
