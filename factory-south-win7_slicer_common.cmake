@@ -6,7 +6,10 @@ set(CTEST_TEST_TIMEOUT 900) # 15mins
 if (NOT DEFINED MY_QT_VERSION)
   set(MY_QT_VERSION "4.7.4")
 endif()
-set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-rel/bin/qmake.exe")
+set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-vs2008-rel/bin/qmake.exe")
+if(${MY_BITNESS} EQUAL 32)
+  set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-rel/bin/qmake.exe")
+endif()
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)
 set(MIDAS_PACKAGE_EMAIL patrick.reynolds@kitware.com)

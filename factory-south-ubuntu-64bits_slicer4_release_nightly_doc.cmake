@@ -40,6 +40,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_BUILD_CLI:BOOL=ON
   Slicer_USE_SimpleITK:BOOL=ON
   DOXYGEN_EXECUTABLE:FILEPATH=/home/kitware/Dashboards/Support/doxygen-1.7.4/bin/doxygen
+  Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
 ")
 
 set(BUILD_OPTIONS_STRING "64bits-QT${MY_QT_VERSION}-PythonQt-With-Tcl-CLI") 
