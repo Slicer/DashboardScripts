@@ -11,7 +11,8 @@ set(CTEST_BUILD_FLAGS "")
 
 #find_program(CTEST_GIT_COMMAND NAMES git)
 set(CTEST_GIT_COMMAND "C:/Program Files (x86)/Git/bin/git.exe")
-find_program(CTEST_SVN_COMMAND NAMES svn)
+#find_program(CTEST_SVN_COMMAND NAMES svn)
+set(CTEST_SVN_COMMAND "C:/Program Files/SlikSvn/bin/svn.exe")
 find_program(CTEST_COVERAGE_COMMAND NAMES gcov)
 find_program(CTEST_MEMORYCHECK_COMMAND NAMES valgrind)
 
