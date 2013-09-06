@@ -12,8 +12,8 @@ export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # Nightly build of slicer extensions
 /home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-64bits_slicerextensions_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-64bits_slicerextensions_release_nightly.log
 
-# Nightly build of slicer 4.2 extensions
-/home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-64bits_slicerextensions_42_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-64bits_slicerextensions_42_release_nightly.log
+# Nightly build of slicer 4.3 extensions
+/home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-64bits_slicerextensions_43_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-64bits_slicerextensions_43_release_nightly.log
 
 # Nightly build of slicer (Coverage)
 #/home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-64bits_slicer4_release_nightly_coverage.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-64bits_slicer4_release_nightly_coverage.log

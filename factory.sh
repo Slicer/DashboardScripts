@@ -14,8 +14,8 @@ export PATH=:/usr/local/git/bin:$PATH
 # Nightly build of slicer extensions
 /Applications/CMake\ 2.8-10.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-64bits_slicerextensions_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-64bits_slicerextensions_release_nightly.log
 
-# Nightly build of slicer 4.2 extensions
-/Applications/CMake\ 2.8-10.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-64bits_slicerextensions_42_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-64bits_slicerextensions_42_release_nightly.log
+# Nightly build of slicer 4.3 extensions
+/Applications/CMake\ 2.8-10.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-64bits_slicerextensions_43_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-64bits_slicerextensions_43_release_nightly.log
 
 # Nightly build of Slicer's VTK
 #/Applications/CMake\ 2.8-10.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory_slicer_vtk_shared.cmake -V
