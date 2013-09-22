@@ -4,7 +4,7 @@ message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 set(CTEST_TEST_TIMEOUT 900) # 15mins
 
 if (NOT DEFINED MY_QT_VERSION)
-  set(MY_QT_VERSION         "4.7.4")
+  set(MY_QT_VERSION         "4.8.5")
 endif()
 set(QT_QMAKE_EXECUTABLE   "$ENV{HOME}/Dashboards/Support/qt/qt-everywhere-opensource-build-${MY_QT_VERSION}/bin/qmake")
 
