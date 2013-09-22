@@ -10,6 +10,7 @@ set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Continuous/")
 set(EXTENSIONS_TRACK_QUALIFIER "4.1.1") # "master", 4.1, ...
 set(package_version 411)
 set(SVN_BRANCH "branches/Slicer-4-1-1")
+set(MY_QT_VERSION "4.7.4")
 
 #-----------------------------------------------------------------------------
 # Dashboard options

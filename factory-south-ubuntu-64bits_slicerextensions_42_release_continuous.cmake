@@ -11,6 +11,7 @@ set(package_version "422")
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "factory-south-ubuntu")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Continuous/")
+set(MY_QT_VERSION "4.7.4")
 
 #-----------------------------------------------------------------------------
 # Dashboard options
