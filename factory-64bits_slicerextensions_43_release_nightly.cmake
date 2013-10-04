@@ -9,7 +9,7 @@ set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Nightly/")
 
 set(EXTENSIONS_TRACK_QUALIFIER "4.3") # "master", 4.1, ...
 set(SVN_BRANCH "branches/Slicer-4-3")
-set(package_version "430")
+set(package_version "431")
 
 #-----------------------------------------------------------------------------
 # Dashboard options
