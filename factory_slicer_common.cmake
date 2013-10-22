@@ -3,6 +3,9 @@ message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
 set(CTEST_TEST_TIMEOUT 900) # 15mins
 
+if(NOT DEFINED MY_QT_VERSION)
+  set(MY_QT_VERSION "4.7.4")
+endif()
 set(QT_QMAKE_EXECUTABLE   "/usr/bin/qmake")
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)
