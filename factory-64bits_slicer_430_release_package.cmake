@@ -11,6 +11,7 @@ set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Package")
 set(package_version 430)
 set(SVN_BRANCH "trunk")
 set(SVN_REVISION "22408") # Release 4.3.0
+set(MY_QT_VERSION "4.7.4")
 
 #
 # Dashboard options

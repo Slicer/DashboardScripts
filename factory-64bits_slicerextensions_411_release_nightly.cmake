@@ -6,6 +6,7 @@ include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "factory")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Nightly/")
+set(MY_QT_VERSION "4.7.4")
 
 #-----------------------------------------------------------------------------
 # Dashboard options
