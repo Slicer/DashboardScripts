@@ -1,0 +1,1 @@
+"C:\Dashboards\Support\cmake-2.8.12.2-win32-x86\bin\ctest.exe" -C Release -S district9-vs2008-32bits_CTKResEdit_release_continuous.cmake -VV -O "C:\D\Logs\district9-vs2008-32bits_CTKResEdit_release_continuous.txt"
