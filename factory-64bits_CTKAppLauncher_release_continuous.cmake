@@ -71,21 +71,9 @@ message("script mode: ${SCRIPT_MODE}")
 message("coverage: ${WITH_COVERAGE}, memcheck: ${WITH_MEMCHECK}")
 
 #
-# Convenient function allowing to download a file
-#
-function(download_file url dest)
-  file(DOWNLOAD ${url} ${dest} STATUS status)
-  list(GET status 0 error_code)
-  list(GET status 1 error_msg)
-  if(error_code)
-    message(FATAL_ERROR "error: Failed to download ${url} - ${error_msg}")
-  endif()
-endfunction()
-
-#
 # Download and include dashboard driver script
 #
-set(url http://www.commontk.org/images/6/6c/CtkAppLauncherDashboardDriverScript.cmake.txt)
+set(url https://raw.githubusercontent.com/commontk/AppLauncher/master/CMake/ctkAppLauncherDashboardDriverScript.cmake)
 set(dest ${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}.driver)
 download_file(${url} ${dest})
 include(${dest})

@@ -9,6 +9,8 @@
 
 cmake_minimum_required(VERSION 2.8)
 
+include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
+
 #
 # For additional information, see http://www.commontk.org/index.php/CTKAppLauncher:Dashboard_setup
 #
@@ -94,21 +96,9 @@ message("script mode: ${SCRIPT_MODE}")
 message("coverage: ${WITH_COVERAGE}, memcheck: ${WITH_MEMCHECK}")
 
 #
-# Convenient macro allowing to download a file
+# Download and include dashboard driver script
 #
-MACRO(downloadFile url dest)
-  FILE(DOWNLOAD ${url} ${dest} STATUS status)
-  LIST(GET status 0 error_code)
-  LIST(GET status 1 error_msg)
-  IF(error_code)
-    MESSAGE(FATAL_ERROR "error: Failed to download ${url} - ${error_msg}")
-  ENDIF()
-ENDMACRO()
-
-#
-# Download and include dashboard driver script 
-#
-set(url http://commontk.org/ctkAppLauncherDashboardDriverScript.cmake)
+set(url https://raw.githubusercontent.com/commontk/AppLauncher/master/CMake/ctkAppLauncherDashboardDriverScript.cmake)
 set(dest ${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}.driver)
-downloadFile(${url} ${dest})
-INCLUDE(${dest})
+download_file(${url} ${dest})
+include(${dest})
