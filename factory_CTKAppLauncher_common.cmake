@@ -14,7 +14,7 @@ set(MIDAS_PACKAGES_CREDENTIAL_FILE "$ENV{HOME}/Dashboards/Support/CTKAppLauncher
 #-----------------------------------------------------------------------------
 foreach(var CTEST_BUILD_FLAGS CTEST_TEST_TIMEOUT
             MY_QT_VERSION QT_QMAKE_EXECUTABLE
-            MIDAS_PACKAGES_API_EMAIL MIDAS_PACKAGES_API_KEY
+            MIDAS_PACKAGES_CREDENTIAL_FILE
             )
   message("-- ${var}: ${${var}}")
 endforeach()
