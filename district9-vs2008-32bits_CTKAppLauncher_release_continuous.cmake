@@ -20,7 +20,7 @@ set(WITH_COVERAGE FALSE)
 set(WITH_DOCUMENTATION FALSE)
 #set(DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY ) # for example: $ENV{HOME}/Projects/Doxygen
 set(WITH_PACKAGES TRUE)
-set(MIDAS_PACKAGES_CREDENTIAL_FILE "C:/Dashboards/Support/CTKAppLauncher-MidasPackagesCredential.cmake")
+set(MIDAS_PACKAGES_CREDENTIAL_FILE "C:/Dashboards/Support/Kitware-MidasPackagesCredential.cmake")
 set(CTEST_BUILD_CONFIGURATION "Release")
 
 set(CTEST_INCLUDED_SCRIPT_NAME ${HOSTNAME}_CTKAppLauncher_common.cmake)

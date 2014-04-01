@@ -7,7 +7,7 @@ set(CTEST_TEST_TIMEOUT 20)
 set(MY_QT_VERSION         "4.7.4")
 set(QT_QMAKE_EXECUTABLE   "$ENV{HOME}/Dashboards/Support/qt/qt-everywhere-opensource-static-release-${MY_QT_VERSION}/bin/qmake")
 
-set(MIDAS_PACKAGES_CREDENTIAL_FILE "$ENV{HOME}/Dashboards/Support/CTKAppLauncher-MidasPackagesCredential.cmake")
+set(MIDAS_PACKAGES_CREDENTIAL_FILE "$ENV{HOME}/Dashboards/Support/Kitware-MidasPackagesCredential.cmake")
 
 #-----------------------------------------------------------------------------
 # Display variables

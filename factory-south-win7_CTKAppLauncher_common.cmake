@@ -6,7 +6,7 @@ set(CTEST_TEST_TIMEOUT 20)
 set(MY_QT_VERSION "4.7.4")
 set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-static-release-i386-4.7.4/bin/qmake.exe")
 
-set(MIDAS_PACKAGES_CREDENTIAL_FILE "C:/D/Support/CTKAppLauncher-MidasPackagesCredential.cmake")
+set(MIDAS_PACKAGES_CREDENTIAL_FILE "C:/D/Support/Kitware-MidasPackagesCredential.cmake")
 
 #-----------------------------------------------------------------------------
 # Display variables
