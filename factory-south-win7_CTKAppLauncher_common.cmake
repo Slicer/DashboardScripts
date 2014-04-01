@@ -6,8 +6,7 @@ set(CTEST_TEST_TIMEOUT 300)
 set(MY_QT_VERSION "4.7.4")
 set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-static-release-i386-4.7.4/bin/qmake.exe")
 
-set(MIDAS_API_EMAIL "jchris.fillionr@kitware.com")
-set(MIDAS_API_KEY "abcd74b876168ed98f1f006be65693e2")
+set(MIDAS_PACKAGES_CREDENTIAL_FILE "C:/D/Support/CTKAppLauncher-MidasPackagesCredential.cmake")
 
 #-----------------------------------------------------------------------------
 # Display variables
