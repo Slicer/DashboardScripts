@@ -21,7 +21,7 @@ set(MY_COMPILER "VS2008")
 set(MY_QT_VERSION "4.7")
 set(QT_QMAKE_EXECUTABLE "C:/Dashboards/Support/qt-static-release-4.7.0/bin/qmake.exe")
 set(CTEST_SITE "district9.kitware") # for example: mymachine.kitware, mymachine.dkfz, ...
-set(CTEST_DASHBOARD_ROOT "C:/Dashboards/Continuous")
+set(CTEST_DASHBOARD_ROOT "C:/D/C")
 set(CTEST_CMAKE_GENERATOR "Visual Studio 9 2008")
 
 #
