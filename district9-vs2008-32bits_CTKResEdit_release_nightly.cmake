@@ -14,6 +14,8 @@
 
 cmake_minimum_required(VERSION 2.8)
 
+include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
+
 #-----------------------------------------------------------------------------
 # Experimental:
 #     - run_ctest() macro will be called *ONE* time
@@ -138,18 +140,6 @@ message("WITH_MEMCHECK .............: ${WITH_MEMCHECK}")
 message("WITH_PACKAGES .............: ${WITH_PACKAGES}")
 message("WITH_DOCUMENTATION ........: ${WITH_DOCUMENTATION}")
 message("DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY: ${DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY}")
-
-#
-# Convenient function allowing to download a file
-#
-function(download_file url dest)
-  file(DOWNLOAD ${url} ${dest} STATUS status)
-  list(GET status 0 error_code)
-  list(GET status 1 error_msg)
-  if(error_code)
-    message(FATAL_ERROR "error: Failed to download ${url} - ${error_msg}")
-  endif()
-endfunction()
 
 #
 # Download and include dashboard driver script 
