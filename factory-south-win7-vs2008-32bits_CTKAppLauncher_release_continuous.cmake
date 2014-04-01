@@ -31,9 +31,9 @@ include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})
 set(SCRIPT_MODE "continuous") # "experimental", "continuous", "nightly"
 
 #
-# Additionnal CMakeCache options
+# Additional CMakeCache options
 #
-set(ADDITIONNAL_CMAKECACHE_OPTION "
+set(ADDITIONAL_CMAKECACHE_OPTION "
 ")
 
 #
