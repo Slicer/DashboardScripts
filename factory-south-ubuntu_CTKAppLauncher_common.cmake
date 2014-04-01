@@ -2,7 +2,7 @@
 message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
 set(CTEST_BUILD_FLAGS "-j2")
-set(CTEST_TEST_TIMEOUT 300)
+set(CTEST_TEST_TIMEOUT 20)
 
 set(MY_QT_VERSION         "4.7.4")
 set(QT_QMAKE_EXECUTABLE   "$ENV{HOME}/Dashboards/Support/qt/qt-everywhere-opensource-static-release-${MY_QT_VERSION}/bin/qmake")

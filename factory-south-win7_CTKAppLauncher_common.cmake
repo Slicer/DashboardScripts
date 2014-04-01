@@ -1,7 +1,7 @@
 
 message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
-set(CTEST_TEST_TIMEOUT 300)
+set(CTEST_TEST_TIMEOUT 20)
 
 set(MY_QT_VERSION "4.7.4")
 set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-static-release-i386-4.7.4/bin/qmake.exe")
