@@ -10,6 +10,7 @@ set(CTEST_DASHBOARD_ROOT  "C:/D/N")
 # Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
 set(CTEST_CMAKE_GENERATOR "Visual Studio 9 2008 Win64")
 set(MY_BITNESS            "64")
+set(MY_QT_VERSION "4.7.4")
 
 #-----------------------------------------------------------------------------
 # Dashboard options

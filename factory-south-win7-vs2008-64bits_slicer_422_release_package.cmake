@@ -15,6 +15,7 @@ set(MY_BITNESS            "64")
 set(package_version 422)
 set(SVN_BRANCH "branches/Slicer-4-2")
 set(SVN_REVISION "21513") # Tweak release 4.2.2-1
+set(MY_QT_VERSION "4.7.4")
 
 #
 # Dashboard options
