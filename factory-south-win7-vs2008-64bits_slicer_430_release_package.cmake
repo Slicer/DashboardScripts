@@ -15,6 +15,7 @@ set(MY_BITNESS            "64")
 set(package_version 430)
 set(SVN_BRANCH "trunk")
 set(SVN_REVISION "22408") # Release 4.3.0
+set(MY_QT_VERSION "4.7.4")
 
 #
 # Dashboard options

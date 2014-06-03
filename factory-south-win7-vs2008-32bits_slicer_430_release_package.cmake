@@ -15,6 +15,8 @@ set(MY_BITNESS            "32")
 set(package_version 430)
 set(SVN_BRANCH "trunk")
 set(SVN_REVISION "22408") # Release 4.3.0
+set(MY_QT_VERSION "4.7.4")
+set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-rel/bin/qmake.exe")
 
 #
 # Dashboard options

@@ -14,6 +14,7 @@ set(MY_BITNESS            "64")
 set(EXTENSIONS_TRACK_QUALIFIER "4.3") # "master", 4.1, ...
 set(SVN_BRANCH "branches/Slicer-4-3")
 set(package_version "431")
+set(MY_QT_VERSION "4.7.4")
 
 #-----------------------------------------------------------------------------
 # Dashboard options
