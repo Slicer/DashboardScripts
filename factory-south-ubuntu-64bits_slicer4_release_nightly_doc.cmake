@@ -39,7 +39,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
   Slicer_BUILD_CLI:BOOL=ON
   Slicer_USE_SimpleITK:BOOL=ON
-  DOXYGEN_EXECUTABLE:FILEPATH=/home/kitware/Dashboards/Support/doxygen-1.7.4/bin/doxygen
+  DOXYGEN_EXECUTABLE:FILEPATH=/home/kitware/Dashboards/Support/doxygen-1.8.4/bin/doxygen
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
 ")
 
