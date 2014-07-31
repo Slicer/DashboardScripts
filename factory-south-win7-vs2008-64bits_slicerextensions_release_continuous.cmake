@@ -79,7 +79,7 @@ file(WRITE "${CTEST_DASHBOARD_ROOT}/S-${dir_identifier}-E${testing_suffix}-b - S
 #-----------------------------------------------------------------------------
 # Source directories
 #-----------------------------------------------------------------------------
-set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/Slicer-1/Extensions/CMake")
+set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/../N/Slicer-${dir_identifier}/Extensions/CMake")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #

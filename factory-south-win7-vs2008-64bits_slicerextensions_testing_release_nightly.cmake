@@ -65,7 +65,7 @@ set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks-N
 set(dir_suffix ${BUILD_OPTIONS_STRING}-${CTEST_BUILD_CONFIGURATION}-${SCRIPT_MODE})
 set(dir_identifier "1")
 
-set(Slicer_DIR "${CTEST_DASHBOARD_ROOT}/Slicer-${dir_identifier}-build/Slicer-build")
+set(Slicer_DIR "${CTEST_DASHBOARD_ROOT}/../N/Slicer-${dir_identifier}-build/Slicer-build")
 
 set(testing_suffix "")
 if(EXTENSIONS_BUILDSYSTEM_TESTING)
@@ -79,7 +79,7 @@ file(WRITE "${CTEST_DASHBOARD_ROOT}/S-${dir_identifier}-E${testing_suffix}-b - S
 #-----------------------------------------------------------------------------
 # Source directories
 #-----------------------------------------------------------------------------
-set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/Slicer-1/Extensions/CMake")
+set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/../N/Slicer-${dir_identifier}/Extensions/CMake")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #

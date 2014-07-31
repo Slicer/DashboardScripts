@@ -77,7 +77,7 @@ file(WRITE "${CTEST_DASHBOARD_ROOT}/S-${dir_identifier}-E${testing_suffix}-b - S
 #-----------------------------------------------------------------------------
 # Source directories
 #-----------------------------------------------------------------------------
-set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/Slicer4-0/Extensions/CMake")
+set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/../Nightly/Slicer-0/Extensions/CMake")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
