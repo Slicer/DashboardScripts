@@ -2,7 +2,7 @@
 message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
 set(MY_OPERATING_SYSTEM   "SnowLeopard") # Windows, Linux, Darwin... 
-set(MY_COMPILER           "g++4.2.1")
+set(MY_COMPILER           "clang-3.0")
 set(CTEST_SITE            "${HOSTNAME}-mac-64bits.kitware") # for example: mymachine.kitware, mymachine.bwh.harvard.edu, ...
 
 get_filename_component(CTEST_SCRIPT_NAME_WE ${CTEST_SCRIPT_NAME} NAME_WE)
