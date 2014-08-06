@@ -43,6 +43,7 @@ set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 # Dashboard properties
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "factory-south-ubuntu")
+set(MY_QT_VERSION         "4.8.6")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/${SCRIPT_MODE}")
 
 set(SVN_BRANCH "trunk")

@@ -41,6 +41,7 @@ set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "factory-south-win7")
 set(MY_COMPILER           "VS2008")
+set(MY_QT_VERSION         "4.8.6")
 set(CTEST_DASHBOARD_ROOT  "C:/D/E")
 
 set(SVN_BRANCH "trunk")
