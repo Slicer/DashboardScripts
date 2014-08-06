@@ -1,6 +1,9 @@
 
 message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
+set(ENV{CC} /usr/bin/clang)
+set(ENV{CXX} /usr/bin/clang++)
+
 set(MY_OPERATING_SYSTEM   "SnowLeopard") # Windows, Linux, Darwin... 
 set(MY_COMPILER           "clang-3.0")
 set(CTEST_SITE            "${HOSTNAME}-mac-64bits.kitware") # for example: mymachine.kitware, mymachine.bwh.harvard.edu, ...
