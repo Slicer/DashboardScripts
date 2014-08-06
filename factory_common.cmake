@@ -1,11 +1,19 @@
 
 message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
+# clang and clang++ are symlinks to
+#  /Users/kitware/Dashboards/Support/clang+llvm-3.1-x86_64-apple-darwin11/bin/clang
+#  and
+#  /Users/kitware/Dashboards/Support/clang+llvm-3.1-x86_64-apple-darwin11/bin/clang++
+#
+# The original clang compilers have been renamed into /usr/bin/clang.provided-by-xcode42
+# and /usr/bin/clang++.provided-by-xcode42
+
 set(ENV{CC} /usr/bin/clang)
 set(ENV{CXX} /usr/bin/clang++)
 
-set(MY_OPERATING_SYSTEM   "SnowLeopard") # Windows, Linux, Darwin... 
-set(MY_COMPILER           "clang-3.0")
+set(MY_OPERATING_SYSTEM   "SnowLeopard") # Windows, Linux, Darwin...
+set(MY_COMPILER           "clang-3.1")
 set(CTEST_SITE            "${HOSTNAME}-mac-64bits.kitware") # for example: mymachine.kitware, mymachine.bwh.harvard.edu, ...
 
 get_filename_component(CTEST_SCRIPT_NAME_WE ${CTEST_SCRIPT_NAME} NAME_WE)
