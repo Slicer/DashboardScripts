@@ -1,1 +1,1 @@
-"C:\D\Support\CMake 2.8.12.2\bin\ctest.exe" -S factory-south-win7-vs2008-32bits_slicer4_release_experimental.cmake -C Release -V -VV -O "C:\D\Logs\factory-south-win7-vs2008-32bits_slicer4_release_experimental.txt"
+"C:\D\Support\CMake 3.0.1\bin\ctest.exe" -S factory-south-win7-vs2008-32bits_slicer4_release_experimental.cmake -C Release -V -VV -O "C:\D\Logs\factory-south-win7-vs2008-32bits_slicer4_release_experimental.txt"

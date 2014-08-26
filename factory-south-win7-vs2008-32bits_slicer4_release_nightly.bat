@@ -1,1 +1,1 @@
-"C:\D\Support\CMake 2.8.12.2\bin\ctest.exe" -S factory-south-win7-vs2008-32bits_slicer4_release_nightly.cmake -C Release -V -VV -O "C:\D\Logs\factory-south-win7-vs2008-32bits_slicer4_release_nightly.txt"
+"C:\D\Support\CMake 3.0.1\bin\ctest.exe" -S factory-south-win7-vs2008-32bits_slicer4_release_nightly.cmake -C Release -V -VV -O "C:\D\Logs\factory-south-win7-vs2008-32bits_slicer4_release_nightly.txt"
