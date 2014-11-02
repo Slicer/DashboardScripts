@@ -42,7 +42,7 @@ set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 set(HOSTNAME              "factory-south-win7")
 set(MY_COMPILER           "VS2008")
 set(MY_QT_VERSION         "4.8.6")
-set(CTEST_DASHBOARD_ROOT  "C:/D/N")
+set(CTEST_DASHBOARD_ROOT  "C:/D/P")
 
 set(SVN_BRANCH "trunk")
 set(SVN_REVISION "23774") # Release 4.4.0
