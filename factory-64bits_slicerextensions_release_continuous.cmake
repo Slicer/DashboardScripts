@@ -29,6 +29,7 @@ set(SCRIPT_MODE "continuous") # "experimental", "continuous", "nightly"
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
+  CMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.6
 ")
 
 #-----------------------------------------------------------------------------

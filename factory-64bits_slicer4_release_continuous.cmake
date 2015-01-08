@@ -78,6 +78,7 @@ set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
+  CMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.6
 ")
 
 #-----------------------------------------------------------------------------
