@@ -78,7 +78,8 @@ set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
-  Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
+  Slicer_USE_VTK_DEBUG_LEAKS:BOOL=ON
+  Slicer_VTK_RENDERING_BACKEND:STRING=OpenGL2
 ")
 
 #-----------------------------------------------------------------------------
