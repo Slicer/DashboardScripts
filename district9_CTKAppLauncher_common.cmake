@@ -3,8 +3,8 @@ message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
 set(CTEST_TEST_TIMEOUT 20)
 
-set(MY_QT_VERSION "4.7.0")
-set(QT_QMAKE_EXECUTABLE "C:/Dashboards/Support/qt-static-release-4.7.0/bin/qmake.exe")
+set(MY_QT_VERSION "4.8.6")
+set(QT_QMAKE_EXECUTABLE "C:/D/Support/qt-static-release-i386-4.8.6/bin/qmake.exe")
 
 set(MIDAS_PACKAGES_CREDENTIAL_FILE "C:/Dashboards/Support/Kitware-MidasPackagesCredential.cmake")
 
