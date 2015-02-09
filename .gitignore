@@ -10,3 +10,5 @@
 
 # Ignore driver scripts
 *.driver
+*-gitclone.cmake
+*-gitupdate.cmake
