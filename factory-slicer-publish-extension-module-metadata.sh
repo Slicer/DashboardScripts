@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 
