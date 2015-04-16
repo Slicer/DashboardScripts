@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export USER=kitware # Required by GitPython so that call to "os.getlogin()/getpass.getuser()" works.
 export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 
 DASHBOARD_DIR=/Users/kitware/Dashboards
