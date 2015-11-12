@@ -45,7 +45,7 @@ set(MY_QT_VERSION         "4.8.5")
 set(CTEST_DASHBOARD_ROOT  "C:/D/P")
 
 set(SVN_BRANCH "trunk")
-set(SVN_REVISION "24729") # Release 4.5.0
+set(SVN_REVISION "24735") # Release 4.5.0-1
 set(package_version "450")
 
 # Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
