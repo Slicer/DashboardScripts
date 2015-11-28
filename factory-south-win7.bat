@@ -18,7 +18,7 @@ for /f "skip=2 tokens=2 delims=," %%a in ('wmic path win32_localtime get dayofwe
 echo DAYOFWEEK[%DAYOFWEEK%]
 
 set STABLE_BEFORE_NIGHTLY=0
-if "%DAYOFWEEK%"=="6" set STABLE_BEFORE_NIGHTLY=1
+::if "%DAYOFWEEK%"=="6" set STABLE_BEFORE_NIGHTLY=1
 if "%DAYOFWEEK%"=="7" set STABLE_BEFORE_NIGHTLY=1
 
 echo STABLE_BEFORE_NIGHTLY[%STABLE_BEFORE_NIGHTLY%]
