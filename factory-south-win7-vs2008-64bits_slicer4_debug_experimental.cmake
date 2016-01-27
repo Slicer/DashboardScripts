@@ -74,8 +74,8 @@ set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
-  ADDITIONAL_C_FLAGS:STRING=
-  ADDITIONAL_CXX_FLAGS:STRING=
+  ADDITIONAL_C_FLAGS:STRING=/MP4
+  ADDITIONAL_CXX_FLAGS:STRING=/MP4
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
 ")
