@@ -3,11 +3,17 @@ message("-- Including ${CTEST_INCLUDED_SCRIPT_NAME}")
 
 set(CTEST_TEST_TIMEOUT 900) # 15mins
 
+if(NOT DEFINED MY_COMPILER)
+  set(MY_COMPILER "VS2008")
+endif()
+string(TOLOWER "${MY_COMPILER}" _lc_compiler)
+
 if(NOT DEFINED MY_QT_VERSION)
   set(MY_QT_VERSION "4.8.5")
 endif()
+
 if(NOT DEFINED QT_QMAKE_EXECUTABLE)
-  set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-vs2008-rel/bin/qmake.exe")
+  set(QT_QMAKE_EXECUTABLE   "C:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-${_lc_compiler}-rel/bin/qmake.exe")
 endif()
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)

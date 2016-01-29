@@ -5,10 +5,10 @@ include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
 # Dashboard properties
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "factory-south-win7")
-set(MY_COMPILER           "VS2008")
+set(MY_COMPILER           "VS2013")
 set(CTEST_DASHBOARD_ROOT  "C:/D/N")
 # Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
-set(CTEST_CMAKE_GENERATOR "Visual Studio 9 2008 Win64")
+set(CTEST_CMAKE_GENERATOR "Visual Studio 12 2013 Win64")
 set(MY_BITNESS            "64")
 
 #-----------------------------------------------------------------------------
