@@ -7,8 +7,6 @@ set(CTEST_SITE            "${HOSTNAME}.kitware") # for example: mymachine.kitwar
 get_filename_component(CTEST_SCRIPT_NAME_WE ${CTEST_SCRIPT_NAME} NAME_WE)
 set(CTEST_LOG_FILE        "C:/D/Logs/${CTEST_SCRIPT_NAME_WE}.txt")
 
-set(CTEST_BUILD_FLAGS "")
-
 #find_program(CTEST_GIT_COMMAND NAMES git)
 set(CTEST_GIT_COMMAND "C:/Program Files (x86)/Git/bin/git.exe")
 #find_program(CTEST_SVN_COMMAND NAMES svn)
