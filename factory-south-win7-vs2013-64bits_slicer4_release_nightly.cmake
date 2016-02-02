@@ -81,7 +81,6 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
   Slicer_BUILD_WIN32_CONSOLE:BOOL=OFF
   Slicer_PATCH_VERSION:STRING=0
-  Slicer_USE_SimpleITK:BOOL=0
 ")
 
 #-----------------------------------------------------------------------------
