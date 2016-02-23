@@ -6,7 +6,7 @@ REM Nightly build of slicer vs2013 64bits
 
 REM Nightly build of slicer extensions testing vs2013 64bits
 ::echo "Nightly build of slicer extensions testing vs2013 64bits"
-"C:\D\Support\CMake 3.4.1\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2013-64bits_slicerextensions_testing_release_nightly.cmake" -C Release -V -O C:\D\Logs\factory-south-win7-vs2013-64bits_slicerextensions_testing_release_nightly.txt
+"C:\D\Support\CMake 3.4.1\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2013-64bits_slicerextensions_testing_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-south-win7-vs2013-64bits_slicerextensions_testing_release_nightly.txt
 
 :: See http://serverfault.com/questions/94824/finding-day-of-week-in-batch-file-windows-server-2008
 :: and http://stackoverflow.com/a/14882478/1539918
@@ -48,7 +48,7 @@ EXIT /B %ERRORLEVEL%
 :factory-south-win7-vs2013-64bits_slicerextensions_release_nightly
 REM Nightly build of slicer extensions vs2013 64bits
 ::echo "Nightly build of slicer extensions vs2013 64bits"
-"C:\D\Support\CMake 3.4.1\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2013-64bits_slicerextensions_release_nightly.cmake" -C Release -V -O C:\D\Logs\factory-south-win7-vs2013-64bits_slicerextensions_release_nightly.txt
+"C:\D\Support\CMake 3.4.1\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2013-64bits_slicerextensions_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-south-win7-vs2013-64bits_slicerextensions_release_nightly.txt
 EXIT /B 0
 
 
@@ -56,5 +56,5 @@ EXIT /B 0
 :factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly
 REM Nightly build of slicer 4.5 extensions vs2008 64bits
 ::echo "Nightly build of slicer 4.5 extensions vs2008 64bits"
-"C:\D\Support\CMake 3.4.1\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly.cmake" -C Release -V -O C:\D\Logs\factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly.txt
+"C:\D\Support\CMake 3.4.1\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly.txt
 EXIT /B 0
