@@ -9,7 +9,7 @@ endif()
 set(QT_QMAKE_EXECUTABLE   "$ENV{HOME}/Dashboards/Support/qt/qt-everywhere-opensource-build-${MY_QT_VERSION}/bin/qmake")
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)
-set(SLICER_PACKAGES_CREDENTIAL_FILE "$ENV{HOME}/Dashboards/Support/Support/Kitware-SlicerPackagesCredential.cmake")
+set(SLICER_PACKAGES_CREDENTIAL_FILE "$ENV{HOME}/Dashboards/Support/Kitware-SlicerPackagesCredential.cmake")
 
 #-----------------------------------------------------------------------------
 # Display variables
