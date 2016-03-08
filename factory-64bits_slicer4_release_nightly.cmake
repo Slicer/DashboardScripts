@@ -43,7 +43,7 @@ set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
 # Dashboard properties
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "factory")
-set(MY_QT_VERSION         "4.8.6")
+set(MY_QT_VERSION         "4.8.7")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/${SCRIPT_MODE}")
 
 set(SVN_BRANCH "trunk")
