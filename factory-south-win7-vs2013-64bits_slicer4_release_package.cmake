@@ -29,7 +29,7 @@ cmake_minimum_required(VERSION 2.8.9)
 # Nightly:
 #     - run_ctest() macro will be called *ONE* time
 #     - binary directory *WILL BE* cleaned
-set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
+set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 
 # You could invoke the script with the following syntax:
 #  ctest -S karakoram_Slicer4_nightly.cmake -C <CTEST_BUILD_CONFIGURATION> -V
