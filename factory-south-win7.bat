@@ -27,15 +27,15 @@ if "%DAYOFWEEK%"=="7" set STABLE_BEFORE_NIGHTLY=1
 echo STABLE_BEFORE_NIGHTLY[%STABLE_BEFORE_NIGHTLY%]
 
 if "%STABLE_BEFORE_NIGHTLY%"=="1" (
-  call :fastdel "C:\D\N\S450-E-b"
-  CALL :factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly
+  call :fastdel "C:\D\N\S460-E-b"
+  CALL :factory-south-win7-vs2013-64bits_slicerextensions_46_release_nightly
   call :fastdel "C:\D\N\S-1-E-b"
   CALL :factory-south-win7-vs2013-64bits_slicerextensions_release_nightly
 ) else (
   call :fastdel "C:\D\N\S-1-E-b"
   CALL :factory-south-win7-vs2013-64bits_slicerextensions_release_nightly
-  call :fastdel "C:\D\N\S450-E-b"
-  CALL :factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly
+  call :fastdel "C:\D\N\S460-E-b"
+  CALL :factory-south-win7-vs2013-64bits_slicerextensions_46_release_nightly
 )
 
 :: Publish Slicer extension module metadata
@@ -60,10 +60,10 @@ EXIT /B 0
 
 
 :: a function to run Release extension dashboard
-:factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly
-REM Nightly build of slicer 4.5 extensions vs2008 64bits
-::echo "Nightly build of slicer 4.5 extensions vs2008 64bits"
-"C:\D\Support\CMake-3.5.0-rc3\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-south-win7-vs2008-64bits_slicerextensions_45_release_nightly.txt
+:factory-south-win7-vs2013-64bits_slicerextensions_46_release_nightly
+REM Nightly build of slicer 4.6 extensions vs2013 64bits
+::echo "Nightly build of slicer 4.6 extensions vs2013 64bits"
+"C:\D\Support\CMake-3.5.0-rc3\bin\ctest.exe" -S "C:\D\DashboardScripts\factory-south-win7-vs2013-64bits_slicerextensions_46_release_nightly.cmake" -C Release -VV -O C:\D\Logs\factory-south-win7-vs2013-64bits_slicerextensions_46_release_nightly.txt
 EXIT /B 0
 
 :: a function to efficiently remove a large directory
