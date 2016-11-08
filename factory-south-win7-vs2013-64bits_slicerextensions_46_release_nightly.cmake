@@ -13,7 +13,7 @@ set(MY_BITNESS            "64")
 
 set(EXTENSIONS_TRACK_QUALIFIER "4.6") # "master", 4.1, ...
 set(SVN_BRANCH "branches/Slicer-4-6")
-set(package_version "461")
+set(package_version "462")
 
 #-----------------------------------------------------------------------------
 # Dashboard options

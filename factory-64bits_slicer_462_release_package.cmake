@@ -1,10 +1,10 @@
 ####################################################################################
-# OS      : GNU/Linux
+# OS      : MacOSX 10.6.8
 # Hardware: x86_64
-# GPU     : OpenGL vendor string: Parallels and ATI Technologies Inc.
-#           OpenGL renderer string: Parallels using ATI Radeon HD 5770 OpenGL Engine
-#           OpenGL version string: 2.1 ATI-1.8.19
-#           OpenGL shading language version string: 1.2
+# GPU     : OpenGL vendor string: ATI Technologies Inc.
+#           OpenGL renderer string: ATI Radeon HD 5770 OpenGL Engine
+#           OpenGL version string: 2.1 ATI-1.6.36
+#           OpenGL shading language version string: 1.20
 ####################################################################################
 # WARNING - The specific version and processor type of this machine should be reported
 # in the header above. Indeed, this file will be send to the dashboard as a NOTE file.
@@ -42,18 +42,18 @@ set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory-south-ubuntu")
-set(MY_QT_VERSION         "4.8.6")
+set(HOSTNAME              "factory")
+set(MY_QT_VERSION         "4.8.7")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Package")
 
 set(SVN_BRANCH "branches/Slicer-4-6")
-set(SVN_REVISION "25513") # Release 4.6.1
-set(package_version "461")
+set(SVN_REVISION "25516") # Release 4.6.2
+set(package_version "462")
 
 # Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
 # It means the following directories will be created:
 #   <CTEST_DASHBOARD_ROOT>/<DIRECTORY_NAME>-<DIRECTORY_IDENTIFIER>        # Source directory
-#   <CTEST_DASHBOARD_ROOT>/<DIRECTORY_NAME>-<DIRECTORY_IDENTIFIER>-package  # Build directory
+#   <CTEST_DASHBOARD_ROOT>/<DIRECTORY_NAME>-<DIRECTORY_IDENTIFIER>-package # Build directory
 set(DIRECTORY_IDENTIFIER  "${package_version}")
 
 # Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
@@ -71,16 +71,16 @@ set(WITH_DOCUMENTATION FALSE)
 set(WITH_PACKAGES TRUE)
 set(CTEST_BUILD_CONFIGURATION "Release")
 #set(CTEST_TEST_TIMEOUT 500)
-set(CTEST_BUILD_FLAGS "-j5 -l4") # Use multiple CPU cores to build. For example "-j -l4" on unix
+set(CTEST_BUILD_FLAGS "-j9 -l8") # Use multiple CPU cores to build. For example "-j -l4" on unix
 set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
 
 #-----------------------------------------------------------------------------
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
-  Slicer_BUILD_CLI:BOOL=ON
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
+  CMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.6
 ")
 
 #-----------------------------------------------------------------------------

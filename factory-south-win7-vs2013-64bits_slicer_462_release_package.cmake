@@ -45,8 +45,8 @@ set(MY_QT_VERSION         "4.8.7")
 set(CTEST_DASHBOARD_ROOT  "C:/D/P")
 
 set(SVN_BRANCH "branches/Slicer-4-6")
-set(SVN_REVISION "25513") # Release 4.6.1
-set(package_version "461")
+set(SVN_REVISION "25516") # Release 4.6.2
+set(package_version "462")
 
 # Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
 # It means the following directories will be created:
