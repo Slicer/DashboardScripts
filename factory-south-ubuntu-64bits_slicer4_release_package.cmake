@@ -73,10 +73,18 @@ set(CTEST_BUILD_CONFIGURATION "Release")
 set(CTEST_BUILD_FLAGS "-j5 -l4") # Use multiple CPU cores to build. For example "-j -l4" on unix
 set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
 
+
+# This will ensure compiler paths specified using the cache variable are used
+# consistently.
+set(ENV{CC} "/dev/null")
+set(ENV{CXX} "/dev/null")
+
 #-----------------------------------------------------------------------------
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
+  CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-4.6
+  CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-4.6
   Slicer_BUILD_CLI:BOOL=ON
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF

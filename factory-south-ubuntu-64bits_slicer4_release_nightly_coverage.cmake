@@ -59,6 +59,11 @@ set(DIRECTORY_IDENTIFIER  "1")
 #set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 #set(MY_BITNESS            "64")
 
+# This will ensure compiler paths specified using the cache variable are used
+# consistently.
+set(ENV{CC} "/dev/null")
+set(ENV{CXX} "/dev/null")
+
 #-----------------------------------------------------------------------------
 # Dashboard options
 #-----------------------------------------------------------------------------
@@ -77,6 +82,8 @@ set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
+  CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-4.6
+  CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-4.6
   Slicer_USE_PYTHONQT:BOOL=ON
   Slicer_USE_PYTHONQT_WITH_TCL:BOOL=ON
   Slicer_BUILD_CLI:BOOL=OFF
