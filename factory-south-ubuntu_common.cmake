@@ -12,12 +12,20 @@ set(CTEST_LOG_FILE        "/home/kitware/Dashboards/Logs/${CTEST_SCRIPT_NAME_WE}
 set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 set(MY_BITNESS            "64")
 
+#-----------------------------------------------------------------------------
+# Required executables
+#-----------------------------------------------------------------------------
 #find_program(CTEST_GIT_COMMAND NAMES git)
 set(CTEST_GIT_COMMAND "/usr/bin/git")
 #find_program(CTEST_SVN_COMMAND NAMES svn)
 set(CTEST_SVN_COMMAND "/usr/bin/svn")
 find_program(CTEST_COVERAGE_COMMAND NAMES gcov)  
 find_program(CTEST_MEMORYCHECK_COMMAND NAMES valgrind)
+
+#-----------------------------------------------------------------------------
+# Cache for External data downloads
+#-----------------------------------------------------------------------------
+set(ENV{ExternalData_OBJECT_STORES} "/home/kitware/.ExternalData")
 
 #-----------------------------------------------------------------------------
 # Display variables

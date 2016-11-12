@@ -34,6 +34,11 @@ find_program(CTEST_COVERAGE_COMMAND NAMES gcov)
 find_program(CTEST_MEMORYCHECK_COMMAND NAMES valgrind)
 
 #-----------------------------------------------------------------------------
+# Cache for External data downloads
+#-----------------------------------------------------------------------------
+set(ENV{ExternalData_OBJECT_STORES} "/Users/kitware/.ExternalData")
+
+#-----------------------------------------------------------------------------
 # Display variables
 #-----------------------------------------------------------------------------
 foreach(var MY_OPERATING_SYSTEM MY_COMPILER CTEST_SITE CTEST_LOG_FILE 
