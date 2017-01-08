@@ -6,7 +6,7 @@ set(CTEST_TEST_TIMEOUT 900) # 15mins
 string(TOLOWER "${MY_COMPILER}" _lc_compiler)
 
 if(NOT DEFINED QT_QMAKE_EXECUTABLE)
-  set(QT_QMAKE_EXECUTABLE   "D:/D/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-${_lc_compiler}-rel/bin/qmake.exe")
+  set(QT_QMAKE_EXECUTABLE   "D:/Support/qt-${MY_QT_VERSION}-${MY_BITNESS}-${_lc_compiler}-rel/bin/qmake.exe")
 endif()
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)
