@@ -8,8 +8,8 @@ call :fastdel "D:\D\N\Slicer-1-build"
 
 REM Nightly build of slicer extensions testing vs2013 64bits
 ::echo "Nightly build of slicer extensions testing vs2013 64bits"
-call :fastdel "D:\D\N\S-1-E-T-b"
-"C:\cmake-3.7.1\bin\cmake.exe" -S "D:\D\DashboardScripts\overload-vs2013-64bits_slicerextensions_testing_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-64bits_slicerextensions_testing_release_nightly.txt
+::call :fastdel "D:\D\N\S-1-E-T-b"
+::"C:\cmake-3.7.1\bin\cmake.exe" -S "D:\D\DashboardScripts\overload-vs2013-64bits_slicerextensions_testing_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-64bits_slicerextensions_testing_release_nightly.txt
 
 :: See http://serverfault.com/questions/94824/finding-day-of-week-in-batch-file-windows-server-2008
 :: and http://stackoverflow.com/a/14882478/1539918
