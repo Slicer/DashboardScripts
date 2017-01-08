@@ -10,7 +10,7 @@ if(NOT DEFINED QT_QMAKE_EXECUTABLE)
 endif()
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)
-set(SLICER_PACKAGES_CREDENTIAL_FILE "D:/D/Support/Kitware-SlicerPackagesCredential.cmake")
+set(SLICER_PACKAGES_CREDENTIAL_FILE "D:/D/Kitware-SlicerPackagesCredential.cmake")
 
 #-----------------------------------------------------------------------------
 # Display variables
