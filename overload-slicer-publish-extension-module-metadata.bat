@@ -2,7 +2,7 @@
 
 set PATH=C:\Program Files (x86)\Git\bin\;%PATH%
 
-set DASHBOARD_DIR=C:\D
+set DASHBOARD_DIR=D:\D
 set SLICER_WIKI_SCRIPTS_DIR=%DASHBOARD_DIR%\Support\slicer-wiki-scripts
 
 ::Clone
@@ -16,7 +16,7 @@ git reset --hard && git checkout master && git fetch origin && git reset --hard 
 ::
 :: Release
 ::
-set PACKAGE_VERSION=440
+set PACKAGE_VERSION=462
 set SLICER_BUILD_DIR=%DASHBOARD_DIR%\P\Slicer-%PACKAGE_VERSION%-package\Slicer-build
 set SLICER_EXTENSIONS_INDEX_BUILD_DIR=%DASHBOARD_DIR%\N\S-%PACKAGE_VERSION%-E-b
 
