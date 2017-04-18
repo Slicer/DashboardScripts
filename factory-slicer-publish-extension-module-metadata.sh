@@ -22,7 +22,7 @@ SLICER_BUILD_DIR=$DASHBOARD_DIR/Package/Slicer-$PACKAGE_VERSION-package/Slicer-b
 SLICER_EXTENSIONS_INDEX_BUILD_DIR=$DASHBOARD_DIR/Nightly/S-$PACKAGE_VERSION-E-b
 SLICER_PYTHON_EXE=$SLICER_BUILD_DIR/../python-install/bin/python
 
-$SLICER_BUILD_DIR/Slicer --launch $SLICER_PYTHON_EXE slicer_wiki_extension_module_listing.py publish-extension-module-metadata $SLICER_BUILD_DIR $SLICER_EXTENSIONS_INDEX_BUILD_DIR
+#$SLICER_BUILD_DIR/Slicer --launch $SLICER_PYTHON_EXE slicer_wiki_extension_module_listing.py publish-extension-module-metadata $SLICER_BUILD_DIR $SLICER_EXTENSIONS_INDEX_BUILD_DIR
 
 #
 # Nightly
