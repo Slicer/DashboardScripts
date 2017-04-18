@@ -38,6 +38,7 @@ if "%STABLE_BEFORE_NIGHTLY%"=="1" (
   CALL :factory-south-win7-vs2013-64bits_slicerextensions_46_release_nightly
 )
 
+:: 2017.04.18 - DISABLED
 :: Publish Slicer extension module metadata
 ::call C:\D\DashboardScripts\factory-south-win7-slicer-publish-extension-module-metadata.bat >C:\D\Logs\factory-south-win7-slicer-publish-extension-module-metadata.log 2>&1
 
