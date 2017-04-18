@@ -28,12 +28,12 @@ source ~/Dashboards/Support/Slicer-WikiCredential.sh
 #
 # Release
 #
-$SLICER_PYTHON slicer_wiki_extension_module_listing.py update-wiki --slicer-version "Slicer 4.4" $SLICER_BUILD_DIR $SLICERBOT_PASSWORD
+$SLICER_PYTHON slicer_wiki_extension_module_listing.py update-wiki --slicer-version "Slicer 4.6" $SLICER_BUILD_DIR $SLICERBOT_PASSWORD
 
 #
 # Nightly
 #
-$SLICER_PYTHON slicer_wiki_extension_module_listing.py update-wiki --slicer-version "Slicer 4.4-Nightly" $SLICER_BUILD_DIR $SLICERBOT_PASSWORD
+$SLICER_PYTHON slicer_wiki_extension_module_listing.py update-wiki --slicer-version "Slicer 4.6-Nightly" $SLICER_BUILD_DIR $SLICERBOT_PASSWORD
 
 popd
 
