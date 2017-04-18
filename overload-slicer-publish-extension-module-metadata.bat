@@ -16,11 +16,11 @@ git reset --hard && git checkout master && git fetch origin && git reset --hard 
 ::
 :: Release
 ::
-set PACKAGE_VERSION=462
-set SLICER_BUILD_DIR=%DASHBOARD_DIR%\P\Slicer-%PACKAGE_VERSION%-package\Slicer-build
-set SLICER_EXTENSIONS_INDEX_BUILD_DIR=%DASHBOARD_DIR%\N\S-%PACKAGE_VERSION%-E-b
+::set PACKAGE_VERSION=462
+::set SLICER_BUILD_DIR=%DASHBOARD_DIR%\P\Slicer-%PACKAGE_VERSION%-package\Slicer-build
+::set SLICER_EXTENSIONS_INDEX_BUILD_DIR=%DASHBOARD_DIR%\N\S-%PACKAGE_VERSION%-E-b
 
-%SLICER_BUILD_DIR%\Slicer.exe --launch python.exe slicer_wiki_extension_module_listing.py publish-extension-module-metadata "%SLICER_BUILD_DIR%" "%SLICER_EXTENSIONS_INDEX_BUILD_DIR%"
+::%SLICER_BUILD_DIR%\Slicer.exe --launch python.exe slicer_wiki_extension_module_listing.py publish-extension-module-metadata "%SLICER_BUILD_DIR%" "%SLICER_EXTENSIONS_INDEX_BUILD_DIR%"
 
 ::
 :: Nightly

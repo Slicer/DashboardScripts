@@ -17,7 +17,7 @@ git reset --hard && git checkout master && git fetch origin && git reset --hard 
 #
 # Release
 #
-PACKAGE_VERSION=440
+PACKAGE_VERSION=462
 SLICER_BUILD_DIR=$DASHBOARD_DIR/Package/Slicer-$PACKAGE_VERSION-package/Slicer-build
 SLICER_EXTENSIONS_INDEX_BUILD_DIR=$DASHBOARD_DIR/Nightly/S-$PACKAGE_VERSION-E-b
 SLICER_PYTHON_EXE=$SLICER_BUILD_DIR/../python-install/bin/python

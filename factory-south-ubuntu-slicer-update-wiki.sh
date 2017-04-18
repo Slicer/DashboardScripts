@@ -19,7 +19,7 @@ git reset --hard && git checkout master && git fetch origin && git reset --hard 
 # We will use the release python interpreter to update the wiki for both
 # the Release and the Nightly namespace
 
-PACKAGE_VERSION=440
+PACKAGE_VERSION=462
 SLICER_BUILD_DIR=$DASHBOARD_DIR/Package/Slicer-$PACKAGE_VERSION-package/Slicer-build
 SLICER_PYTHON="$SLICER_BUILD_DIR/Slicer --launch python"
 
