@@ -19,7 +19,7 @@ export PATH=:/usr/local/git/bin:$PATH
 # /Users/kitware/DashboardScripts/factory-slicer-publish-extension-module-metadata.sh > /Users/kitware/Dashboards/Logs/factory-slicer-publish-extension-module-metadata.log 2>&1
 
 # Nightly build of CTKAppLauncher
-/Users/kitware/Dashboards/Support/CMake-3.5.0-rc3.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-64bits_CTKAppLauncher_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-64bits_CTKAppLauncher_release_nightly.log
+# /Users/kitware/Dashboards/Support/CMake-3.5.0-rc3.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-64bits_CTKAppLauncher_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-64bits_CTKAppLauncher_release_nightly.log
 
 # Nightly build of Slicer's VTK
 #/Users/kitware/Dashboards/Support/CMake-3.5.0-rc3.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory_slicer_vtk_shared.cmake -V

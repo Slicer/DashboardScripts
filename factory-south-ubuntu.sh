@@ -25,7 +25,7 @@ export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-slicer-update-wiki.sh > /home/kitware/Dashboards/Logs/factory-south-ubuntu-slicer-update-wiki.log 2>&1
 
 # Nightly build of CTKAppLauncher
-/home/kitware/Dashboards/Support/cmake-3.5.0-rc3-Linux-x86_64/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-64bits_CTKAppLauncher_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-64bits_CTKAppLauncher_release_nightly.log
+# /home/kitware/Dashboards/Support/cmake-3.5.0-rc3-Linux-x86_64/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-64bits_CTKAppLauncher_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-64bits_CTKAppLauncher_release_nightly.log
 
 
 # Nightly build of slicer (Coverage)
