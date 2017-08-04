@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.9.0)
 
 include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
  #-----------------------------------------------------------------------------
