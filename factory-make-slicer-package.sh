@@ -7,4 +7,4 @@ DASHBOARD_SCRIPTS_DIR=/Users/kitware/DashboardScripts
 LOG_DIR=/Users/kitware/Dashboards/Logs
 
 # Package build of slicer
-/Users/kitware/Dashboards/Support/CMake-3.5.0-rc3.app/Contents/bin/ctest -S $DASHBOARD_SCRIPTS_DIR/${HOSTNAME}-slicer_release_package.cmake -VV -O $LOG_DIR/${HOSTNAME}-slicer_release_package.txt
+/Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S $DASHBOARD_SCRIPTS_DIR/${HOSTNAME}-slicer_release_package.cmake -VV -O $LOG_DIR/${HOSTNAME}-slicer_release_package.txt
