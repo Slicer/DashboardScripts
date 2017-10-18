@@ -4,7 +4,7 @@ include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
  #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory")
+set(HOSTNAME              "factory-macos")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Nightly/")
 
 #-----------------------------------------------------------------------------

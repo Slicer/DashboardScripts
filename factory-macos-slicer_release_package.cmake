@@ -15,7 +15,7 @@ cmake_minimum_required(VERSION 3.9.0)
 # Nightly:
 #     - run_ctest() macro will be called *ONE* time
 #     - binary directory *WILL BE* cleaned
-set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
+set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 
 # You could invoke the script with the following syntax:
 #  ctest -S karakoram_Slicer4_nightly.cmake -C <CTEST_BUILD_CONFIGURATION> -V
@@ -25,9 +25,9 @@ set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory")
+set(HOSTNAME              "factory-macos")
 set(MY_QT_VERSION         "4.8.7")
-set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/${SCRIPT_MODE}")
+set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Package")
 
 set(SVN_BRANCH "trunk")
 set(SVN_REVISION "")

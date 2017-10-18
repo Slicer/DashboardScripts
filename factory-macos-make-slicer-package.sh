@@ -2,7 +2,7 @@ open -a x11
 export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 export PATH=:/usr/local/git/bin:$PATH
 
-HOSTNAME=factory
+HOSTNAME=factory-macos
 DASHBOARD_SCRIPTS_DIR=/Users/kitware/DashboardScripts
 LOG_DIR=/Users/kitware/Dashboards/Logs
 
