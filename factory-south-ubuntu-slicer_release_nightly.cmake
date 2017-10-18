@@ -105,7 +105,7 @@ include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})
 # Update the following variable to match the chosen build options. This variable is used to
 # generate both the build directory and the build name.
 # See http://www.cdash.org/CDash/index.php?project=Slicer4 for examples
-set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks-Doxygen")
+set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks")
 
 #-----------------------------------------------------------------------------
 # Directory name
