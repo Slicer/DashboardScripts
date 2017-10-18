@@ -27,15 +27,15 @@ if "%DAYOFWEEK%"=="7" set STABLE_BEFORE_NIGHTLY=1
 echo STABLE_BEFORE_NIGHTLY[%STABLE_BEFORE_NIGHTLY%]
 
 if "%STABLE_BEFORE_NIGHTLY%"=="1" (
-::  call :fastdel "D:\D\N\S460-E-b"
-::  CALL :overload-vs2013-slicerextensions_46_release_nightly
+::  call :fastdel "D:\D\N\S480-E-b"
+::  CALL :overload-vs2013-slicerextensions_48_release_nightly
   call :fastdel "D:\D\N\S-1-E-b"
   CALL :overload-vs2013-slicerextensions_release_nightly
 ) else (
   call :fastdel "D:\D\N\S-1-E-b"
   CALL :overload-vs2013-slicerextensions_release_nightly
-::  call :fastdel "D:\D\N\S460-E-b"
-::  CALL :overload-vs2013-slicerextensions_46_release_nightly
+::  call :fastdel "D:\D\N\S480-E-b"
+::  CALL :overload-vs2013-slicerextensions_48_release_nightly
 )
 
 :: Add here other jobs
@@ -52,10 +52,10 @@ EXIT /B 0
 
 
 :: a function to run Release extension dashboard
-:overload-vs2013-slicerextensions_46_release_nightly
-REM Nightly build of slicer 4.6 extensions vs2013 64bits
-::echo "Nightly build of slicer 4.6 extensions vs2013 64bits"
-"C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_46_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_46_release_nightly.txt
+:overload-vs2013-slicerextensions_48_release_nightly
+REM Nightly build of slicer 4.8 extensions vs2013 64bits
+::echo "Nightly build of slicer 4.8 extensions vs2013 64bits"
+"C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_48_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_48_release_nightly.txt
 EXIT /B 0
 
 :: a function to efficiently remove a large directory

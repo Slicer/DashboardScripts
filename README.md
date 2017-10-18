@@ -42,6 +42,15 @@ for script in $(find -name "*.*" -not -path ".git" | ack $FROM_XY);  do
   sed -i -e "s/$FROM_DOT_XY/$TO_DOT_XY/g" $new_script
   sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $new_script
 done
+
+# Update reference to extension release build in nightly scripts
+for script in overload.bat factory-south-ubuntu.sh factory.sh; do
+  echo "Updating $script"
+  sed -i -e "s/$FROM_DOT/$TO_DOT/g" $script
+  sed -i -e "s/$FROM_DOT_XY/$TO_DOT_XY/g" $script
+  sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $script
+  sed -i -e "s/$FROM_XY/$TO_XY/g" $script
+done
 ```
 
 ## Generate new set of dashboard scripts for a different host
