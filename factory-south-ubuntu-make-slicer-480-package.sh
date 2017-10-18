@@ -6,4 +6,4 @@ LOG_DIR=/home/kitware/Dashboards/Logs
 PACKAGE_VERSION=480
 
 # Package build of slicer
-/home/kitware/Dashboards/Support/cmake-3.5.0-rc3-Linux-x86_64/bin/ctest -S $DASHBOARD_SCRIPTS_DIR/${HOSTNAME}-slicer_${PACKAGE_VERSION}_release_package.cmake -VV -O $LOG_DIR/${HOSTNAME}-slicer_${PACKAGE_VERSION}_release_package.txt
+/home/kitware/Dashboards/Support/cmake-3.9.0-Linux-x86_64/bin/ctest -S $DASHBOARD_SCRIPTS_DIR/${HOSTNAME}-slicer_${PACKAGE_VERSION}_release_package.cmake -VV -O $LOG_DIR/${HOSTNAME}-slicer_${PACKAGE_VERSION}_release_package.txt
