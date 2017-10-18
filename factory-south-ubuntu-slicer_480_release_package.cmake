@@ -64,6 +64,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_BUILD_CLI:BOOL=ON
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
+  Slicer_RELEASE_TYPE:STRING=Stable
 ")
 
 #-----------------------------------------------------------------------------

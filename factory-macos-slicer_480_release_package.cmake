@@ -64,6 +64,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
   CMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.6
+  Slicer_RELEASE_TYPE:STRING=Stable
 ")
 
 #-----------------------------------------------------------------------------
