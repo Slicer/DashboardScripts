@@ -14,10 +14,6 @@ export PATH=:/usr/local/git/bin:$PATH
 # Nightly build of slicer 4.6 extensions
 /Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-slicerextensions_46_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-slicerextensions_46_release_nightly.log
 
-# 2017.04.18 - DISABLED 
-# Publish Slicer extension module metadata
-# /Users/kitware/DashboardScripts/factory-slicer-publish-extension-module-metadata.sh > /Users/kitware/Dashboards/Logs/factory-slicer-publish-extension-module-metadata.log 2>&1
-
 # Nightly build of CTKAppLauncher
 # /Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-CTKAppLauncher_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-CTKAppLauncher_release_nightly.log
 

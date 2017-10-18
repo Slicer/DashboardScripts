@@ -38,10 +38,6 @@ if "%STABLE_BEFORE_NIGHTLY%"=="1" (
 ::  CALL :overload-vs2013-slicerextensions_46_release_nightly
 )
 
-:: 2017.04.18 - DISABLED
-:: Publish Slicer extension module metadata
-:: call D:\D\DashboardScripts\overload-slicer-publish-extension-module-metadata.bat >D:\D\Logs\overload-slicer-publish-extension-module-metadata.log 2>&1
-
 REM Nightly build of slicer vs2010 64bits
 REM "C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2010-slicer4_release_nightly.cmake" -C Release -V -O D:\D\Logs\overload-vs2010-slicer4_release_nightly.txt
 

@@ -16,14 +16,6 @@ export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # Nightly build of slicer 4.6 extensions
 /home/kitware/Dashboards/Support/cmake-3.9.0-Linux-x86_64/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-slicerextensions_46_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-slicerextensions_46_release_nightly.log
 
-# 2017.04.18 - DISABLED
-# Publish Slicer extension module metadata
-# /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-slicer-publish-extension-module-metadata.sh > /home/kitware/Dashboards/Logs/factory-south-ubuntu-slicer-publish-extension-module-metadata.log 2>&1
-
-# 2017.04.18 - DISABLED
-# Update wiki
-# /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-slicer-update-wiki.sh > /home/kitware/Dashboards/Logs/factory-south-ubuntu-slicer-update-wiki.log 2>&1
-
 # Nightly build of CTKAppLauncher
 # /home/kitware/Dashboards/Support/cmake-3.9.0-Linux-x86_64/bin/ctest -S /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu-CTKAppLauncher_release_nightly.cmake -VV -O /home/kitware/Dashboards/Logs/factory-south-ubuntu-CTKAppLauncher_release_nightly.log
 
