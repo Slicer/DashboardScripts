@@ -12,7 +12,7 @@
 #     'glxinfo | grep OpenGL' to obtain GPU details.
 ####################################################################################
 
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.9.0)
 
 #
 # For additional information, see http://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Tutorials/DashboardSetup
@@ -39,10 +39,10 @@ set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory-south-win7")
+set(HOSTNAME              "overload")
 set(MY_COMPILER           "VS2013")
 set(MY_QT_VERSION         "4.8.7")
-set(CTEST_DASHBOARD_ROOT  "C:/D/P")
+set(CTEST_DASHBOARD_ROOT  "D:/D/P")
 
 set(SVN_BRANCH "branches/Slicer-4.8")
 set(SVN_REVISION "25516") # Release 4.8.0

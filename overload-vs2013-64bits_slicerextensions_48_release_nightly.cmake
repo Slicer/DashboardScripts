@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.9.0)
 
 include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
  #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory-south-win7")
+set(HOSTNAME              "overload")
 set(MY_COMPILER           "VS2013")
-set(CTEST_DASHBOARD_ROOT  "C:/D/N")
+set(CTEST_DASHBOARD_ROOT  "D:/D/N")
 # Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
 set(CTEST_CMAKE_GENERATOR "Visual Studio 12 2013 Win64")
 set(MY_BITNESS            "64")
