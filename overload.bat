@@ -5,12 +5,6 @@ REM Nightly build of slicer vs2013 64bits
 call :fastdel "D:\D\N\Slicer-1-build"
 "C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicer_release_nightly.txt
 
-
-REM Nightly build of slicer extensions testing vs2013 64bits
-::echo "Nightly build of slicer extensions testing vs2013 64bits"
-::call :fastdel "D:\D\N\S-1-E-T-b"
-::"C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_testing_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_testing_release_nightly.txt
-
 :: See http://serverfault.com/questions/94824/finding-day-of-week-in-batch-file-windows-server-2008
 :: and http://stackoverflow.com/a/14882478/1539918
 for /f "skip=2 tokens=2 delims=," %%a in ('wmic path win32_localtime get dayofweek /format:csv') do set DAYOFWEEK=%%a
