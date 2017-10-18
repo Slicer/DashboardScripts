@@ -94,7 +94,7 @@ pip install docopt==0.6.0
 
 ### 2. Copy scripts updating the associated hostname
 ```
-./cdashly.py clone "factory-ubuntu" "factory-south-ubuntu" --sitename_suffix="-64bits"
+./cdashly.py clone "factory-ubuntu" "factory-south-ubuntu"
 ```
 
 ### 3. Update common paths
@@ -102,13 +102,13 @@ pip install docopt==0.6.0
   * First preview the change
 
 ```
-./cdashly.py replace "factory-south-ubuntu*" "/home/kitware/Dashboards/Support/cmake-2.8.8-Linux-i386" "/home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386"
+./cdashly.py replace "factory-south-ubuntu*" "cmake-3.9.0" "cmake-3.10.0"
 ```
 
   * ... then apply
 
 ```
-./cdashly.py replace "factory-south-ubuntu*" "/home/kitware/Dashboards/Support/cmake-2.8.8-Linux-i386" "/home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386" --apply
+./cdashly.py replace "factory-south-ubuntu*" "cmake-3.9.0" "cmake-3.10.0" --apply
 ```
 
   * Follow the same approach for:
@@ -128,6 +128,6 @@ pip install docopt==0.6.0
 ```
 
 ```
-<HOSTNAME>_(CTKApplauncher, slicer)_common.cmake # Variables MY_QT_VERSION, QT_QMAKE_EXECUTABLE 
+<HOSTNAME>_(slicer, slicerextensions)_common.cmake # Variables MY_QT_VERSION, QT_QMAKE_EXECUTABLE
 ```
 
