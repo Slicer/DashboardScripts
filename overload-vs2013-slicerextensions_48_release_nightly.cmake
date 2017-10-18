@@ -12,7 +12,7 @@ set(CTEST_CMAKE_GENERATOR "Visual Studio 12 2013 Win64")
 set(MY_BITNESS            "64")
 
 set(EXTENSIONS_TRACK_QUALIFIER "4.8") # "master", 4.1, ...
-set(SVN_BRANCH "branches/Slicer-4.8")
+set(SVN_BRANCH "trunk") # trunk or branches/Slicer-4.8
 set(package_version "480")
 
 #-----------------------------------------------------------------------------

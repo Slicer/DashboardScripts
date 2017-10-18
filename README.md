@@ -5,7 +5,17 @@ Collection of dashboard scripts used on `factory` and `factory-south` build mach
 
 ## Rename and update release scripts
 
-Update `FROM_DOT` and `TO_DOT` variables
+1. Open bash terminal
+
+2. Clone repository
+
+```
+cd /tmp
+git clone git@github.com:Slicer/DashboardScripts.git
+cd DashboardScripts
+```
+
+3. Update `FROM_DOT` and `TO_DOT` variables and execute the following statements:
 
 ```
 FROM_DOT=4.6.2
@@ -51,6 +61,28 @@ for script in overload.bat factory-south-ubuntu.sh factory.sh; do
   sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $script
   sed -i -e "s/$FROM_XY/$TO_XY/g" $script
 done
+```
+
+5. Edit and update `SVN_BRANCH` and `SVN_REVISION` set in release scripts:
+
+```
+gedit \
+  overload-vs2013-slicer_${TO_XYZ}_release_package.cmake \
+  overload-vs2013-slicerextensions_${TO_XY}_release_nightly.cmake \
+  factory-south-ubuntu-slicer_${TO_XYZ}_release_package.cmake \
+  factory-south-ubuntu-slicerextensions_${TO_XY}_release_nightly.cmake \
+  factory-slicer_${TO_XYZ}_release_package.cmake \
+  factory-slicerextensions_${TO_XY}_release_nightly.cmake
+```
+
+* If no release branch has been created yet, `SVN_BRANCH` should be set to `trunk`
+* `SVN_REVISION` should be set to the revision associated with Slicer version <TO_DOT>
+
+6. Review and commit using message like:
+
+```
+git add -A
+git commit -m "Rename and update Slicer release scripts from $FROM_DOT to $TO_DOT"
 ```
 
 ## Generate new set of dashboard scripts for a different host
