@@ -38,12 +38,7 @@ if "%STABLE_BEFORE_NIGHTLY%"=="1" (
 ::  CALL :overload-vs2013-slicerextensions_46_release_nightly
 )
 
-REM Nightly build of slicer vs2010 64bits
-REM "C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2010-slicer4_release_nightly.cmake" -C Release -V -O D:\D\Logs\overload-vs2010-slicer4_release_nightly.txt
-
-REM cd "D:\Dashboards\Client"
-
-REM "C:\cmake-3.9.0\bin\ctest.exe" -S "D:\Dashboards\Client\factory.kitware.ctest" -V -O "D:\Dashboards\Logs\itk_cdash_at_home.txt"
+:: Add here other jobs
 
 :: force execution to quit at the end of the "main" logic
 EXIT /B %ERRORLEVEL%

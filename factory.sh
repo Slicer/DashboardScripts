@@ -14,12 +14,6 @@ export PATH=:/usr/local/git/bin:$PATH
 # Nightly build of slicer 4.6 extensions
 /Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-slicerextensions_46_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-slicerextensions_46_release_nightly.log
 
-# Nightly build of CTKAppLauncher
-# /Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-CTKAppLauncher_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-CTKAppLauncher_release_nightly.log
-
-# Nightly build of Slicer's VTK
-#/Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory_slicer_vtk_shared.cmake -V
-
 # Nightly build of Slicer's ITK
 /Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory_slicer_itk_shared.cmake -V
 
