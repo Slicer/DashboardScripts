@@ -3,7 +3,7 @@ export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 export PATH=:/usr/local/git/bin:$PATH
 
 # Nightly build of slicer
-/Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-slicer4_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-slicer4_release_nightly.log
+/Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-slicer_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-slicer_release_nightly.log
 
 # Nightly build of slicer extensions testing
 /Users/kitware/Dashboards/Support/CMake-3.9.0.app/Contents/bin/ctest -S /Users/kitware/DashboardScripts/factory-slicerextensions_testing_release_nightly.cmake -VV -O /Users/kitware/Dashboards/Logs/factory-slicerextensions_testing_release_nightly.log

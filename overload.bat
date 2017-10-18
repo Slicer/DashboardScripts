@@ -3,7 +3,7 @@
 REM Nightly build of slicer vs2013 64bits
 ::echo "Nightly build of slicer vs2013 64bits"
 call :fastdel "D:\D\N\Slicer-1-build"
-"C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicer4_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicer4_release_nightly.txt
+"C:\cmake-3.9.0\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicer_release_nightly.txt
 
 
 REM Nightly build of slicer extensions testing vs2013 64bits
