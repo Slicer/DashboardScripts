@@ -30,7 +30,7 @@ set(MY_QT_VERSION         "4.8.6")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Package")
 
 set(SVN_BRANCH "trunk") # trunk or branches/Slicer-4.8
-set(SVN_REVISION "25516") # Release 4.8.0
+set(SVN_REVISION "26489") # Release 4.8.0
 set(package_version "480")
 
 # Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
