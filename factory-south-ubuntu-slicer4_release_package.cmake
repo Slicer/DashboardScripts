@@ -1,20 +1,3 @@
-####################################################################################
-# OS      : GNU/Linux
-# Hardware: x86_64
-# GPU     : OpenGL vendor string: Parallels and ATI Technologies Inc.
-#           OpenGL renderer string: Parallels using ATI Radeon HD 5770 OpenGL Engine
-#           OpenGL version string: 2.1 ATI-1.8.19
-#           OpenGL shading language version string: 1.2
-####################################################################################
-# WARNING - The specific version and processor type of this machine should be reported
-# in the header above. Indeed, this file will be send to the dashboard as a NOTE file.
-#
-# On linux, you could run:
-#     'uname -o' and 'cat /etc/*-release' to obtain the OS name.
-#     'uname -mpi' to obtain hardware details.
-#     'glxinfo | grep OpenGL' to obtain GPU details.
-####################################################################################
-
 cmake_minimum_required(VERSION 3.9.0)
 
 #
