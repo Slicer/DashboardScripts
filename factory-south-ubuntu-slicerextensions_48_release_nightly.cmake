@@ -28,11 +28,17 @@ set(CTEST_BUILD_FLAGS "-j5 -l4") # Use multiple CPU cores to build. For example 
 #
 set(SCRIPT_MODE "nightly") # "experimental", "continuous", "nightly"
 
+# This will ensure compiler paths specified using the cache variable are used
+# consistently.
+set(ENV{CC} "/dev/null")
+set(ENV{CXX} "/dev/null")
 
 #-----------------------------------------------------------------------------
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
+  CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-4.6
+  CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-4.6
 ")
 
 #-----------------------------------------------------------------------------
