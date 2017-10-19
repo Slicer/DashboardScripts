@@ -14,13 +14,13 @@ for /f "skip=2 tokens=2 delims=," %%a in ('wmic path win32_localtime get dayofwe
 ::  7 -> Sunday
 echo DAYOFWEEK[%DAYOFWEEK%]
 
-set STABLE_BEFORE_NIGHTLY=0
-::if "%DAYOFWEEK%"=="6" set STABLE_BEFORE_NIGHTLY=1
-if "%DAYOFWEEK%"=="7" set STABLE_BEFORE_NIGHTLY=1
+set IS_WEEKEND=0
+::if "%DAYOFWEEK%"=="6" set IS_WEEKEND=1
+if "%DAYOFWEEK%"=="7" set IS_WEEKEND=1
 
-echo STABLE_BEFORE_NIGHTLY[%STABLE_BEFORE_NIGHTLY%]
+echo IS_WEEKEND[%IS_WEEKEND%]
 
-if "%STABLE_BEFORE_NIGHTLY%"=="1" (
+if "%IS_WEEKEND%"=="1" (
 ::  call :fastdel "D:\D\N\S480-E-b"
 ::  CALL :overload-vs2013-slicerextensions_48_release_nightly
   call :fastdel "D:\D\N\S-1-E-b"
