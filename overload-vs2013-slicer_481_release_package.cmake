@@ -30,7 +30,7 @@ set(MY_COMPILER           "VS2013")
 set(MY_QT_VERSION         "4.8.7")
 set(CTEST_DASHBOARD_ROOT  "D:/D/P")
 
-set(SVN_BRANCH "branches/Slicer-4.8") # trunk or branches/Slicer-4.8
+set(SVN_BRANCH "branches/Slicer-4-8") # trunk or branches/Slicer-4-8
 set(SVN_REVISION "26813") # Release 4.8.1
 set(package_version "481")
 

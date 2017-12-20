@@ -8,7 +8,7 @@ set(HOSTNAME              "factory-south-ubuntu")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Nightly/")
 
 set(EXTENSIONS_TRACK_QUALIFIER "4.8") # "master", 4.1, ...
-set(SVN_BRANCH "branches/Slicer-4.8") # trunk or branches/Slicer-4.8
+set(SVN_BRANCH "branches/Slicer-4-8") # trunk or branches/Slicer-4-8
 set(package_version "481")
 
 #-----------------------------------------------------------------------------
