@@ -25,13 +25,14 @@ set(SCRIPT_MODE "Experimental") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory-south-ubuntu")
-set(MY_QT_VERSION         "4.8.6")
-set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Package")
+set(HOSTNAME              "overload")
+set(MY_COMPILER           "VS2013")
+set(MY_QT_VERSION         "4.8.7")
+set(CTEST_DASHBOARD_ROOT  "D:/D/P")
 
-set(SVN_BRANCH "trunk") # trunk or branches/Slicer-4.8
-set(SVN_REVISION "26489") # Release 4.8.0
-set(package_version "480")
+set(SVN_BRANCH "branches/Slicer-4.8") # trunk or branches/Slicer-4.8
+set(SVN_REVISION "26813") # Release 4.8.1
+set(package_version "481")
 
 # Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
 # It means the following directories will be created:
@@ -40,8 +41,8 @@ set(package_version "480")
 set(DIRECTORY_IDENTIFIER  "${package_version}")
 
 # Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
-#set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-#set(MY_BITNESS            "64")
+set(CTEST_CMAKE_GENERATOR "Visual Studio 12 2013 Win64")
+set(MY_BITNESS            "64")
 
 #-----------------------------------------------------------------------------
 # Dashboard options
@@ -54,23 +55,18 @@ set(WITH_DOCUMENTATION FALSE)
 set(WITH_PACKAGES TRUE)
 set(CTEST_BUILD_CONFIGURATION "Release")
 #set(CTEST_TEST_TIMEOUT 500)
-set(CTEST_BUILD_FLAGS "-j5 -l4") # Use multiple CPU cores to build. For example "-j -l4" on unix
+set(CTEST_BUILD_FLAGS "/maxcpucount:4") # Use multiple CPU cores to build. For example "-j -l4" on unix
 set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
-
-# This will ensure compiler paths specified using the cache variable are used
-# consistently.
-set(ENV{CC} "/dev/null")
-set(ENV{CXX} "/dev/null")
 
 #-----------------------------------------------------------------------------
 # Additional CMakeCache options
 #-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
-  CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-4.6
-  CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-4.6
-  Slicer_BUILD_CLI:BOOL=ON
+  ADDITIONAL_C_FLAGS:STRING=/MP4
+  ADDITIONAL_CXX_FLAGS:STRING=/MP4
   Slicer_USE_PYTHONQT_WITH_OPENSSL:BOOL=ON
   Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
+  Slicer_BUILD_WIN32_CONSOLE:BOOL=OFF
   Slicer_RELEASE_TYPE:STRING=Stable
 ")
 
@@ -106,7 +102,7 @@ include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})
 # Update the following variable to match the chosen build options. This variable is used to
 # generate both the build directory and the build name.
 # See http://www.cdash.org/CDash/index.php?project=Slicer4 for examples
-set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks")
+set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks-NoConsole")
 
 #-----------------------------------------------------------------------------
 # Directory name

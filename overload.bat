@@ -30,7 +30,7 @@ call :fastdel "D:\D\N\Slicer-1-build"
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
 call :fastdel "D:\D\N\S-1-E-b"
-call :fastdel "D:\D\N\S480-E-b"
+call :fastdel "D:\D\N\S481-E-b"
 if "%IS_WEEKEND%"=="1" (
   call :overload-vs2013-slicerextensions_release_nightly
   call :overload-vs2013-slicerextensions_48_release_nightly

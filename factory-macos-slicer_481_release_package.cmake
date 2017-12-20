@@ -29,9 +29,9 @@ set(HOSTNAME              "factory-macos")
 set(MY_QT_VERSION         "4.8.7")
 set(CTEST_DASHBOARD_ROOT  "$ENV{HOME}/Dashboards/Package")
 
-set(SVN_BRANCH "trunk") # trunk or branches/Slicer-4.8
-set(SVN_REVISION "26489") # Release 4.8.0
-set(package_version "480")
+set(SVN_BRANCH "branches/Slicer-4.8") # trunk or branches/Slicer-4.8
+set(SVN_REVISION "26813") # Release 4.8.1
+set(package_version "481")
 
 # Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
 # It means the following directories will be created:
