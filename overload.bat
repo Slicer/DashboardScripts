@@ -22,9 +22,9 @@ echo IS_WEEKEND[%IS_WEEKEND%]
 :: ----------------------------------------------------------------------------
 :: Build Slicer Nightly
 :: ----------------------------------------------------------------------------
-::echo "Nightly build of slicer vs2013 64bits"
+::echo "Nightly build of slicer vs2015 64bits"
 call :fastdel "D:\D\N\Slicer-1-build"
-"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicer_release_nightly.txt
+"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_release_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -32,11 +32,11 @@ call :fastdel "D:\D\N\Slicer-1-build"
 call :fastdel "D:\D\N\S-1-E-b"
 call :fastdel "D:\D\N\S481-E-b"
 if "%IS_WEEKEND%"=="1" (
-  call :overload-vs2013-slicerextensions_release_nightly
+  call :overload-vs2015-slicerextensions_release_nightly
   call :overload-vs2013-slicerextensions_48_release_nightly
 ) else (
   call :overload-vs2013-slicerextensions_48_release_nightly
-  call :overload-vs2013-slicerextensions_release_nightly
+  call :overload-vs2015-slicerextensions_release_nightly
 )
 
 
@@ -50,10 +50,10 @@ EXIT /B %ERRORLEVEL%
 
 :: ----------------------------------------------------------------------------
 :: a function to run Nightly extension dashboard
-:overload-vs2013-slicerextensions_release_nightly
-REM Nightly build of slicer extensions vs2013 64bits
-::echo "Nightly build of slicer extensions vs2013 64bits"
-"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_release_nightly.txt
+:overload-vs2015-slicerextensions_release_nightly
+REM Nightly build of slicer extensions vs2015 64bits
+::echo "Nightly build of slicer extensions vs2015 64bits"
+"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_release_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
