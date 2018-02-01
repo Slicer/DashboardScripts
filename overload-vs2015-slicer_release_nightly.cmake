@@ -27,7 +27,7 @@ set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 set(HOSTNAME              "overload")
 set(MY_COMPILER           "VS2015")
-set(MY_QT_VERSION         "4.8.7")
+set(MY_QT_VERSION         "5.10.0")
 set(CTEST_DASHBOARD_ROOT  "D:/D/N")
 
 set(SVN_BRANCH "trunk")
