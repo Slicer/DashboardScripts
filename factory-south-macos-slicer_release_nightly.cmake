@@ -25,7 +25,7 @@ set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
 #-----------------------------------------------------------------------------
 # Dashboard properties
 #-----------------------------------------------------------------------------
-set(HOSTNAME              "factory-macos")
+set(HOSTNAME              "factory-south-macos")
 set(MY_QT_VERSION         "5.10.0")
 set(CTEST_DASHBOARD_ROOT  "/Volumes/Dashboards/${SCRIPT_MODE}")
 
