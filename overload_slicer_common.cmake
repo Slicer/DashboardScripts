@@ -32,7 +32,7 @@ set(SLICER_PACKAGES_CREDENTIAL_FILE "D:/D/Kitware-SlicerPackagesCredential.cmake
 #-----------------------------------------------------------------------------
 # Display variables
 #-----------------------------------------------------------------------------
-foreach(var CTEST_TEST_TIMEOUT MY_QT_VERSION QT_QMAKE_EXECUTABLE
+foreach(var CTEST_TEST_TIMEOUT MY_QT_VERSION QT_QMAKE_EXECUTABLE Qt5_DIR
             MIDAS_PACKAGE_URL SLICER_PACKAGES_CREDENTIAL_FILE
             )
   message("-- ${var}: ${${var}}")
