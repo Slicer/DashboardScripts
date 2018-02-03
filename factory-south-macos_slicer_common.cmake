@@ -20,7 +20,7 @@ else()
 endif()
 
 set(MIDAS_PACKAGE_URL http://slicer.kitware.com/midas3)
-set(SLICER_PACKAGES_CREDENTIAL_FILE "/Users/kitware/Dashboards/Support/Kitware-SlicerPackagesCredential.cmake")
+set(SLICER_PACKAGES_CREDENTIAL_FILE "/Volumes/Dashboards/Support/Kitware-SlicerPackagesCredential.cmake")
 
 #-----------------------------------------------------------------------------
 # Display variables
