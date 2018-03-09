@@ -1,10 +1,12 @@
 DashboardScripts
 ================
 
-Collection of dashboard scripts used on `factory` and `factory-south` build machines.
+Collection of dashboard scripts used to build 3D Slicer and associated extensions on Linux, macOS and Windows.
+
 
 Table of Contents:
 
+* [Introduction](#introduction)
 * [Update CMake version used in nightly builds](#update-cmake-version-used-in-nightly-builds)
    * [Step 1: Update the scripts](#step-1-update-the-scripts)
    * [Step 2: Install new version of CMake on the machine](#step-2-install-new-version-of-cmake-on-the-machine)
@@ -17,7 +19,32 @@ Table of Contents:
    * [3. Update common paths](#3-update-common-paths)
    * [4. Manually updates the following files](#4-manually-updates-the-following-files)
 
+<!--
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+-->
 
+## Introduction
+
+On each build machine, the corresponding main script is executed every day at 11:00 pm:
+
+```
+factory-south-macos.sh
+factory-south-ubuntu.sh
+overload.bat
+```
+
+Before executing any of these scripts on the different build machine, this repository
+is automatically cloned or updated.
+
+
+Templates used to create each build scripts are available in the Slicer source repository:
+
+* [SlicerDashboardScript.TEMPLATE.cmake](https://github.com/Slicer/Slicer/blob/master/CMake/SlicerDashboardScript.TEMPLATE.cmake)
+* [SlicerExtensionsDashboardScript.TEMPLATE.cmake](https://github.com/Slicer/Slicer/blob/master/Extensions/CMake/SlicerExtensionsDashboardScript.TEMPLATE.cmake)
+
+Reading the [Dashboard Setup tutorial](https://www.slicer.org/wiki/Documentation/Nightly/Developers/Tutorials/DashboardSetup)
+and [Developers/FAQ/Dashboard](https://www.slicer.org/wiki/Documentation/Nightly/Developers/FAQ/Dashboard) can be helpful
+to address common pitfall.
 
 ## Update CMake version used in nightly builds
 
