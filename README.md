@@ -153,7 +153,7 @@ for script in $(find -name "*.*" -not -path ".git" | ack $FROM_XY);  do
 done
 
 # Update reference to extension release build in nightly scripts
-for script in overload.bat factory-south-ubuntu.sh factory-macos.sh; do
+for script in factory-south-macos.sh factory-south-ubuntu.sh overload.bat; do
   echo "Updating $script"
   sed -i -e "s/$FROM_DOT/$TO_DOT/g" $script
   sed -i -e "s/$FROM_DOT_XY/$TO_DOT_XY/g" $script
@@ -170,8 +170,8 @@ gedit \
   overload-vs2013-slicerextensions_${TO_XY}_release_nightly.cmake \
   factory-south-ubuntu-slicer_${TO_XYZ}_release_package.cmake \
   factory-south-ubuntu-slicerextensions_${TO_XY}_release_nightly.cmake \
-  factory-macos-slicer_${TO_XYZ}_release_package.cmake \
-  factory-macos-slicerextensions_${TO_XY}_release_nightly.cmake
+  factory-south-macos-slicer_${TO_XYZ}_release_package.cmake \
+  factory-south-macos-slicerextensions_${TO_XY}_release_nightly.cmake
 ```
 
 * If no release branch has been created yet, `SVN_BRANCH` should be set to `trunk`
