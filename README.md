@@ -3,7 +3,106 @@ DashboardScripts
 
 Collection of dashboard scripts used on `factory` and `factory-south` build machines.
 
+Table of Contents:
+
+* [Update CMake version used in nightly builds](#update-cmake-version-used-in-nightly-builds)
+   * [Step 1: Update the scripts](#step-1-update-the-scripts)
+   * [Step 2: Install new version of CMake on the machine](#step-2-install-new-version-of-cmake-on-the-machine)
+      * [factory-south-macos and factory-south-ubuntu](#factory-south-macos-and-factory-south-ubuntu)
+      * [overload](#overload)
+* [Rename and update release scripts](#rename-and-update-release-scripts)
+* [Generate new set of dashboard scripts for a different host](#generate-new-set-of-dashboard-scripts-for-a-different-host)
+   * [1. Install prerequisites](#1-install-prerequisites)
+   * [2. Copy scripts updating the associated hostname](#2-copy-scripts-updating-the-associated-hostname)
+   * [3. Update common paths](#3-update-common-paths)
+   * [4. Manually updates the following files](#4-manually-updates-the-following-files)
+
+
+
+## Update CMake version used in nightly builds
+
+### Step 1: Update the scripts
+
+These steps are used when updating the version of CMake used in the following night scripts:
+
+```
+factory-south-macos.sh
+factory-south-ubuntu.sh
+overload.bat
+```
+
+Steps:
+
+1. Open bash terminal
+
+2. Clone repository
+
+```
+cd /tmp
+git clone git@github.com:Slicer/DashboardScripts.git
+cd DashboardScripts
+```
+
+3. Update `FROM_CMAKE` and `TO_CMAKE` variables and execute the following statements:
+
+```
+FROM_CMAKE=3.11.0-rc3
+TO_CMAKE=3.11.0
+
+echo "FROM_CMAKE [$FROM_CMAKE]"
+echo "  TO_CMAKE [$TO_CMAKE]"
+
+# Update version of CMake used in nightly scripts
+for script in overload.bat factory-south-ubuntu.sh factory-south-macos.sh; do
+  echo "Updating $script"
+  sed -i -e "s/cmake-$FROM_CMAKE/cmake-$TO_CMAKE/g" $script
+  sed -i -e "s/CMake-$FROM_CMAKE/CMake-$TO_CMAKE/g" $script
+done
+```
+
+### Step 2: Install new version of CMake on the machine
+
+These steps are used to update the version of CMake used on the following machine:
+
+```
+factory-south-macos
+factory-south-ubuntu
+overload
+```
+
+#### factory-south-macos and factory-south-ubuntu
+
+Since these machines have both SSH installed, the following steps will remotely execute
+the update scripts:
+
+1. Open bash terminal and execute the following statements:
+
+```
+cd scripts
+
+./factory-south-macos-update-cmake.sh $TO_CMAKE
+
+./factory-south-ubuntu-update-cmake.sh $TO_CMAKE
+```
+
+#### overload
+
+1. Connect using VNC
+
+2. Open a command line terminal as Administrator
+
+3. Update and execute the following statement:
+
+```
+@powershell -ExecutionPolicy Unrestricted "$cmakeVersion='3.11.0'; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/scikit-build/scikit-ci-addons/master/windows/install-cmake.ps1'))"
+```
+
+_The one-liner is provided by [scikit-ci-addons](http://scikit-ci-addons.readthedocs.io/en/latest/addons.html#install-cmake-ps1)_
+
+
 ## Rename and update release scripts
+
+These steps are used when releasing a new version of Slicer.
 
 1. Open bash terminal
 

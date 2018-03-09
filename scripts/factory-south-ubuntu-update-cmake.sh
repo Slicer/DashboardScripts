@@ -5,8 +5,19 @@ set -ex
 host=10.171.2.142 # factory-south-ubuntu
 username=kitware
 
-cmake_xy=3.11
-cmake_version=${cmake_xy}.0-rc3
+if [[ $# != 1 ]]; then
+  echo "Usage: $0 x.y.z[-rcN]"
+  exit 1
+fi
+
+cmake_version=$1  # 3.11.0-rc3
+
+cmake_x=$(echo $cmake_version | cut -d"." -f1)
+cmake_y=$(echo $cmake_version | cut -d"." -f2)
+cmake_xy=${cmake_x}.${cmake_y}  # 3.11
+
+echo "cmake_xy      [${cmake_xy}]"
+echo "cmake_version [${cmake_version}]"
 
 host_working_dir="/home/kitware/Dashboards/Support/"
 
