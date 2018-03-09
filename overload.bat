@@ -19,12 +19,14 @@ if "%DAYOFWEEK%"=="7" set IS_WEEKEND=1
 
 echo IS_WEEKEND[%IS_WEEKEND%]
 
+set CMAKE_INSTALL_DIR="C:\cmake-3.11.0-rc3"
+
 :: ----------------------------------------------------------------------------
 :: Build Slicer Nightly
 :: ----------------------------------------------------------------------------
 ::echo "Nightly build of slicer vs2015 64bits"
 call :fastdel "D:\D\N\Slicer-1-build"
-"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_release_nightly.txt
+"%CMAKE_INSTALL_DIR%\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_release_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -53,7 +55,7 @@ EXIT /B %ERRORLEVEL%
 :overload-vs2015-slicerextensions_release_nightly
 REM Nightly build of slicer extensions vs2015 64bits
 ::echo "Nightly build of slicer extensions vs2015 64bits"
-"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_release_nightly.txt
+"%CMAKE_INSTALL_DIR%\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_release_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
@@ -61,7 +63,7 @@ EXIT /B 0
 :overload-vs2013-slicerextensions_48_release_nightly
 REM Nightly build of slicer 4.8 extensions vs2013 64bits
 ::echo "Nightly build of slicer 4.8 extensions vs2013 64bits"
-"C:\cmake-3.10.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_48_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_48_release_nightly.txt
+"%CMAKE_INSTALL_DIR%\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_48_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_48_release_nightly.txt
 EXIT /B 0
 
 :: a function to efficiently remove a large directory
