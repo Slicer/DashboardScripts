@@ -12,7 +12,7 @@ Table of Contents:
       * [overload](#overload)
 * [Rename and update release scripts](#rename-and-update-release-scripts)
 * [Generate new set of dashboard scripts for a different host](#generate-new-set-of-dashboard-scripts-for-a-different-host)
-   * [1. Install prerequisites](#1-install-prerequisites)
+   * [1. Install helper tool](#1-install-helper-tool)
    * [2. Copy scripts updating the associated hostname](#2-copy-scripts-updating-the-associated-hostname)
    * [3. Update common paths](#3-update-common-paths)
    * [4. Manually updates the following files](#4-manually-updates-the-following-files)
@@ -186,14 +186,17 @@ git commit -m "Rename and update Slicer release scripts from $FROM_DOT to $TO_DO
 
 ## Generate new set of dashboard scripts for a different host
 
-### 1. Install prerequisites
+### 1. Install helper tool
+
 ```
-pip install docopt==0.6.0
+cd /tmp
+git clone git@github.com:Slicer/DashboardScripts.git
+pip install DashboardScripts/scripts/cdashly
 ```
 
 ### 2. Copy scripts updating the associated hostname
 ```
-./cdashly.py clone "factory-ubuntu" "factory-south-ubuntu"
+cdashly clone "factory-ubuntu" "factory-south-ubuntu"
 ```
 
 ### 3. Update common paths
@@ -201,13 +204,13 @@ pip install docopt==0.6.0
   * First preview the change
 
 ```
-./cdashly.py replace "factory-south-ubuntu*" "cmake-3.9.0" "cmake-3.10.0"
+cdashly replace "factory-south-ubuntu*" "cmake-3.9.0" "cmake-3.10.0"
 ```
 
   * ... then apply
 
 ```
-./cdashly.py replace "factory-south-ubuntu*" "cmake-3.9.0" "cmake-3.10.0" --apply
+cdashly replace "factory-south-ubuntu*" "cmake-3.9.0" "cmake-3.10.0" --apply
 ```
 
   * Follow the same approach for:

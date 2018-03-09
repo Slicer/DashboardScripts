@@ -22,6 +22,7 @@ Options:
 """
 from docopt import docopt
 
+
 def recursively_list_file_within_directory(directory, pattern):
     """The returned list of file including the relative path to the provided directory."""
     import fnmatch
@@ -32,6 +33,7 @@ def recursively_list_file_within_directory(directory, pattern):
         for filename in fnmatch.filter(filenames, pattern):
             matches.append(os.path.join(root, filename))
     return matches
+
 
 def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False):
     import re
@@ -84,6 +86,7 @@ def clone(directory, src_hostname, dest_hostname, sitename_suffix, force = False
         dest_files.append(dest_file)
     return dest_files
 
+
 def replace(directory, wildcard_expression, old_value, new_value, preview = True):
     files = recursively_list_file_within_directory(directory, wildcard_expression)
     for file in files:
@@ -104,11 +107,16 @@ def replace(directory, wildcard_expression, old_value, new_value, preview = True
                 for line in updated_lines:
                     f.write(line)
 
+
+def main():
+    arguments = docopt(__doc__, version='CDashly 0.1')
+    directory = '.'
+    if arguments['clone']:
+        clone(directory, arguments['<src_hostname>'], arguments['<dest_hostname>'], arguments['--sitename_suffix'], arguments['--force'])
+    elif arguments['replace']:
+        replace(directory, arguments['<wildcard_expression>'], arguments['<old_value>'] , arguments['<new_value>'], not arguments['--apply'])
+
+
 if __name__ == '__main__':
-      arguments = docopt(__doc__, version='CDashly 0.1')
-      directory = '.'
-      if arguments['clone']:
-          clone(directory, arguments['<src_hostname>'], arguments['<dest_hostname>'], arguments['--sitename_suffix'], arguments['--force'])
-      elif arguments['replace']:
-          replace(directory, arguments['<wildcard_expression>'], arguments['<old_value>'] , arguments['<new_value>'], not arguments['--apply'])
+    main()
 
