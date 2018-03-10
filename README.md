@@ -1,12 +1,24 @@
 DashboardScripts
 ================
 
-Collection of dashboard scripts used to build 3D Slicer and associated extensions on Linux, macOS and Windows.
+## Overview
+
+This projects is a collection of scripts allowing to orchestrate the building, testing and packaging of [3D Slicer](https://slicer.org)
+and associated extensions on Linux, macOS and Windows dashboards.
+
+Ultimately, these scripts and dashboards maintained by [Kitware, Inc](https://kitware.com) enable researchers accross
+the world to [download](http://download.slicer.org) both stable and preview releases of 3D Slicer application. They also
+make it possible for researchers to contribute or install more than hunderd extensions.
+
+Additionally, this project also provides tooling and instructions to (1) facilitate the maintenance of these script,
+(2) update and backup associated task scheduling configuration, and (3) update softare installed on each dashboards.
 
 
-Table of Contents:
+## Table of Contents
 
-* [Introduction](#introduction)
+* [Overview](#overview)
+* [Terminology](#terminolgy)
+* [Scheduled tasks](#scheduled-tasks)
 * [Update CMake version used in nightly builds](#update-cmake-version-used-in-nightly-builds)
    * [Step 1: Update the scripts](#step-1-update-the-scripts)
    * [Step 2: Install new version of CMake on the machine](#step-2-install-new-version-of-cmake-on-the-machine)
@@ -23,19 +35,30 @@ Table of Contents:
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 -->
 
-## Introduction
+## Terminology
 
-On each build machine, the corresponding main script is executed every day at 11:00 pm:
+<table>
+  <tr>
+    <th>Term</th>
+    <th>Description</th>
+    <th>Synonyms</th>
+  </tr>
+  <tr>
+    <td>dasboard</td>
+    <td>Environment  in which Slicer is configured, built, tested and packaged. It corresponds to either a 
+physical machine, a virtual machine or a Docker container.
+    </td>
+    <td>dashboard machine, build machine</td>
+  </tr>
+  <tr>
+</table>
 
-```
-factory-south-macos.sh
-factory-south-ubuntu.sh
-overload.bat
-```
+## Scheduled tasks
 
-Before executing any of these scripts on the different build machine, this repository
-is automatically cloned or updated.
+_TBD_
 
+
+## Setting up your own dashboard
 
 Templates used to create each build scripts are available in the Slicer source repository:
 
@@ -60,9 +83,7 @@ overload.bat
 
 Steps:
 
-1. Open bash terminal
-
-2. Clone repository
+1. Open bash terminal and clone repository
 
 ```
 cd /tmp
@@ -70,7 +91,7 @@ git clone git@github.com:Slicer/DashboardScripts.git
 cd DashboardScripts
 ```
 
-3. Update `FROM_CMAKE` and `TO_CMAKE` variables and execute the following statements:
+2. Update `FROM_CMAKE` and `TO_CMAKE` variables and execute the following statements:
 
 ```
 FROM_CMAKE=3.11.0-rc3
@@ -100,16 +121,16 @@ overload
 #### factory-south-macos and factory-south-ubuntu
 
 Since these machines have both SSH installed, the following steps will remotely execute
-the update scripts:
+the scripts:
 
 1. Open bash terminal and execute the following statements:
 
 ```
-cd scripts
+cd maintenance
 
-./factory-south-macos-update-cmake.sh $TO_CMAKE
+./factory-south-macos/install-cmake.sh $TO_CMAKE
 
-./factory-south-ubuntu-update-cmake.sh $TO_CMAKE
+./factory-south-ubuntu/install-cmake.sh $TO_CMAKE
 ```
 
 #### overload
@@ -131,9 +152,7 @@ _The one-liner is provided by [scikit-ci-addons](http://scikit-ci-addons.readthe
 
 These steps are used when releasing a new version of Slicer.
 
-1. Open bash terminal
-
-2. Clone repository
+1. Open bash terminal and clone repository
 
 ```
 cd /tmp
@@ -141,7 +160,7 @@ git clone git@github.com:Slicer/DashboardScripts.git
 cd DashboardScripts
 ```
 
-3. Update `FROM_DOT` and `TO_DOT` variables and execute the following statements:
+2. Update `FROM_DOT` and `TO_DOT` variables and execute the following statements:
 
 ```
 FROM_DOT=4.6.2

@@ -2,8 +2,10 @@
 
 set -ex
 
-host=10.171.2.166 # factory-south
-username=kitware
+script_dir=$(cd $(dirname $0) || exit 1; pwd)
+
+remote_ip=$(head -n1 $script_dir/IP)
+remote_username=$(head -n1 $script_dir/USERNAME)
 
 if [[ $# != 1 ]]; then
   echo "Usage: $0 x.y.z[-rcN]"
@@ -19,7 +21,7 @@ cmake_xy=${cmake_x}.${cmake_y}  # 3.11
 echo "cmake_xy      [${cmake_xy}]"
 echo "cmake_version [${cmake_version}]"
 
-host_working_dir="/Volumes/Dashboards/Support"
+remote_working_dir="/Volumes/Dashboards/Support"
 
 #------------------------------------------------------------------------------
 # Generate script
@@ -31,7 +33,7 @@ set -ex
 
 [[ \$(hostname) != "factory-south" ]] && exit 1
 
-cd $host_working_dir
+cd $remote_working_dir
 
 rm -rf CMake-${cmake_version}.app cmake-${cmake_version}-Darwin-x86_64*
 
@@ -46,6 +48,6 @@ rm -rf cmake-${cmake_version}-Darwin-x86_64*
 REMOTE_SCRIPT
 
 #------------------------------------------------------------------------------
-# Execute script on host
+# Execute script on remote
 #
-ssh $username@$host 'bash -s' < /tmp/$script_name
+ssh $remote_username@$remote_ip 'bash -s' < /tmp/$script_name
