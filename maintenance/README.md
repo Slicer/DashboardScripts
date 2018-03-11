@@ -25,10 +25,14 @@ maintenance
 [...]
 ```
 
-Gotcha: Since remote execution of script is currently implemented only for Unix based
+**Gotcha**: Since remote execution of script is currently implemented only for Unix based
 dashboards, directory associated with Windows dashboard will instead contain step-by-step
-instructions. This may be improved in the future by using [Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH).
-See also [Microsoft blog: OpenSSH for Windows Update](https://blogs.msdn.microsoft.com/powershell/2015/10/19/openssh-for-windows-update/).
+instructions. This may be improved in the future by using OpenSSH for windows:
+* source: https://github.com/PowerShell/openssh-portable
+* wiki: https://github.com/PowerShell/Win32-OpenSSH/wiki/Project-Status
+* Microsoft blog posts:
+  * 2017/12/15: [Using the OpenSSH Beta in Windows 10 Fall Creators Update and Windows Server 1709](https://blogs.msdn.microsoft.com/powershell/2017/12/15/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/)
+  * 2015/10/10: [OpenSSH for Windows Update](https://blogs.msdn.microsoft.com/powershell/2015/10/19/openssh-for-windows-update/).
 
 ## Requirements
 
