@@ -36,7 +36,7 @@ $(addprefix nightly-script-cmake-update.,$(DASHBOARDS)):
 
 remote-install-cmake: nightly-script-cmake-update $(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS))
 
-$(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS)): $(addprefix nightly-script-cmake-update.,$(UNIX_DASHBOARDS))
+$(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS)):
 	$(subst .,,$(suffix $@))/remote-install-cmake.sh ${CMAKE_VERSION}
 
 .PHONY: remote-install-cmake $(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS))
