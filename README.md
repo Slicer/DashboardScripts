@@ -61,6 +61,7 @@ Release process:
 
 Setting up new dashboards:
 
+* [Push or pull of crontab settings](maintenance/guides/push-pull-crontab-settings.md)
 * [Create scripts for a new dashboard](maintenance/guides/create-scripts-for-new-dashboard.md)
 
 ## Frequently Asked Question

@@ -10,6 +10,7 @@ text files in that same directory.
 ```
 maintenance
   |--- <dashboard-name-1>
+  |          |------ crontab
   |          |------ REMOTE_HOSTNAME
   |          |------ REMOTE_IP
   |          |------ REMOTE_USERNAME
@@ -19,6 +20,7 @@ maintenance
   .
   .
   |--- <dashboard-name-2>
+  |          |------ crontab
   |          |------ REMOTE_HOSTNAME
   .          .
   .          .

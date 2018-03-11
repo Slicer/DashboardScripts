@@ -1,0 +1,8 @@
+# m h  dom mon dow   command
+
+0 23 * * * (cd /home/kitware/Dashboards/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master  > /home/kitware/Dashboards/Logs/update-dashboardscripts.log 2>&1)
+
+10 23 * * * /home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu.sh > /home/kitware/Dashboards/Logs/factory-south-ubuntu.log 2>&1
+
+# CDashAtHome
+#05 23 * * * cd /home/kitware/CDashAtHome/SiteConfig && /home/kitware/Dashboards/Support/cmake-2.8.10.2-Linux-i386/bin/ctest -DCDASH_SITE_CONFIG_FILE:FILEPATH=factory-south-ubuntu.kitware_Linux_Ubuntu_64_gcc-4.4.3_CMake-2.8.10.2.cdash.xml -S cdash_bootstrap_client_common.ctest -V > ./Logs/factory-south-ubuntu.kitware_Linux_Ubuntu_64_gcc-4.4.3_CMake-2.8.10.2.cdash.xml.log 2>&1
