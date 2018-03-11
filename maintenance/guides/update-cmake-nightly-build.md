@@ -12,28 +12,11 @@ cd DashboardScripts
 
 ## Step 2: Update the scripts
 
-These steps are used to update the version of CMake used in the dashboard scripts.
-
-2. Update `FROM_CMAKE` and `TO_CMAKE` variables and execute the following statements:
+This step is used to update the version of CMake used in the nightly dashboard scripts.
 
 ```
-FROM_CMAKE=3.11.0-rc3
-TO_CMAKE=3.11.0
-
-echo "FROM_CMAKE [$FROM_CMAKE]"
-echo "  TO_CMAKE [$TO_CMAKE]"
-
-DASHBOARDS="
-factory-south-macos.sh
-factory-south-ubuntu.sh
-overload.bat
-"
-
-for script in $DASHBOARDS; do
-  echo "Updating $script"
-  sed -i -e "s/cmake-$FROM_CMAKE/cmake-$TO_CMAKE/g" $script
-  sed -i -e "s/CMake-$FROM_CMAKE/CMake-$TO_CMAKE/g" $script
-done
+cd maintenance
+CMAKE_VERSION=X.Y.Z make nightly-script-cmake-update
 ```
 
 ## Step 3: Install new version of CMake on each build machine
@@ -46,9 +29,8 @@ the install scripts:
 1. Open bash terminal and execute the following statements:
 
 ```
-./maintenance/factory-south-macos/install-cmake.sh $TO_CMAKE
-
-./maintenance/factory-south-ubuntu/install-cmake.sh $TO_CMAKE
+cd maintenance
+CMAKE_VERSION=X.Y.Z make install-cmake
 ```
 
 ### Windows

@@ -1,5 +1,9 @@
 @ECHO OFF
 
+:: CMAKE_VERSION=3.11.0-rc3 - This comment is used by the maintenance script to look up the cmake version
+
+:: To facilitate execution of the command below by copy/paste, they do not include variables.
+
 :: ----------------------------------------------------------------------------
 :: Set IS_WEEKEND
 :: ----------------------------------------------------------------------------

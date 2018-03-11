@@ -1,14 +1,58 @@
 
-DASHBOARDS = factory-south-macos factory-south-ubuntu
+UNIX_DASHBOARDS = factory-south-macos factory-south-ubuntu
+WIN_DASHBOARDS = overload
 
-push-crontab:$(addprefix push-crontab.,$(DASHBOARDS))
+DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
 
-pull-crontab:$(addprefix pull-crontab.,$(DASHBOARDS))
 
-$(addprefix push-crontab.,$(DASHBOARDS)):
-	common/push-crontab.sh $(subst .,,$(suffix $@))
+help:
+	@echo "$(MAKE) [target]"
+	@echo
+	@echo "  targets:"
+	@echo
+	@echo "    nightly-script-cmake-update                      - Update cmake used in nightly dasboard scripts"
+	@echo "    nightly-script-cmake-update.<dashboard_name>     - Update cmake used in a nightly specific dasboard script"
+	@echo
+	@echo "    install-cmake                                    - Install cmake on dashboards"
+	@echo "    install-cmake.<dashboard_name>                   - Install cmake on a specific dashboard"
+	@echo
+	@echo "    pull-crontab                                     - Download crontab setting of all dashboards"
+	@echo "    pull-crontab                                     - Download crontab setting of a specific dashboard"
+	@echo
+	@echo "    push-crontab                                     - Install crontab setting of all dashboards"
+	@echo "    push-crontab                                     - Install crontab setting of a specific dashboard"
 
-$(addprefix pull-crontab.,$(DASHBOARDS)):
+.PHONY: help
+
+
+nightly-script-cmake-update: $(addprefix nightly-script-cmake-update.,$(DASHBOARDS))
+
+$(addprefix nightly-script-cmake-update.,$(DASHBOARDS)):
+	@echo
+	common/nightly-script-cmake-update.sh $(subst .,,$(suffix $@)) ${CMAKE_VERSION}
+
+.PHONY: nightly-script-cmake-update $(addprefix nightly-script-cmake-update.,$(DASHBOARDS))
+
+
+install-cmake: nightly-script-cmake-update $(addprefix install-cmake.,$(UNIX_DASHBOARDS))
+
+$(addprefix install-cmake.,$(UNIX_DASHBOARDS)): $(addprefix nightly-script-cmake-update.,$(UNIX_DASHBOARDS))
+	$(subst .,,$(suffix $@))/install-cmake.sh ${CMAKE_VERSION}
+
+.PHONY: install-cmake $(addprefix install-cmake.,$(UNIX_DASHBOARDS))
+
+
+pull-crontab:$(addprefix pull-crontab.,$(UNIX_DASHBOARDS))
+
+$(addprefix pull-crontab.,$(UNIX_DASHBOARDS)):
 	common/pull-crontab.sh $(subst .,,$(suffix $@))
 
-.PHONY: push-crontab $(addprefix push-crontab.,$(DASHBOARDS)) pull-crontab $(addprefix pull-crontab.,$(DASHBOARDS))
+.PHONY: pull-crontab $(addprefix pull-crontab.,$(UNIX_DASHBOARDS))
+
+
+push-crontab:$(addprefix push-crontab.,$(UNIX_DASHBOARDS))
+
+$(addprefix push-crontab.,$(UNIX_DASHBOARDS)):
+	common/push-crontab.sh $(subst .,,$(suffix $@))
+
+.PHONY: push-crontab $(addprefix push-crontab.,$(UNIX_DASHBOARDS))
