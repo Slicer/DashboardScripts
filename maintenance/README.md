@@ -5,14 +5,23 @@ You will find here scripts allowing to remotely update dashboard machines.
 
 Script used to maintain a specific dashboard machine are found in a directory of the
 same name. Information needed to remote connect to each dashboard are also stored in
-text file in that same directory.
+text files in that same directory.
 
 ```
-maintenance/<dashboard-name>
-maintenance/<dashboard-name>/IP
-maintenance/<dashboard-name>/USERNAME
-maintenance/<dashboard-name>/maintenance_task_1.sh
-maintenance/<dashboard-name>/maintenance_task_2.sh
+maintenance
+  |--- <dashboard-name-1>
+  |          |------ REMOTE_HOSTNAME
+  |          |------ REMOTE_IP
+  |          |------ REMOTE_USERNAME
+  |          |------ maintenance_task_1.sh
+  |          |------ maintenance_task_2.sh
+  .          .
+  .
+  .
+  |--- <dashboard-name-2>
+  |          |------ REMOTE_HOSTNAME
+  .          .
+  .          .
 [...]
 ```
 

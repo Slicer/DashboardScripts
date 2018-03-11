@@ -53,7 +53,7 @@ the install scripts:
 
 ### Windows
 
-1. Connect to [overload](../overload/IP) using VNC
+1. Connect to [overload](../overload/REMOTE_IP) using VNC
 
 2. Open a command line terminal as Administrator
 
