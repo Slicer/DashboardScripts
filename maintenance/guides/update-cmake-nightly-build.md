@@ -30,7 +30,7 @@ the install scripts:
 
 ```
 cd maintenance
-CMAKE_VERSION=X.Y.Z make install-cmake
+CMAKE_VERSION=X.Y.Z make remote-install-cmake
 ```
 
 ### Windows
