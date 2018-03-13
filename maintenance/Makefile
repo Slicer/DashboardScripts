@@ -4,7 +4,6 @@ WIN_DASHBOARDS = overload
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
 
-
 help:
 	@echo "$(MAKE) [target]"
 	@echo
@@ -17,10 +16,17 @@ help:
 	@echo "    remote-install-cmake.<dashboard_name>            - Install cmake on a specific dashboard"
 	@echo
 	@echo "    pull-crontab                                     - Download crontab setting of all dashboards"
-	@echo "    pull-crontab                                     - Download crontab setting of a specific dashboard"
+	@echo "    pull-crontab.<dashboard_name>                    - Download crontab setting of a specific dashboard"
 	@echo
 	@echo "    push-crontab                                     - Install crontab setting of all dashboards"
-	@echo "    push-crontab                                     - Install crontab setting of a specific dashboard"
+	@echo "    push-crontab.<dashboard_name>                    - Install crontab setting of a specific dashboard"
+	@echo
+	@echo "  dashboards:"
+	@echo
+	@for dashboard in $(DASHBOARDS); do \
+		echo "    $$dashboard"; \
+	done
+	@echo
 
 .PHONY: help
 
