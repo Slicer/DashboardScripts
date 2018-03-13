@@ -1,162 +1,66 @@
-cmake_minimum_required(VERSION 3.9.0)
+cmake_minimum_required(VERSION 3.9)
+macro(dashboard_set var value)
+  if(NOT DEFINED "${var}")
+    set(${var} "${value}")
+  endif()
+endmacro()
 
-#
-# For additional information, see http://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Developers/Tutorials/DashboardSetup
-#
+dashboard_set(DASHBOARDS_DIR        "/Volumes/Dashboards")
+dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
+dashboard_set(HOSTNAME              "factory-south-macos")
+dashboard_set(OPERATING_SYSTEM      "macOS")
+dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
+dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)review or (S)table
+dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
+dashboard_set(SVN_REVISION "")                        # Specify a revision for Stable release
+if(APPLE)
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
+endif()
+dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
+dashboard_set(COMPILER              "clang-8.0.0")    # Used only to set the build name
+dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
+# By default, CMake auto-discovers the compilers
+#dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
+#dashboard_set(CMAKE_CXX_COMPILER    "/path/to/cxx/compiler")
+dashboard_set(CTEST_BUILD_CONFIGURATION "Release")
+dashboard_set(WITH_MEMCHECK       FALSE)
+dashboard_set(WITH_COVERAGE       FALSE)
+dashboard_set(WITH_DOCUMENTATION  FALSE)
+dashboard_set(Slicer_BUILD_CLI    ON)
+dashboard_set(Slicer_USE_PYTHONQT ON)
 
-#-----------------------------------------------------------------------------
-# Experimental:
-#     - run_ctest() macro will be called *ONE* time
-#     - binary directory will *NOT* be cleaned
-# Continuous:
-#     - run_ctest() macro will be called EVERY 5 minutes ...
-#     - binary directory will *NOT* be cleaned
-#     - configure/build will be executed *ONLY* if the repository has been updated
-# Nightly:
-#     - run_ctest() macro will be called *ONE* time
-#     - binary directory *WILL BE* cleaned
-set(SCRIPT_MODE "Nightly") # "Experimental", "Continuous", "Nightly"
+dashboard_set(QT_VERSION          "5.9.1")
+dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/Qt${QT_VERSION}/${QT_VERSION}/clang_64/lib/cmake/Qt5")
 
-# You could invoke the script with the following syntax:
-#  ctest -S karakoram_Slicer4_nightly.cmake -C <CTEST_BUILD_CONFIGURATION> -V
-#
-# Note that '-C <CTEST_BUILD_CONFIGURATION>' is mandatory on windows
+#   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
+#   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
+dashboard_set(Slicer_DIRECTORY_BASENAME   "Slicer")
+dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
+dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
+                                                      # Set to Slicer version XYZ for Stable release build
 
-#-----------------------------------------------------------------------------
-# Dashboard properties
-#-----------------------------------------------------------------------------
-set(HOSTNAME              "factory-south-macos")
-set(MY_QT_VERSION         "5.10.0")
-set(CTEST_DASHBOARD_ROOT  "/Volumes/Dashboards/${SCRIPT_MODE}")
+# Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
+set(BUILD_NAME_SUFFIX "")
 
-set(SVN_BRANCH "trunk")
-set(SVN_REVISION "")
+set(TEST_TO_EXCLUDE_REGEX "")
 
-# Each dashboard script should specify a unique ID per CTEST_DASHBOARD_ROOT.
-# It means the following directories will be created:
-#   <CTEST_DASHBOARD_ROOT>/<DIRECTORY_NAME>-<DIRECTORY_IDENTIFIER>        # Source directory
-#   <CTEST_DASHBOARD_ROOT>/<DIRECTORY_NAME>-<DIRECTORY_IDENTIFIER>-build  # Build directory
-set(DIRECTORY_IDENTIFIER  "0")
-
-# Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
-#set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-#set(MY_BITNESS            "64")
-
-#-----------------------------------------------------------------------------
-# Dashboard options
-#-----------------------------------------------------------------------------
-set(WITH_KWSTYLE FALSE)
-set(WITH_MEMCHECK FALSE)
-set(WITH_COVERAGE FALSE)
-set(WITH_DOCUMENTATION FALSE)
-#set(DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY ) # for example: $ENV{HOME}/Projects/Doxygen
-set(WITH_PACKAGES TRUE)
-set(CTEST_BUILD_CONFIGURATION "Release")
-#set(CTEST_TEST_TIMEOUT 500)
-set(CTEST_BUILD_FLAGS "-j9 -l8") # Use multiple CPU cores to build. For example "-j -l4" on unix
-set(CTEST_PARALLEL_LEVEL 8) # Number of tests running in parallel
-
-#-----------------------------------------------------------------------------
-# Additional CMakeCache options
-#-----------------------------------------------------------------------------
 set(ADDITIONAL_CMAKECACHE_OPTION "
-  Slicer_USE_VTK_DEBUG_LEAKS:BOOL=OFF
-  CMAKE_OSX_DEPLOYMENT_TARGET:STRING=10.9
 ")
 
-#-----------------------------------------------------------------------------
-# List of test that should be explicitly disabled on this machine
-#-----------------------------------------------------------------------------
-set(TEST_TO_EXCLUDE_REGEX "qMRMLLayoutManagerTest3")
-
-#-----------------------------------------------------------------------------
-# Set any extra environment variables here
-#-----------------------------------------------------------------------------
-if(UNIX)
-  set(ENV{DISPLAY} ":0")
-endif()
-
-#-----------------------------------------------------------------------------
-# Required executables
-#-----------------------------------------------------------------------------
-find_program(CTEST_SVN_COMMAND NAMES svn)
-find_program(CTEST_GIT_COMMAND NAMES git)
-find_program(CTEST_COVERAGE_COMMAND NAMES gcov)
-find_program(CTEST_MEMORYCHECK_COMMAND NAMES valgrind)
-
-#-----------------------------------------------------------------------------
-# Factory settings
-#-----------------------------------------------------------------------------
-set(CTEST_INCLUDED_SCRIPT_NAME ${HOSTNAME}_slicer_common.cmake)
-include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})
-
-#-----------------------------------------------------------------------------
-# Build Name
-#-----------------------------------------------------------------------------
-# Update the following variable to match the chosen build options. This variable is used to
-# generate both the build directory and the build name.
-# See http://www.cdash.org/CDash/index.php?project=Slicer4 for examples
-set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks")
-
-#-----------------------------------------------------------------------------
-# Directory name
-#-----------------------------------------------------------------------------
-set(DIRECTORY_NAME "Slicer")
-
-#-----------------------------------------------------------------------------
-# Build directory
-#-----------------------------------------------------------------------------
-set(CTEST_BINARY_DIRECTORY "${CTEST_DASHBOARD_ROOT}/${DIRECTORY_NAME}-${DIRECTORY_IDENTIFIER}-build")
-file(WRITE "${CTEST_DASHBOARD_ROOT}/${DIRECTORY_NAME}-${DIRECTORY_IDENTIFIER}-build - ${BUILD_OPTIONS_STRING}-${CTEST_BUILD_CONFIGURATION}-${SCRIPT_MODE}.txt" "Generated by ${CTEST_SCRIPT_NAME}")
-
-#-----------------------------------------------------------------------------
-# Source directory
-#-----------------------------------------------------------------------------
-set(CTEST_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/${DIRECTORY_NAME}-${DIRECTORY_IDENTIFIER}")
-
+# Custom settings
+include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
-
-set(CTEST_NOTES_FILES "${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}")
-
-#
-# Project specific properties
-#
-set(CTEST_PROJECT_NAME "Slicer4")
-set(CTEST_BUILD_NAME "${MY_OPERATING_SYSTEM}-${MY_COMPILER}-${BUILD_OPTIONS_STRING}-${CTEST_BUILD_CONFIGURATION}")
-
-#
-# Display build info
-#
-message("CTEST_SITE ................: ${CTEST_SITE}")
-message("CTEST_BUILD_NAME ..........: ${CTEST_BUILD_NAME}")
-message("SCRIPT_MODE ...............: ${SCRIPT_MODE}")
-message("CTEST_BUILD_CONFIGURATION .: ${CTEST_BUILD_CONFIGURATION}")
-message("WITH_KWSTYLE ..............: ${WITH_KWSTYLE}")
-message("WITH_COVERAGE: ............: ${WITH_COVERAGE}")
-message("WITH_MEMCHECK .............: ${WITH_MEMCHECK}")
-message("WITH_PACKAGES .............: ${WITH_PACKAGES}")
-message("WITH_DOCUMENTATION ........: ${WITH_DOCUMENTATION}")
-message("DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY: ${DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY}")
-
-#
-# Convenient function allowing to download a file
-#
-function(download_file url dest)
+if(NOT DEFINED DRIVER_SCRIPT)
+  set(url http://svn.slicer.org/Slicer4/trunk/CMake/SlicerDashboardDriverScript.cmake)
+  set(dest ${DASHBOARDS_DIR}/${EXTENSION_DASHBOARD_SUBDIR}/${CTEST_SCRIPT_NAME}.driver)
   file(DOWNLOAD ${url} ${dest} STATUS status)
-  list(GET status 0 error_code)
-  list(GET status 1 error_msg)
-  if(error_code)
-    message(FATAL_ERROR "error: Failed to download ${url} - ${error_msg}")
+  if(NOT status MATCHES "0.*")
+    message(FATAL_ERROR "error: Failed to download ${url} - ${status}")
   endif()
-endfunction()
+  set(DRIVER_SCRIPT ${dest})
+endif()
+include(${DRIVER_SCRIPT})
 
-#
-# Download and include dashboard driver script
-#
-set(url http://svn.slicer.org/Slicer4/${SVN_BRANCH}/CMake/SlicerDashboardDriverScript.cmake)
-set(dest ${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}.driver)
-download_file(${url} ${dest})
-include(${dest})

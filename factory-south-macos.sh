@@ -1,5 +1,4 @@
 open -a x11
-export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 
 # CMAKE_VERSION=3.11.0-rc3 - This comment is used by the maintenance script to look up the cmake version
 

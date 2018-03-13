@@ -1,105 +1,69 @@
-cmake_minimum_required(VERSION 3.10.2)
+cmake_minimum_required(VERSION 3.9)
+macro(dashboard_set var value)
+  if(NOT DEFINED "${var}")
+    set(${var} "${value}")
+  endif()
+endmacro()
 
-include(${CTEST_SCRIPT_DIRECTORY}/CMakeDashboardScriptUtils.cmake)
- #-----------------------------------------------------------------------------
-# Dashboard properties
-#-----------------------------------------------------------------------------
-set(HOSTNAME              "overload")
-set(MY_COMPILER           "VS2015")
-set(CTEST_DASHBOARD_ROOT  "D:/D/N")
-# Open a shell and type in "cmake --help" to obtain the proper spelling of the generator
-set(CTEST_CMAKE_GENERATOR "Visual Studio 14 2015 Win64")
-set(MY_BITNESS            "64")
+dashboard_set(DASHBOARDS_DIR        "D:/D")
+dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
+dashboard_set(HOSTNAME              "overload")
+dashboard_set(OPERATING_SYSTEM      "Windows7")
+dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
+dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
+dashboard_set(EXTENSIONS_INDEX_BRANCH "master")       # "master", X.Y, ...
+if(APPLE)
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
+endif()
+dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 14 2015 Win64")
+dashboard_set(COMPILER              "VS2015")         # Used only to set the build name
+dashboard_set(CTEST_BUILD_FLAGS     "/maxcpucount:4") # Use multiple CPU cores to build. For example "-j -l4" on unix
+# By default, CMake auto-discovers the compilers
+#dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
+#dashboard_set(CMAKE_CXX_COMPILER    "/path/to/cxx/compiler")
+dashboard_set(CTEST_BUILD_CONFIGURATION "Release")
+dashboard_set(EXTENSIONS_BUILDSYSTEM_TESTING FALSE)   # If enabled, build <Slicer_SOURCE_DIR>/Extensions/*.s4ext
 
-#-----------------------------------------------------------------------------
-# Dashboard options
-#-----------------------------------------------------------------------------
-set(EXTENSIONS_BUILDSYSTEM_TESTING FALSE)
-set(WITH_KWSTYLE FALSE)
-set(WITH_MEMCHECK FALSE)
-set(WITH_COVERAGE FALSE)
-set(WITH_DOCUMENTATION FALSE)
-#set(DOCUMENTATION_ARCHIVES_OUTPUT_DIRECTORY ) # for example: $ENV{HOME}/Projects/Doxygen
-set(CTEST_BUILD_CONFIGURATION "Release")
-set(CTEST_BUILD_FLAGS "/maxcpucount:4") # Use multiple CPU cores to build. For example "-j -l4" on unix
+dashboard_set(QT_VERSION            "5.10.0")         # Used only to set the build name
 
-#
-# Dashboard type
-#
-set(SCRIPT_MODE "nightly") # "experimental", "continuous", "nightly"
+#   Slicer_SOURCE_DIR: <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
+#   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
+dashboard_set(Slicer_DIRECTORY_BASENAME   "Slicer")
+dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
+dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
+                                                      # Set to Slicer version XYZ for Stable release build
+dashboard_set(Slicer_SOURCE_DIR "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${Slicer_DIRECTORY_BASENAME}-${Slicer_DIRECTORY_IDENTIFIER}")
+dashboard_set(Slicer_DIR        "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${Slicer_DIRECTORY_BASENAME}-${Slicer_DIRECTORY_IDENTIFIER}-package/Slicer-build")
 
-#-----------------------------------------------------------------------------
-# Additional CMakeCache options
-#-----------------------------------------------------------------------------
+# CTEST_SOURCE_DIRECTORY: <Slicer_SOURCE_DIR>/Extensions/CMake
+# CTEST_BINARY_DIRECTORY: <DASHBOARDS_DIR>/<EXTENSION_DASHBOARD_SUBDIR>/<EXTENSION_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-E[-T]-b
+dashboard_set(EXTENSION_DASHBOARD_SUBDIR   "P")
+dashboard_set(EXTENSION_DIRECTORY_BASENAME "S")
+
+dashboard_set(EXTENSIONS_INDEX_GIT_TAG        "origin/${EXTENSIONS_INDEX_BRANCH}") # origin/master, origin/X.Y, ...
+dashboard_set(EXTENSIONS_INDEX_GIT_REPOSITORY "git://github.com/Slicer/ExtensionsIndex.git")
+
+# Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
+set(BUILD_NAME_SUFFIX "")
+
 set(ADDITIONAL_CMAKECACHE_OPTION "
 ")
 
-#-----------------------------------------------------------------------------
-# Set any extra environment variables here
-#-----------------------------------------------------------------------------
-if(UNIX)
-  set(ENV{DISPLAY} ":0")
-endif()
-
-#-----------------------------------------------------------------------------
-# Git tag
-#-----------------------------------------------------------------------------
-set(EXTENSIONS_TRACK_QUALIFIER "master") # "master", 4.1, ...
-set(EXTENSIONS_INDEX_GIT_TAG "origin/${EXTENSIONS_TRACK_QUALIFIER}") # origin/master, origin/4.1, ...
-
-#-----------------------------------------------------------------------------
-# Common settings
-#-----------------------------------------------------------------------------
-set(CTEST_INCLUDED_SCRIPT_NAME ${HOSTNAME}_slicerextensions_common.cmake)
-include(${CTEST_SCRIPT_DIRECTORY}/${CTEST_INCLUDED_SCRIPT_NAME})
-
-#-----------------------------------------------------------------------------
-# Build Name
-#-----------------------------------------------------------------------------
-# Update the following variable to match the chosen build options. This variable is used to
-# generate both the build directory and the build name.
-set(BUILD_OPTIONS_STRING "${MY_BITNESS}bits-QT${MY_QT_VERSION}-NoVTKDebugLeaks-NoConsole")
-
-#-----------------------------------------------------------------------------
-# Build directories
-#-----------------------------------------------------------------------------
-set(dir_suffix ${BUILD_OPTIONS_STRING}-${CTEST_BUILD_CONFIGURATION}-${SCRIPT_MODE})
-set(dir_identifier "1")
-
-set(Slicer_DIR "${CTEST_DASHBOARD_ROOT}/../N/Slicer-${dir_identifier}-build/Slicer-build")
-
-set(testing_suffix "")
-if(EXTENSIONS_BUILDSYSTEM_TESTING)
-  set(testing_suffix "-T")
-endif()
-
-#set(CTEST_BINARY_DIRECTORY "${CTEST_DASHBOARD_ROOT}/SlicerExtensions-build-${dir_suffix}${testing_suffix}-${EXTENSIONS_TRACK_QUALIFIER}")
-set(CTEST_BINARY_DIRECTORY "${CTEST_DASHBOARD_ROOT}/S-${dir_identifier}-E${testing_suffix}-b")
-file(WRITE "${CTEST_DASHBOARD_ROOT}/S-${dir_identifier}-E${testing_suffix}-b - SlicerExtensions-build-${dir_suffix}-${SCRIPT_MODE}${testing_suffix}-${EXTENSIONS_TRACK_QUALIFIER}.txt" "Generated by ${CTEST_SCRIPT_NAME}")
-
-#-----------------------------------------------------------------------------
-# Source directories
-#-----------------------------------------------------------------------------
-set(EXTENSIONS_BUILDSYSTEM_SOURCE_DIRECTORY "${CTEST_DASHBOARD_ROOT}/../N/Slicer-${dir_identifier}/Extensions/CMake")
+# Custom settings
+include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
+set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
-
-set(CTEST_NOTES_FILES "${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}")
-
-#
-# Project specific properties
-#
-set(CTEST_PROJECT_NAME "Slicer4")
-set(CTEST_BUILD_NAME "${MY_OPERATING_SYSTEM}-${MY_COMPILER}-${BUILD_OPTIONS_STRING}-${CTEST_BUILD_CONFIGURATION}")
-
-
-
-#
-# Download and include dashboard driver script
-#
-set(url http://svn.slicer.org/Slicer4/trunk/Extensions/CMake/SlicerExtensionsDashboardDriverScript.cmake)
-set(dest ${CTEST_SCRIPT_DIRECTORY}/${CTEST_SCRIPT_NAME}.driver)
-download_file(${url} ${dest})
-include(${dest})
+set(EXTENSIONS_TRACK_QUALIFIER ${EXTENSIONS_INDEX_BRANCH})
+if(NOT DEFINED DRIVER_SCRIPT)
+  set(url http://svn.slicer.org/Slicer4/trunk/Extensions/CMake/SlicerExtensionsDashboardDriverScript.cmake)
+  set(dest ${DASHBOARDS_DIR}/${EXTENSION_DASHBOARD_SUBDIR}/${CTEST_SCRIPT_NAME}.driver)
+  file(DOWNLOAD ${url} ${dest} STATUS status)
+  if(NOT status MATCHES "0.*")
+    message(FATAL_ERROR "error: Failed to download ${url} - ${status}")
+  endif()
+  set(DRIVER_SCRIPT ${dest})
+endif()
+include(${DRIVER_SCRIPT})
