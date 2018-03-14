@@ -24,23 +24,23 @@ if "%DAYOFWEEK%"=="7" set IS_WEEKEND=1
 echo IS_WEEKEND[%IS_WEEKEND%]
 
 :: ----------------------------------------------------------------------------
-:: Build Slicer Nightly
+:: Build Slicer
 :: ----------------------------------------------------------------------------
-::echo "Nightly build of slicer vs2015 64bits"
-call :fastdel "D:\D\N\Slicer-1-build"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_release_nightly.txt
+::echo "Slicer 'Preview' release"
+call :fastdel "D:\D\P\Slicer-0-build"
+"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
-call :fastdel "D:\D\N\S-1-E-b"
-call :fastdel "D:\D\N\S-481-E-b"
+call :fastdel "D:\D\P\S-0-E-b"
+call :fastdel "D:\D\S\S-481-E-b"
 if "%IS_WEEKEND%"=="1" (
-  call :overload-vs2015-slicerextensions_release_nightly
-  call :overload-vs2013-slicerextensions_48_release_nightly
+  call :slicerextensions_preview_nightly
+  call :slicerextensions_stable_nightly
 ) else (
-  call :overload-vs2013-slicerextensions_48_release_nightly
-  call :overload-vs2015-slicerextensions_release_nightly
+  call :slicerextensions_stable_nightly
+  call :slicerextensions_preview_nightly
 )
 
 
@@ -53,24 +53,24 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 
 :: ----------------------------------------------------------------------------
-:: a function to run Nightly extension dashboard
-:overload-vs2015-slicerextensions_release_nightly
-REM Nightly build of slicer extensions vs2015 64bits
-::echo "Nightly build of slicer extensions vs2015 64bits"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_release_nightly.txt
+:slicerextensions_preview_nightly
+::echo "Slicer 'Preview' release extensions"
+"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
-:: a function to run Release extension dashboard
-:overload-vs2013-slicerextensions_48_release_nightly
-REM Nightly build of slicer 4.8 extensions vs2013 64bits
-::echo "Nightly build of slicer 4.8 extensions vs2013 64bits"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_48_release_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_48_release_nightly.txt
+:slicerextensions_stable_nightly
+::echo "Slicer 'Stable' release extensions"
+"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013--slicerextensions_stable_nightly.txt
 EXIT /B 0
 
+:: ----------------------------------------------------------------------------
 :: a function to efficiently remove a large directory
 :: See http://mattpilz.com/fastest-way-to-delete-large-folders-windows/
 :fastdel
+if NOT EXIST %1 (
+  EXIT /B 0
+)
 echo "Removing %1 [%time%]"
 del /f/s/q %1 > nul
 rmdir /s/q %1
