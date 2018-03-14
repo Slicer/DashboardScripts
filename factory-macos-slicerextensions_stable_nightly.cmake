@@ -65,4 +65,14 @@ set(CTEST_SVN_COMMAND "/usr/bin/svn")
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
-
+set(EXTENSIONS_TRACK_QUALIFIER ${EXTENSIONS_INDEX_BRANCH})
+if(NOT DEFINED DRIVER_SCRIPT)
+  set(url http://svn.slicer.org/Slicer4/trunk/Extensions/CMake/SlicerExtensionsDashboardDriverScript.cmake)
+  set(dest ${DASHBOARDS_DIR}/${EXTENSION_DASHBOARD_SUBDIR}/${CTEST_SCRIPT_NAME}.driver)
+  file(DOWNLOAD ${url} ${dest} STATUS status)
+  if(NOT status MATCHES "0.*")
+    message(FATAL_ERROR "error: Failed to download ${url} - ${status}")
+  endif()
+  set(DRIVER_SCRIPT ${dest})
+endif()
+include(${DRIVER_SCRIPT})
