@@ -1,5 +1,5 @@
 
-UNIX_DASHBOARDS = factory-south-macos factory-south-ubuntu
+UNIX_DASHBOARDS = factory-macos factory-south-macos factory-south-ubuntu
 WIN_DASHBOARDS = overload
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
