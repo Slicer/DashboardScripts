@@ -1,3 +1,5 @@
+MAILTO=""
+
 */1 * * * * /Volumes/Dashboards/SVN2Github/lockrun --quiet --lockfile=/Volumes/Dashboards/SVN2Github/Slicer-SVN2GitHub.lockrun -- /bin/sh /Volumes/Dashboards/SVN2Github/Slicer-SVN2GitHub.sh
 #*/1 * * * * /Volumes/Dashboards/SVN2Github/lockrun --quiet --lockfile=/Volumes/Dashboards/SVN2Github/SlicerRT-SVN2GitHub.lockrun -- /bin/sh /Volumes/Dashboards/SVN2Github/SlicerRT-SVN2GitHub.sh
 
@@ -12,4 +14,3 @@
 
 # See https://stackoverflow.com/questions/2135478/how-to-simulate-the-environment-cron-executes-a-script-with#2546509
 #*/1 * * * * env > ~/cronenv
-
