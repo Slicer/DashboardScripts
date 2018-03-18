@@ -6,7 +6,3 @@ MAILTO=""
 # 23:00 EDT (3:00am UTC) every day
 0 23 * * * /Users/kitware/DashboardScripts/factory-macos.sh > /Users/kitware/Dashboards/Logs/factory-macos.log 2>&1
 
-# CDashAtHome
-#05 23 * * * cd /Users/kitware/CDashAtHome/SiteConfig && /Users/kitware/Dashboards/Support/CMake\ 3.0.0.app/Contents/bin/ctest -DCDASH_SITE_CONFIG_FILE:FILEPATH=factory.kitware_Mac_SnowLeopard_64_gcc-4.2.1_CMake-3.0.0.cdash.xml -S cdash_bootstrap_client_common.ctest -V > ./Logs/factory.kitware_Mac_SnowLeopard_64_gcc-4.2.1_CMake-3.0.0.cdash.xml.log 2>&1
-
-
