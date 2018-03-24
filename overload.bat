@@ -61,7 +61,7 @@ EXIT /B 0
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013--slicerextensions_stable_nightly.txt
+"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
