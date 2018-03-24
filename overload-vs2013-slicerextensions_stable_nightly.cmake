@@ -10,7 +10,7 @@ dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "overload")
 dashboard_set(OPERATING_SYSTEM      "Windows7")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
-dashboard_set(Slicer_RELEASE_TYPE   "Stable")         # (E)xperimental, (P)review or (S)table
+dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 dashboard_set(EXTENSIONS_INDEX_BRANCH "4.8")          # "master", X.Y, ...
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
@@ -37,7 +37,7 @@ dashboard_set(Slicer_DIR        "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${
 
 # CTEST_SOURCE_DIRECTORY: <Slicer_SOURCE_DIR>/Extensions/CMake
 # CTEST_BINARY_DIRECTORY: <DASHBOARDS_DIR>/<EXTENSION_DASHBOARD_SUBDIR>/<EXTENSION_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-E[-T]-b
-dashboard_set(EXTENSION_DASHBOARD_SUBDIR   "S")
+dashboard_set(EXTENSION_DASHBOARD_SUBDIR   "${Slicer_RELEASE_TYPE}")
 dashboard_set(EXTENSION_DIRECTORY_BASENAME "S")
 
 dashboard_set(EXTENSIONS_INDEX_GIT_TAG        "origin/${EXTENSIONS_INDEX_BRANCH}") # origin/master, origin/X.Y, ...
