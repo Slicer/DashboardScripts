@@ -18,7 +18,7 @@ source $dashboard_dir/../common/remote_execute.sh
 script_name=$(basename $0)
 cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 
-set -e
+set -ex
 
 [[ \$(hostname) != "${remote_hostname}" ]] && exit 1
 
