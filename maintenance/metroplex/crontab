@@ -1,0 +1,6 @@
+
+0 12 * * * /bin/bash /home/kitware/bin/cronjob_docker_cleanup.sh > /home/kitware/bin/cronjob_docker_cleanup-log.txt
+
+#0 21 * * * /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
+
+10 0 * * * /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1

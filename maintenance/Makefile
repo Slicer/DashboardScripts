@@ -1,5 +1,5 @@
 
-UNIX_DASHBOARDS = factory-macos factory-south-macos factory-south-ubuntu
+UNIX_DASHBOARDS = factory-macos factory-south-macos factory-south-ubuntu metroplex
 WIN_DASHBOARDS = overload
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
@@ -39,6 +39,9 @@ $(addprefix nightly-script-cmake-update.,$(DASHBOARDS)):
 
 .PHONY: nightly-script-cmake-update $(addprefix nightly-script-cmake-update.,$(DASHBOARDS))
 
+nightly-script-cmake-update.metroplex:
+	echo "metroplex: skipping nightly-script-cmake-update"
+
 #-------------------------------------------------------------------------------
 remote-install-cmake: nightly-script-cmake-update $(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS))
 
@@ -46,6 +49,9 @@ $(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS)):
 	$(subst .,,$(suffix $@))/remote-install-cmake.sh ${CMAKE_VERSION}
 
 .PHONY: remote-install-cmake $(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS))
+
+remote-install-cmake.metroplex:
+	echo "metroplex: skipping remote-install-cmake"
 
 #-------------------------------------------------------------------------------
 pull-crontab:$(addprefix pull-crontab.,$(UNIX_DASHBOARDS))
