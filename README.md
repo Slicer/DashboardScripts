@@ -58,6 +58,10 @@ Software updates:
 * [Update CMake version used in nightly builds](maintenance/guides/update-cmake-nightly-build.md)
 * [Update Slicer Package Manager client](maintenance/guides/update-slicerpackagemanager-client.md)
 
+Nightly build:
+
+* [Re-trigger nightly build skipping SCM update](maintenance/guides/re-trigger-nightly-build.md)
+
 Release process:
 
 * [Rename and update release scripts](maintenance/guides/rename-and-update-release-scripts.md)
