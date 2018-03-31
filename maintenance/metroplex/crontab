@@ -1,6 +1,12 @@
 
+# 12:00 EDT (4:00pm UTC) every day
 0 12 * * * /bin/bash /home/kitware/bin/cronjob_docker_cleanup.sh > /home/kitware/bin/cronjob_docker_cleanup-log.txt
 
-#0 21 * * * /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
+# 22:50 EDT (2:50am UTC) every day
+50 22 * * * (cd /home/kitware/Dashboards/Slicer/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /home/kitware/Dashboards/Slicer/Logs/update-dashboardscripts.log 2>&1)
 
-10 0 * * * /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
+# 23:00 EDT (3:00am UTC) every day
+0 23 * * * /home/kitware/Dashboards/Slicer/DashboardScripts/metroplex.sh > /home/kitware/Dashboards/Slicer/Logs/metroplex.log 2>&1
+
+# XXX Disable on 2018.03.30 by Jc: This script is now called from "Slicer/DashboardScripts/metroplex.sh"
+# 10 0 * * * /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
