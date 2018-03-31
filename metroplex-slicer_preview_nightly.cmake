@@ -18,7 +18,7 @@ if(APPLE)
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Ninja")
 dashboard_set(COMPILER              "g++-5.3.1")      # Used only to set the build name
-dashboard_set(CTEST_BUILD_FLAGS     "")        # Use multiple CPU cores to build. For example "-j -l4" on unix
+dashboard_set(CTEST_BUILD_FLAGS     "")               # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
 #dashboard_set(CMAKE_CXX_COMPILER    "/path/to/cxx/compiler")
