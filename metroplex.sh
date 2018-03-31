@@ -5,23 +5,23 @@ export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 cd  /home/kitware/Dashboards/Slicer
 
 # Slicer dashboard settings
-run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}
-run_ctest_with_update=${run_ctest_with_update-TRUE}
-run_ctest_with_test=${run_ctest_with_test-FALSE} # XXX Re-enable testing after slicer/slicer-test images have been updated
+docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}"
+docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
+docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
 
 # Slicer 'Preview' release
 slicer-buildenv-qt5-centos7-latest \
-  --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e run_ctest_with_test=${run_ctest_with_test}" \
+  --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicer_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicer_preview_nightly.log
 
 # Slicer 'Stable' release extensions
 # slicer-buildenv-qt5-centos7-latest \
-#  --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e run_ctest_with_test=${run_ctest_with_test}" \
-#  ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
+#   --args "${docker_args}" \
+#   ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
 # Slicer 'Preview' release extensions
 # slicer-buildenv-qt5-centos7-latest \
-#   --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e # run_ctest_with_test=${run_ctest_with_test}" \
+#   --args "${docker_args}" \
 #   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
 # ITKPythonPackage, ITK CodeCov, ...
