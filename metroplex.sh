@@ -12,17 +12,17 @@ run_ctest_with_test=${run_ctest_with_test-FALSE} # XXX Re-enable testing after s
 # Slicer 'Preview' release
 slicer-buildenv-qt5-centos7-latest \
   --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e run_ctest_with_test=${run_ctest_with_test}" \
-  ctest -S /work/DashboardScripts/metroplex-slicer_preview_nightly.cmake -VV -O /work/Support/Logs/metroplex-slicer_preview_nightly.log
+  ctest -S /work/DashboardScripts/metroplex-slicer_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicer_preview_nightly.log
 
 # Slicer 'Stable' release extensions
 # slicer-buildenv-qt5-centos7-latest \
 #  --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e run_ctest_with_test=${run_ctest_with_test}" \
-#  ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Support/Logs/metroplex-slicerextensions_stable_nightly.log
+#  ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
 # Slicer 'Preview' release extensions
-#slicer-buildenv-qt5-centos7-latest \
-#  --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e run_ctest_with_test=${run_ctest_with_test}" \
-#  ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Support/Logs/metroplex-slicerextensions_preview_nightly.log
+# slicer-buildenv-qt5-centos7-latest \
+#   --args "-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean} -e run_ctest_with_update=${run_ctest_with_update} -e # run_ctest_with_test=${run_ctest_with_test}" \
+#   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
 # ITKPythonPackage, ITK CodeCov, ...
 /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
