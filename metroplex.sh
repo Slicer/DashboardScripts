@@ -1,6 +1,7 @@
 export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 
+#-------------------------------------------------------------------------------
 with_itk_dashboard=0
 
 while [[ $# != 0 ]]; do
@@ -23,6 +24,7 @@ done
 echo "Job started at: $(date +'%T %D %Z')"
 echo "with_itk_dashboard [${with_itk_dashboard}]"
 
+#-------------------------------------------------------------------------------
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/kitware/Dashboards/Slicer
 
@@ -42,10 +44,11 @@ time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
 #   ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
 # Slicer 'Preview' release extensions
-# time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
-#   --args "${docker_args}" \
-#   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+  --args "${docker_args}" \
+  ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
+#-------------------------------------------------------------------------------
 # See https://github.com/Slicer/SlicerDockerUpdate
 time /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
 
