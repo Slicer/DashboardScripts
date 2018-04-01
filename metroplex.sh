@@ -24,5 +24,8 @@ docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-ena
 #   --args "${docker_args}" \
 #   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
+# See https://github.com/Slicer/SlicerDockerUpdate
+/bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
+
 # ITKPythonPackage, ITK CodeCov, ...
 /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
