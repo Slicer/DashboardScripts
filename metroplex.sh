@@ -1,7 +1,28 @@
 export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 
-# Changing directory is required by slicer-buildenv-qt5-centos7-latest
+with_itk_dashboard=0
+
+while [[ $# != 0 ]]; do
+    case $1 in
+        --with-itk-dashboard)
+            with_itk_dashboard=1
+            shift 1
+            ;;
+        -*)
+            err Unknown option \"$1\"
+            help
+            exit 1
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+echo "with_itk_dashboard [${with_itk_dashboard}]"
+
+# Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/kitware/Dashboards/Slicer
 
 # Slicer dashboard settings
@@ -27,5 +48,6 @@ docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-ena
 # See https://github.com/Slicer/SlicerDockerUpdate
 /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
 
-# ITKPythonPackage, ITK CodeCov, ...
-/home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
+if [ $with_itk_dashboard == 1 ]; then
+  /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
+fi
