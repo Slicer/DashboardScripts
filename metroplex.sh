@@ -10,17 +10,17 @@ docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
 docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
 
 # Slicer 'Preview' release
-slicer-buildenv-qt5-centos7-latest \
+/home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicer_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicer_preview_nightly.log
 
 # Slicer 'Stable' release extensions
-# slicer-buildenv-qt5-centos7-latest \
+# /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
 #   --args "${docker_args}" \
 #   ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
 # Slicer 'Preview' release extensions
-# slicer-buildenv-qt5-centos7-latest \
+# /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
 #   --args "${docker_args}" \
 #   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
