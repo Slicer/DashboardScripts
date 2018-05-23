@@ -36,7 +36,7 @@ svn up
 On Linux:
 
 ```
-cd ~/Dashboards/Preview/Slicer-0
+cd ~/Dashboards/Slicer/Preview/Slicer-0
 svn up
 ```
 
