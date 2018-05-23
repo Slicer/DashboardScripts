@@ -6,7 +6,7 @@
 0 11 * * * /bin/bash /home/kitware/bin/cronjob_docker_cleanup.sh > /home/kitware/bin/cronjob_docker_cleanup-log.txt
 
 # 20:00 CDT (21:00 EDT) (2:00am UTC) every week
-# 0 20 * * 0 /bin/bash /home/kitware/Support/slicer_package_manager/python_client/cleanNightly.sh $(cat /home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-Url.txt)/api/v1 $(cat /home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-ApiKey.txt) 20 -y
+# 0 20 * * 0 /bin/bash /home/kitware//Dashboards/Slicer/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh $(cat /home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-Url.txt)/api/v1 $(cat /home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-ApiKey.txt) 20 -y
 
 # 21:50 CDT (22:50 EDT) (3:50am UTC) every day
 50 21 * * * (cd /home/kitware/Dashboards/Slicer/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /home/kitware/Dashboards/Slicer/Logs/update-dashboardscripts.log 2>&1)
