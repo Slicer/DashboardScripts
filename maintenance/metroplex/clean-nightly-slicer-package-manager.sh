@@ -69,7 +69,7 @@ done
 server_ip_file=$dashboard_dir/REMOTE_IP
 api_key_file=/home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-ApiKey.txt
 
-export PATH=/home/kitware/Support/slicer_extension_package-venv/bin:$PATH
+export PATH=/home/kitware/Support/slicer_package_manager-venv/bin:$PATH
 
 #-------------------------------------------------------------------------------
 # Sanity checks
