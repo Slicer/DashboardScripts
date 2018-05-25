@@ -23,7 +23,8 @@ the install scripts:
 1. Open bash terminal and execute the following statements:
 
 ```
-./maintenance/factory-south-macos/install-slicerpackagemanager-client.sh
+cd maintenance
+make remote-install-slicerpackagemanager-client
 ```
 
 ### Window

@@ -12,8 +12,11 @@ help:
 	@echo "    nightly-script-cmake-update                      - Update cmake used in nightly dasboard scripts"
 	@echo "    nightly-script-cmake-update.<dashboard_name>     - Update cmake used in a nightly specific dasboard script"
 	@echo
-	@echo "    remote-install-cmake                             - Install cmake on dashboards"
+	@echo "    remote-install-cmake                             - Install cmake on all dashboards"
 	@echo "    remote-install-cmake.<dashboard_name>            - Install cmake on a specific dashboard"
+	@echo
+	@echo "    remote-install-slicerpackagemanager-client       - Install slicer-package-manager client on all dashboards"
+	@echo "    remote-install-slicerpackagemanager-client.<dashboard_name>            - Install slicer-package-manager client on a specific dashboard"
 	@echo
 	@echo "    pull-crontab                                     - Download crontab setting of all dashboards"
 	@echo "    pull-crontab.<dashboard_name>                    - Download crontab setting of a specific dashboard"
@@ -52,6 +55,20 @@ $(addprefix remote-install-cmake.,$(UNIX_DASHBOARDS)):
 
 remote-install-cmake.metroplex:
 	echo "metroplex: skipping remote-install-cmake"
+
+#-------------------------------------------------------------------------------
+remote-install-slicerpackagemanager-client: $(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS))
+
+$(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS)):
+	$(subst .,,$(suffix $@))/remote-install-slicerpackagemanager-client.sh
+
+.PHONY: remote-install-slicerpackagemanager-client $(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS))
+
+remote-install-slicerpackagemanager-client.factory-macos:
+	echo "factory-macos: skipping remote-install-slicerpackagemanager-client"
+
+remote-install-slicerpackagemanager-client.factory-south-ubuntu:
+	echo "factory-south-ubuntu: skipping remote-install-slicerpackagemanager-client"
 
 #-------------------------------------------------------------------------------
 pull-crontab:$(addprefix pull-crontab.,$(UNIX_DASHBOARDS))
