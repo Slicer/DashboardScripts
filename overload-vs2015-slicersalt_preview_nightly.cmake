@@ -35,7 +35,7 @@ dashboard_set(Qt5_DIR             "D:/Support/Qt/${QT_VERSION}/msvc2015_64/lib/c
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
-dashboard_set(Slicer_DIRECTORY_BASENAME   "SlicerSALT")
+dashboard_set(Slicer_DIRECTORY_BASENAME   "SSALT")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
