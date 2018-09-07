@@ -43,6 +43,12 @@ if "%IS_WEEKEND%"=="1" (
   call :slicerextensions_stable_nightly
 )
 
+:: ----------------------------------------------------------------------------
+:: Build SlicerSALT
+:: ----------------------------------------------------------------------------
+::echo "SlicerSALT 'Preview' release"
+call :fastdel "D:\D\P\Slicer-0-build"
+"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicersalt_preview_nightly.txt
 
 :: force execution to quit at the end of the "main" logic
 EXIT /B %ERRORLEVEL%

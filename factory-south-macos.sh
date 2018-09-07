@@ -6,6 +6,9 @@ open -a x11
 # Slicer 'Preview' release
 /Volumes/Dashboards/Support/CMake-3.11.0-rc3.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicer_preview_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicer_preview_nightly.log
 
+# SlicerSALT 'Preview' release
+/Volumes/Dashboards/Support/CMake-3.11.0-rc3.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicersalt_preview_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicersalt_preview_nightly.log
+
 # Slicer 'Stable' release extensions
 #/Volumes/Dashboards/Support/CMake-3.11.0-rc3.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicerextensions_stable_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicerextensions_stable_nightly.log
 
