@@ -58,6 +58,7 @@ ADDITIONAL_CXX_FLAGS:STRING=/MP4
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerSALTPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 set(CTEST_SVN_COMMAND "C:/SlikSvn/bin/svn.exe")
+set(ENV{FC} "C:\Miniconda3\envs\flang-env\Library\bin\flang.exe") # For LAPACKE
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
