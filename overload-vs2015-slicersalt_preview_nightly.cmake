@@ -11,7 +11,7 @@ dashboard_set(HOSTNAME              "overload")
 dashboard_set(OPERATING_SYSTEM      "Windows7")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
-# TODO: Disable WITH_PACKAGES for now
+# TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
 dashboard_set(SVN_REVISION          "")               # Specify a revision for Stable release
 if(APPLE)

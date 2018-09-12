@@ -55,3 +55,14 @@ time /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitw
 if [ $with_itk_dashboard == 1 ]; then
   time /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
 fi
+
+#-------------------------------------------------------------------------------
+# SlicerSALT dashboard settings
+slicersalt_docker_args="-e run_ctest_with_disable_clean=${run_slicersalt_ctest_with_disable_clean-FALSE}"
+slicersalt_docker_args+=" -e run_ctest_with_update=${run_slicersalt_ctest_with_update-TRUE}"
+slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
+
+# SlicerSALT 'Preview' release
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+  --args "${docker_args}" \
+  ctest -S /work/DashboardScripts/metroplex-slicersalt_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicersalt_preview_nightly.log
