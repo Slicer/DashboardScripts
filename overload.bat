@@ -1,6 +1,6 @@
 @ECHO OFF
 
-:: CMAKE_VERSION=3.11.0-rc3 - This comment is used by the maintenance script to look up the cmake version
+:: CMAKE_VERSION=3.12.2 - This comment is used by the maintenance script to look up the cmake version
 
 :: To facilitate execution of the command below by copy/paste, they do not include variables.
 
@@ -28,7 +28,7 @@ echo IS_WEEKEND[%IS_WEEKEND%]
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Preview' release"
 call :fastdel "D:\D\P\Slicer-0-build"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_preview_nightly.txt
+"C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -48,7 +48,7 @@ if "%IS_WEEKEND%"=="1" (
 :: ----------------------------------------------------------------------------
 ::echo "SlicerSALT 'Preview' release"
 call :fastdel "D:\D\P\Slicer-0-build"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicersalt_preview_nightly.txt
+"C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicersalt_preview_nightly.txt
 
 :: force execution to quit at the end of the "main" logic
 EXIT /B %ERRORLEVEL%
@@ -61,13 +61,13 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 :slicerextensions_preview_nightly
 ::echo "Slicer 'Preview' release extensions"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_preview_nightly.txt
+"C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.11.0-rc3\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_stable_nightly.txt
+"C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
