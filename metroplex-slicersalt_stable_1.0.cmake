@@ -49,12 +49,17 @@ dashboard_set(GIT_TAG        "master")
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
+# Testing
+set(run_ctest_with_test 0)
+set(build_testing 0)
+
 set(TEST_TO_EXCLUDE_REGEX "")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
 CMAKE_JOB_POOLS:STRING=compile=16;link=8
 CMAKE_JOB_POOL_COMPILE:STRING=compile
 CMAKE_JOB_POOL_LINK:STRING=link
+BUILD_TESTING:BOOL=${build_testing}
 ")
 
 # Custom settings

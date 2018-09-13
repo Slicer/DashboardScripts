@@ -47,11 +47,16 @@ dashboard_set(GIT_TAG        "master")
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoConsole][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
+# Testing
+set(run_ctest_with_test 0)
+set(build_testing 0)
+
 set(TEST_TO_EXCLUDE_REGEX "")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
 ADDITIONAL_C_FLAGS:STRING=/MP4
 ADDITIONAL_CXX_FLAGS:STRING=/MP4
+BUILD_TESTING:BOOL=${build_testing}
 ")
 
 # Custom settings
