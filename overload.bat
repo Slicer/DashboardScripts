@@ -47,7 +47,7 @@ if "%IS_WEEKEND%"=="1" (
 :: Build SlicerSALT
 :: ----------------------------------------------------------------------------
 ::echo "SlicerSALT 'Preview' release"
-call :fastdel "D:\D\P\Slicer-0-build"
+call :fastdel "D:\D\P\SSALT-0-build"
 "C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicersalt_preview_nightly.txt
 
 :: force execution to quit at the end of the "main" logic
