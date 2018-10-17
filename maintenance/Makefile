@@ -1,5 +1,5 @@
 
-UNIX_DASHBOARDS = factory-macos factory-south-macos factory-south-ubuntu metroplex
+UNIX_DASHBOARDS = factory-south-macos metroplex
 WIN_DASHBOARDS = overload
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
@@ -63,12 +63,6 @@ $(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS)):
 	$(subst .,,$(suffix $@))/remote-install-slicerpackagemanager-client.sh
 
 .PHONY: remote-install-slicerpackagemanager-client $(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS))
-
-remote-install-slicerpackagemanager-client.factory-macos:
-	echo "factory-macos: skipping remote-install-slicerpackagemanager-client"
-
-remote-install-slicerpackagemanager-client.factory-south-ubuntu:
-	echo "factory-south-ubuntu: skipping remote-install-slicerpackagemanager-client"
 
 #-------------------------------------------------------------------------------
 pull-crontab:$(addprefix pull-crontab.,$(UNIX_DASHBOARDS))

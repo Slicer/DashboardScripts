@@ -15,8 +15,8 @@ cd DashboardScripts
 2. Update `FROM_DOT` and `TO_DOT` variables and execute the following statements:
 
 ```
-FROM_DOT=4.6.2
-TO_DOT=4.8.0
+FROM_DOT=4.8.1
+TO_DOT=4.10.0
 
 FROM_DOT_XY=${FROM_DOT%.*}
 TO_DOT_XY=${TO_DOT%.*}
@@ -31,45 +31,41 @@ echo "FROM_DOT [$FROM_DOT] FROM_DOT_XY [$FROM_DOT_XY] FROM_XYZ [$FROM_XYZ] FROM_
 echo "  TO_DOT [$TO_DOT]   TO_DOT_XY [$TO_DOT_XY]   TO_XYZ [$TO_XYZ]   TO_XY [$TO_XY]"
 
 # Copy scripts <host>_slicer_<FROM_XYZ>.* to  <host>_slicer_<TO_XYZ>.*
-for script in $(find -name "*.*" -not -path ".git" | ack $FROM_XYZ);  do
+for script in $(find -name "*.*" -not -path ".git" | ack "slicer\_" | ack $FROM_XYZ);  do
   new_script=$(echo $script | sed "s/$FROM_XYZ/$TO_XYZ/g");
-  echo "Copied $script to  $new_script"
+  echo "Renamed $script to  $new_script"
   mv $script $new_script
-  sed -i -e "s/$FROM_DOT/$TO_DOT/g" $new_script
-  sed -i -e "s/$FROM_DOT_XY/$TO_DOT_XY/g" $new_script
-  sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $new_script
 done
 
-# Copy scripts <host>_slicer_<FROM_XY>.* to  <host>_slicer_<TO_XY>.*
-for script in $(find -name "*.*" -not -path ".git" | ack $FROM_XY);  do
-  new_script=$(echo $script | sed "s/$FROM_XY/$TO_XY/g");
-  echo "Copied $script to  $new_script"
-  mv $script $new_script
-  sed -i -e "s/$FROM_DOT/$TO_DOT/g" $new_script
-  sed -i -e "s/$FROM_DOT_XY/$TO_DOT_XY/g" $new_script
-  sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $new_script
-done
-
-# Update reference to extension release build in nightly scripts
-for script in factory-south-macos.sh factory-south-ubuntu.sh overload.bat; do
+# Update version references in scripts
+for script in \
+    factory-south-macos.sh \
+    metroplex.sh \
+    overload.bat \
+    $(find -name "*slicerextensions_stable_nightly.cmake" -not -path ".git") \
+    $(find -name "*.*" -not -path ".git" | ack $TO_XY) \
+    $(find -name "*.*" -not -path ".git" | ack $TO_XYZ) \
+  ; do
   echo "Updating $script"
   sed -i -e "s/$FROM_DOT/$TO_DOT/g" $script
   sed -i -e "s/$FROM_DOT_XY/$TO_DOT_XY/g" $script
   sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $script
   sed -i -e "s/$FROM_XY/$TO_XY/g" $script
 done
+
+
 ```
 
 5. Edit and update `SVN_BRANCH` and `SVN_REVISION` set in release scripts:
 
 ```
 gedit \
-  overload-vs2013-slicer_${TO_XYZ}_release_package.cmake \
-  overload-vs2013-slicerextensions_${TO_XY}_release_nightly.cmake \
-  factory-south-ubuntu-slicer_${TO_XYZ}_release_package.cmake \
-  factory-south-ubuntu-slicerextensions_${TO_XY}_release_nightly.cmake \
   factory-south-macos-slicer_${TO_XYZ}_release_package.cmake \
-  factory-south-macos-slicerextensions_${TO_XY}_release_nightly.cmake
+  factory-south-macos-slicerextensions_stable_nightly.cmake \
+  metroplex-slicer_${TO_XYZ}_release_package.cmake \
+  metroplex-slicerextensions_stable_nightly.cmake \
+  overload-vs2015-slicer_${TO_XYZ}_release_package.cmake \
+  overload-vs2015-slicerextensions_stable_nightly.cmake
 ```
 
 * If no release branch has been created yet, `SVN_BRANCH` should be set to `trunk`

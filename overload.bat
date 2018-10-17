@@ -34,7 +34,7 @@ call :fastdel "D:\D\P\Slicer-0-build"
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
 call :fastdel "D:\D\P\S-0-E-b"
-call :fastdel "D:\D\S\S-481-E-b"
+call :fastdel "D:\D\S\S-4100-E-b"
 if "%IS_WEEKEND%"=="1" (
   call :slicerextensions_stable_nightly
   call :slicerextensions_preview_nightly
@@ -67,7 +67,7 @@ EXIT /B 0
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2013-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2013-slicerextensions_stable_nightly.txt
+"C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------

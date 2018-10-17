@@ -1,9 +1,4 @@
 cmake_minimum_required(VERSION 3.9)
-# Two possible approaches to use this script:
-# (1) Copy and adapt to your specific configuration or (2) Use as it is by passing options
-# Either way, the script can be executed using ctest:
-#  ctest [-DOPTION:TYPE=<value> [...]] -S /path/to/this/script.cmake [-C <CTEST_BUILD_CONFIGURATION>] [-V]
-# Note that '-C <CTEST_BUILD_CONFIGURATION>' is mandatory on windows
 macro(dashboard_set var value)
   if(NOT DEFINED "${var}")
     set(${var} "${value}")
@@ -22,7 +17,7 @@ if(APPLE)
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 dashboard_set(COMPILER              "g++-5.3.1")      # Used only to set the build name
-dashboard_set(CTEST_BUILD_FLAGS     "")               # Use multiple CPU cores to build. For example "-j -l4" on unix
+dashboard_set(CTEST_BUILD_FLAGS     "-j5 -l4")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
 #dashboard_set(CMAKE_CXX_COMPILER    "/path/to/cxx/compiler")

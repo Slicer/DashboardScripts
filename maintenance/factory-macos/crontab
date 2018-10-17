@@ -1,8 +1,0 @@
-MAILTO=""
-
-# 22:50 EDT (2:50am UTC) every day
-50 22 * * * (cd /Users/kitware/DashboardScripts && /usr/local/git/bin/git fetch origin && /usr/local/git/bin/git reset --hard origin/master > /Users/kitware/Dashboards/Logs/update-dashboardscripts.log 2>&1)
-
-# 23:00 EDT (3:00am UTC) every day
-0 23 * * * /Users/kitware/DashboardScripts/factory-macos.sh > /Users/kitware/Dashboards/Logs/factory-macos.log 2>&1
-

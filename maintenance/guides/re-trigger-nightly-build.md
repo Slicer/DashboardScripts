@@ -78,5 +78,5 @@ Finally, on macOS
 and on Linux:
 
 ```
-/home/kitware/Dashboards/DashboardScripts/factory-south-ubuntu.sh > /home/kitware/Dashboards/Logs/factory-south-ubuntu.log 2>&1
+/home/kitware/Dashboards/Slicer/DashboardScripts/metroplex.sh --with-itk-dashboard > /home/kitware/Dashboards/Slicer/Logs/metroplex.log 2>&1
 ```
