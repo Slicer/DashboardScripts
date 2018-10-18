@@ -13,7 +13,6 @@ dashboard_set(SCRIPT_MODE           "Experimental")        # Experimental, Conti
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
-dashboard_set(SVN_REVISION          "")  # Specify a revision for Stable release
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 endif()
@@ -42,7 +41,7 @@ dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer
 
 # Set GIT_REPOSITORY and GIT_TAG for the project
 dashboard_set(GIT_REPOSITORY "https://github.com/kitware/SlicerSALT")
-dashboard_set(GIT_TAG        "master")
+dashboard_set(GIT_TAG        "v1.0.0")
 
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoConsole][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
