@@ -13,7 +13,7 @@ dashboard_set(SCRIPT_MODE           "Experimental")        # Experimental, Conti
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
-dashboard_set(SVN_REVISION          "")               # Specify a revision for Stable release
+dashboard_set(SVN_REVISION          "")  # Specify a revision for Stable release
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 endif()
