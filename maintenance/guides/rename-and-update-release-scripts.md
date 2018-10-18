@@ -56,7 +56,36 @@ done
 
 ```
 
-5. Edit and update `SVN_BRANCH` and `SVN_REVISION` set in release scripts:
+5. On metroplex and if it applies, create a new `slicer-buildenv-*` script corresponding to the [tagged build environment image](https://github.com/Slicer/SlicerBuildEnvironment/blob/master/README.rst#maintainers)
+
+A new script must created for both major and minor Slicer release.
+For patch release, if the environment did not change, no new script is needed.
+
+Script are located in `/home/kitware/bin` directory.
+
+Assuming the selected tag is `<name-of-tag>`, the following step will download the
+corresponding docker image and generate the script:
+
+```
+TAG=<name-of-tag>
+
+IMAGE=qt5-centos7
+
+docker pull slicer/buildenv-${IMAGE}:${TAG}
+docker run --rm slicer/buildenv-${IMAGE}:${TAG} > ~/bin/slicer-buildenv-${IMAGE}-${TAG}
+chmod u+x ~/bin/slicer-buildenv-${IMAGE}-${TAG}
+```
+
+Finally, if it applies, update nightly and release scripts:
+
+```
+gedit \
+  metroplex.sh \
+  metroplex-slicer_${TO_XYZ}_release_package.sh
+```
+
+
+6. Edit and update `SVN_BRANCH` and `SVN_REVISION` set in release scripts:
 
 ```
 gedit \
@@ -71,7 +100,7 @@ gedit \
 * If no release branch has been created yet, `SVN_BRANCH` should be set to `trunk`
 * `SVN_REVISION` should be set to the revision associated with Slicer version <TO_DOT>
 
-6. Review and commit using message like:
+7. Review and commit using message like:
 
 ```
 git add -A
