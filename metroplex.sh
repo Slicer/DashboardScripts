@@ -65,5 +65,5 @@ slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_tes
 
 # SlicerSALT 'Preview' release
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
-  --args "${docker_args}" \
+  --args "${slicersalt_docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicersalt_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicersalt_preview_nightly.log
