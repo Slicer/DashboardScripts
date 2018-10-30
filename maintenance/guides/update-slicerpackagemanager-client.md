@@ -31,8 +31,30 @@ make remote-install-slicerpackagemanager-client
 
 1. Connect to [overload](../overload/REMOTE_IP) using VNC
 
-2. Open a command line terminal
+2. Open `Git Bash`
 
-3. Update and execute the following statement:
+3. Execute the following statements:
 
-_TBD_
+```
+[[ ! -d /d/Support/slicer_package_manager ]] && cd /d/Support && git clone git://github.com/girder/slicer_package_manager
+cd /d/Support/slicer_package_manager
+git fetch origin
+git reset --hard origin/master
+```
+
+4. Open a command line terminal
+
+5. If needed, create the environment executing the following statements:
+
+```
+D:
+C:\Python36-x64\Scripts\virtualenv.exe D:\Support\slicer_package_manager-venv
+```
+
+6. Finally, execute the following statements:
+
+```
+D:
+D:\Support\slicer_package_manager-venv\Scripts\pip install -U girder_client
+D:\Support\slicer_package_manager-venv\Scripts\pip install -U D:\Support\slicer_package_manager\python_client
+```

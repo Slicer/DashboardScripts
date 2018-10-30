@@ -57,6 +57,7 @@ Software updates:
 
 * [Update CMake version used in nightly builds](maintenance/guides/update-cmake-nightly-build.md)
 * [Update Slicer Package Manager client](maintenance/guides/update-slicerpackagemanager-client.md)
+* [Update Girder client](maintenance/guides/update-girder-client.md)
 
 Nightly build:
 
