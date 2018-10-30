@@ -18,6 +18,9 @@ help:
 	@echo "    remote-install-slicerpackagemanager-client       - Install slicer-package-manager client on all dashboards"
 	@echo "    remote-install-slicerpackagemanager-client.<dashboard_name>            - Install slicer-package-manager client on a specific dashboard"
 	@echo
+	@echo "    remote-install-girder-client       - Install Girder client on all dashboards"
+	@echo "    remote-install-girder-client.<dashboard_name>            - Install Girder client on a specific dashboard"
+	@echo
 	@echo "    pull-crontab                                     - Download crontab setting of all dashboards"
 	@echo "    pull-crontab.<dashboard_name>                    - Download crontab setting of a specific dashboard"
 	@echo
@@ -63,6 +66,14 @@ $(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS)):
 	$(subst .,,$(suffix $@))/remote-install-slicerpackagemanager-client.sh
 
 .PHONY: remote-install-slicerpackagemanager-client $(addprefix remote-install-slicerpackagemanager-client.,$(UNIX_DASHBOARDS))
+
+#-------------------------------------------------------------------------------
+remote-install-girder-client: $(addprefix remote-install-girder-client.,$(UNIX_DASHBOARDS))
+
+$(addprefix remote-install-girder-client.,$(UNIX_DASHBOARDS)):
+	$(subst .,,$(suffix $@))/remote-install-girder-client.sh
+
+.PHONY: remote-install-girder-client $(addprefix remote-install-girder-client.,$(UNIX_DASHBOARDS))
 
 #-------------------------------------------------------------------------------
 pull-crontab:$(addprefix pull-crontab.,$(UNIX_DASHBOARDS))
