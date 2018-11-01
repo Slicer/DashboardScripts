@@ -52,6 +52,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
+set(ENV{FC} "C:\\Miniconda3\\envs\\flang-env\\Library\\bin\\flang.exe") # For LAPACKE
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
