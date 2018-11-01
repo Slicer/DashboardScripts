@@ -51,6 +51,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
+set(ENV{FC} "/Volumes/Dashboards/Support/miniconda3/envs/gfortran-env/bin/gfortran") # For LAPACKE
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
