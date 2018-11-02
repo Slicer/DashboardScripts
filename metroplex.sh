@@ -69,4 +69,4 @@ time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
   ctest -S /work/DashboardScripts/metroplex-slicersalt_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicersalt_preview_nightly.log
 
 # SlicerSALT 'Preview' release - package upload
-/home/kitware/.nix-profile/bin/cmake -P /home/kitware/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake
+/home/kitware/.nix-profile/bin/cmake -P /home/kitware/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake > /home/kitware/Dashboards/Logs/metroplex-slicersalt-upload-package.txt 2>&1
