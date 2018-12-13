@@ -50,6 +50,9 @@ if "%IS_WEEKEND%"=="1" (
 call :fastdel "D:\D\P\SSALT-0-build"
 "C:\cmake-3.12.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicersalt_preview_nightly.txt
 
+::echo "SlicerSALT 'Preview' release - generate package"
+"C:\cmake-3.12.2\bin\cmake.exe" --build "D:\D\P\SSALT-0-build/Slicer-build" --target PACKAGE --config Release > D:\D\Logs\overload-slicersalt-generate-package.txt 2>&1
+
 ::echo "SlicerSALT 'Preview' release - package upload"
 "C:\cmake-3.12.2\bin\cmake.exe" -P "D:\D\DashboardScripts\scripts\slicersalt-upload-package.cmake" > D:\D\Logs\overload-slicersalt-upload-package.txt 2>&1
 

@@ -8,6 +8,9 @@
 # SlicerSALT 'Preview' release
 /Volumes/Dashboards/Support/CMake-3.12.2.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicersalt_preview_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicersalt_preview_nightly.log
 
+# SlicerSALT 'Preview' release - generate package
+/Volumes/Dashboards/Support/CMake-3.12.2.app/Contents/bin/cmake --build /Volumes/Dashboards/Preview/SSALT-0-build/Slicer-build --target package --config Release > /Volumes/Dashboards/Logs/factory-south-macos-slicersalt-generate-package.txt 2>&1
+
 # SlicerSALT 'Preview' release - package upload
 /Volumes/Dashboards/Support/CMake-3.12.2.app/Contents/bin/cmake -P /Volumes/Dashboards/DashboardScripts/scripts/slicersalt-upload-package.cmake > /Volumes/Dashboards/Logs/factory-south-macos-slicersalt-upload-package.txt 2>&1
 

@@ -68,5 +68,9 @@ time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
   --args "${slicersalt_docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicersalt_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicersalt_preview_nightly.log
 
+# SlicerSALT 'Preview' release - generate package
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+  cmake --build /work/Preview/SSALT-0-build/Slicer-build/ --target package --config Release > /home/kitware/Dashboards/Logs/metroplex-slicersalt-generate-package.txt 2>&1
+
 # SlicerSALT 'Preview' release - package upload
 /home/kitware/.nix-profile/bin/cmake -P /home/kitware/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake > /home/kitware/Dashboards/Logs/metroplex-slicersalt-upload-package.txt 2>&1
