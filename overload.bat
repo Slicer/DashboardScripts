@@ -34,7 +34,7 @@ call :fastdel "D:\D\P\Slicer-0-build"
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
 call :fastdel "D:\D\P\S-0-E-b"
-call :fastdel "D:\D\S\S-4100-E-b"
+call :fastdel "D:\D\S\S-4101-E-b"
 if "%IS_WEEKEND%"=="1" (
   call :slicerextensions_stable_nightly
   call :slicerextensions_preview_nightly
