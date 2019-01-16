@@ -13,7 +13,7 @@ dashboard_set(SCRIPT_MODE           "Experimental")   # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 dashboard_set(SVN_REVISION          "27931")          # Specify a revision for Stable release
-dashboard_set(SVN_BRANCH            "Slicer-4-10")
+dashboard_set(SVN_BRANCH            "branches/Slicer-4-10")
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 endif()

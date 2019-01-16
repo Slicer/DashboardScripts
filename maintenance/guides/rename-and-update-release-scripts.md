@@ -97,7 +97,7 @@ gedit \
   overload-vs2015-slicerextensions_stable_nightly.cmake
 ```
 
-* If no release branch has been created yet, `SVN_BRANCH` should be set to `trunk`
+* If no release branch has been created yet, `SVN_BRANCH` should be set to `trunk`. If a branch has been created, it must be set to a value like `branches/Slicer-X-Y`.
 * `SVN_REVISION` should be set to the revision associated with Slicer version <TO_DOT>
 
 7. Review and commit using message like:
