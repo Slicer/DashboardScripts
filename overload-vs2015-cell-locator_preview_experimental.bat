@@ -1,6 +1,9 @@
 @ECHO OFF
 :: CMAKE_VERSION=3.12.2 - This comment is used by the maintenance script to look up the cmake version
 
+:: XXX Re-enable if a CTestConfig file is added and a dashboard is created on CDash
+set run_ctest_submit=FALSE
+
 :: ----------------------------------------------------------------------------
 :: Build CellLocator
 :: ----------------------------------------------------------------------------
