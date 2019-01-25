@@ -1,8 +1,5 @@
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 
-# XXX Re-enable if a CTestConfig file is added and a dashboard is created on CDash
-export run_ctest_submit=FALSE
-
 # Disable tests
 export run_ctest_with_test=FALSE
 
