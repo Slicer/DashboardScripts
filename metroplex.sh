@@ -28,6 +28,9 @@ echo "with_itk_dashboard [${with_itk_dashboard}]"
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/kitware/Dashboards/Slicer
 
+# Download up-to-date slicer/buildenv-qt5-centos7:latest image
+/home/kitware/bin/slicer-buildenv-qt5-centos7-latest update
+
 # Slicer dashboard settings
 docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}"
 docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
