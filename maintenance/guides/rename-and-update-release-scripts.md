@@ -4,7 +4,7 @@ Rename and update release scripts
 
 These steps are used when releasing a new version of Slicer.
 
-1. Open bash terminal and clone repository
+1. On your workstation, open bash (or Git Bash) terminal and clone the repository
 
 ```
 cd /tmp
@@ -15,8 +15,8 @@ cd DashboardScripts
 2. Update `FROM_DOT` and `TO_DOT` variables and execute the following statements:
 
 ```
-FROM_DOT=4.8.1
-TO_DOT=4.10.0
+FROM_DOT=4.10.2
+TO_DOT=5.0.0
 
 FROM_DOT_XY=${FROM_DOT%.*}
 TO_DOT_XY=${TO_DOT%.*}
@@ -31,7 +31,7 @@ echo "FROM_DOT [$FROM_DOT] FROM_DOT_XY [$FROM_DOT_XY] FROM_XYZ [$FROM_XYZ] FROM_
 echo "  TO_DOT [$TO_DOT]   TO_DOT_XY [$TO_DOT_XY]   TO_XYZ [$TO_XYZ]   TO_XY [$TO_XY]"
 
 # Copy scripts <host>_slicer_<FROM_XYZ>.* to  <host>_slicer_<TO_XYZ>.*
-for script in $(find -name "*.*" -not -path ".git" | ack "slicer\_" | ack $FROM_XYZ);  do
+for script in $(find -name "*.*" -not -path ".git" | grep "slicer\_" | grep $FROM_XYZ);  do
   new_script=$(echo $script | sed "s/$FROM_XYZ/$TO_XYZ/g");
   echo "Renamed $script to  $new_script"
   mv $script $new_script
@@ -43,8 +43,8 @@ for script in \
     metroplex.sh \
     overload.bat \
     $(find -name "*slicerextensions_stable_nightly.cmake" -not -path ".git") \
-    $(find -name "*.*" -not -path ".git" | ack $TO_XY) \
-    $(find -name "*.*" -not -path ".git" | ack $TO_XYZ) \
+    $(find -name "*.*" -not -path ".git" | grep $TO_XY) \
+    $(find -name "*.*" -not -path ".git" | grep $TO_XYZ) \
   ; do
   echo "Updating $script"
   sed -i -e "s/$FROM_DOT/$TO_DOT/g" $script
