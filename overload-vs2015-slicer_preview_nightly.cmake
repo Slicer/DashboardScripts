@@ -16,7 +16,9 @@ dashboard_set(SVN_REVISION          "")               # Specify a revision for S
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 endif()
-dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 14 2015 Win64")
+dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 16 2019")
+dashboard_set(CMAKE_GENERATOR_PLATFORM "x64")
+dashboard_set(CMAKE_GENERATOR_TOOLSET "v140")
 dashboard_set(COMPILER              "VS2015")         # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "/maxcpucount:4") # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
