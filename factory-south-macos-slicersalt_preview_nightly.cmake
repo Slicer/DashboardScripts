@@ -14,10 +14,10 @@ dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)revie
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-dashboard_set(COMPILER              "clang-8.0.0")    # Used only to set the build name
+dashboard_set(COMPILER              "clang-9.0.0")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -29,7 +29,7 @@ dashboard_set(WITH_DOCUMENTATION  FALSE)
 dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
-dashboard_set(QT_VERSION          "5.10.0")
+dashboard_set(QT_VERSION          "5.12.4")
 dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-build-${QT_VERSION}/lib/cmake/Qt5")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
