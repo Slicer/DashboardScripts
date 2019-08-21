@@ -13,7 +13,7 @@ dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)review or (S)table
 dashboard_set(EXTENSIONS_INDEX_BRANCH "master")       # "master", X.Y, ...
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 dashboard_set(COMPILER              "g++-5.3.1")      # Used only to set the build name
@@ -24,7 +24,7 @@ dashboard_set(CTEST_BUILD_FLAGS     "-j5 -l4")        # Use multiple CPU cores t
 dashboard_set(CTEST_BUILD_CONFIGURATION "Release")
 dashboard_set(EXTENSIONS_BUILDSYSTEM_TESTING FALSE)   # If enabled, build <Slicer_SOURCE_DIR>/Extensions/*.s4ext
 
-dashboard_set(QT_VERSION            "5.11.2")         # Used only to set the build name
+dashboard_set(QT_VERSION            "5.12.8")         # Used only to set the build name
 
 #   Slicer_SOURCE_DIR: <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
