@@ -23,6 +23,12 @@ if "%DAYOFWEEK%"=="7" set IS_WEEKEND=1
 
 echo IS_WEEKEND[%IS_WEEKEND%]
 
+
+:: ----------------------------------------------------------------------------
+:: Clean Slicer settings
+:: ----------------------------------------------------------------------------
+call :fastdel "C:\Users\dashboard\AppData\Roaming\NA-MIC"
+
 :: ----------------------------------------------------------------------------
 :: Build Slicer
 :: ----------------------------------------------------------------------------
@@ -42,6 +48,11 @@ if "%IS_WEEKEND%"=="1" (
   call :slicerextensions_preview_nightly
   call :slicerextensions_stable_nightly
 )
+
+:: ----------------------------------------------------------------------------
+:: Clean SlicerSALT settings
+:: ----------------------------------------------------------------------------
+call :fastdel "C:\Users\dashboard\AppData\Roaming\Kitware, Inc"
 
 :: ----------------------------------------------------------------------------
 :: Build SlicerSALT
