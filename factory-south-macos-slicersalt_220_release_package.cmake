@@ -14,7 +14,7 @@ dashboard_set(Slicer_RELEASE_TYPE   "Stable")        # (E)xperimental, (P)review
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 dashboard_set(COMPILER              "clang-8.0.0")    # Used only to set the build name
