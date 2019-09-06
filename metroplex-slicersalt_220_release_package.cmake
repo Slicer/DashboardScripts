@@ -41,7 +41,7 @@ dashboard_set(Slicer_DIRECTORY_IDENTIFIER "220")        # Set to arbitrary integ
 
 # Set GIT_REPOSITORY and GIT_TAG for the project
 dashboard_set(GIT_REPOSITORY "https://github.com/kitware/SlicerSALT")
-dashboard_set(GIT_TAG        "v2.2.0")
+dashboard_set(GIT_TAG        "e5b1eda1c4935484fba4ed14b7dd265d6fee60d1")
 
 
 
