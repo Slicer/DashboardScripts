@@ -34,14 +34,14 @@ dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-build
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
-dashboard_set(Slicer_DIRECTORY_BASENAME   "SSALT")
+dashboard_set(Slicer_DIRECTORY_BASENAME   "SLT")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "220")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 
 # Set GIT_REPOSITORY and GIT_TAG for the project
 dashboard_set(GIT_REPOSITORY "https://github.com/kitware/SlicerSALT")
-dashboard_set(GIT_TAG        "e5b1eda1c4935484fba4ed14b7dd265d6fee60d1")
+dashboard_set(GIT_TAG        "v2.2.1")
 
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
