@@ -8,7 +8,7 @@ endmacro()
 dashboard_set(DASHBOARDS_DIR        "D:/D/")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "overload")
-dashboard_set(OPERATING_SYSTEM      "Windows7")
+dashboard_set(OPERATING_SYSTEM      "Windows10")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
