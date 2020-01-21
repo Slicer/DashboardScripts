@@ -1,6 +1,6 @@
 @ECHO OFF
 
-:: CMAKE_VERSION=3.15.6 - This comment is used by the maintenance script to look up the cmake version
+:: CMAKE_VERSION=3.15.1 - This comment is used by the maintenance script to look up the cmake version
 
 :: To facilitate execution of the command below by copy/paste, they do not include variables.
 
@@ -34,7 +34,7 @@ call :fastdel "C:\Users\dashboard\AppData\Roaming\NA-MIC"
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Preview' release"
 call :fastdel "D:\D\P\Slicer-0-build"
-"C:\cmake-3.15.6\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_preview_nightly.txt
+"C:\cmake-3.15.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -78,13 +78,13 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 :slicerextensions_preview_nightly
 ::echo "Slicer 'Preview' release extensions"
-"C:\cmake-3.15.6\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_preview_nightly.txt
+"C:\cmake-3.15.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.15.6\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_stable_nightly.txt
+"C:\cmake-3.15.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
