@@ -12,7 +12,7 @@ dashboard_set(OPERATING_SYSTEM      "Windows10")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
-dashboard_set(SVN_REVISION          "")               # Specify a revision for Stable release
+dashboard_set(GIT_TAG               "master")         # Specify a tag for Stable release
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 endif()
@@ -58,7 +58,7 @@ set(CTEST_SVN_COMMAND "C:/SlikSvn/bin/svn.exe")
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
 if(NOT DEFINED DRIVER_SCRIPT)
-  set(url http://svn.slicer.org/Slicer4/trunk/CMake/SlicerDashboardDriverScript.cmake)
+  set(url https://raw.githubusercontent.com/Slicer/Slicer/master/CMake/SlicerDashboardDriverScript.cmake)
   set(dest ${DASHBOARDS_DIR}/${EXTENSION_DASHBOARD_SUBDIR}/${CTEST_SCRIPT_NAME}.driver)
   file(DOWNLOAD ${url} ${dest} STATUS status)
   if(NOT status MATCHES "0.*")
