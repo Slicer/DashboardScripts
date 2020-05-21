@@ -65,7 +65,7 @@ set(ENV{FC} "C:\\Miniconda3\\envs\\flang-env\\Library\\bin\\flang.exe") # For LA
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
 if(NOT DEFINED DRIVER_SCRIPT)
-  set(url http://svn.slicer.org/Slicer4/trunk/CMake/SlicerDashboardDriverScript.cmake)
+  set(url https://raw.githubusercontent.com/Slicer/Slicer/master/CMake/SlicerDashboardDriverScript.cmake)
   set(dest ${DASHBOARDS_DIR}/${EXTENSION_DASHBOARD_SUBDIR}/${CTEST_SCRIPT_NAME}.driver)
   file(DOWNLOAD ${url} ${dest} STATUS status)
   if(NOT status MATCHES "0.*")
