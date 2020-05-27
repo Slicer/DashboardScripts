@@ -78,7 +78,7 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 :slicerextensions_preview_nightly
 ::echo "Slicer 'Preview' release extensions"
-"C:\cmake-3.15.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2017-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_preview_nightly.txt
+"C:\cmake-3.15.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2019-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2019-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
