@@ -67,12 +67,12 @@ slicersalt_docker_args+=" -e run_ctest_with_update=${run_slicersalt_ctest_with_u
 slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
 
 # SlicerSALT 'Preview' release
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.05.27 \
   --args "${slicersalt_docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicersalt_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicersalt_preview_nightly.log
 
 # SlicerSALT 'Preview' release - generate package
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.05.27 \
   cmake --build /work/Preview/SSALT-0-build/Slicer-build/ --target package --config Release > /home/kitware/Dashboards/Logs/metroplex-slicersalt-generate-package.txt 2>&1
 
 # SlicerSALT 'Preview' release - package upload
