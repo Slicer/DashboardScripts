@@ -14,10 +14,10 @@ dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)revie
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 dashboard_set(GIT_TAG               "master")         # Specify a tag for Stable release
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-dashboard_set(COMPILER              "clang-9.0.0")    # Used only to set the build name
+dashboard_set(COMPILER              "clang-11.0.3")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -29,7 +29,7 @@ dashboard_set(WITH_DOCUMENTATION  FALSE)
 dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
-dashboard_set(QT_VERSION          "5.12.8")
+dashboard_set(QT_VERSION          "5.15.0")
 dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-build-${QT_VERSION}/lib/cmake/Qt5")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
