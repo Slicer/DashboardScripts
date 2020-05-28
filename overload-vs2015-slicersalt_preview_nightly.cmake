@@ -14,12 +14,10 @@ dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)revie
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 endif()
-dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 16 2019")
-dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "x64")
-dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "v141")
-dashboard_set(COMPILER              "VS2017")         # Used only to set the build name
+dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 14 2015 Win64")
+dashboard_set(COMPILER              "VS2015")         # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "/maxcpucount:4") # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -32,7 +30,7 @@ dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
 dashboard_set(QT_VERSION          "5.14.2")
-dashboard_set(Qt5_DIR             "D:/Support/Qt2/${QT_VERSION}/msvc2017_64/lib/cmake/Qt5")
+dashboard_set(Qt5_DIR             "D:/Support/Qt2/${QT_VERSION}/msvc2015_64/lib/cmake/Qt5")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
