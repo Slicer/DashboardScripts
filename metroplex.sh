@@ -38,12 +38,12 @@ docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-ena
 docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
 
 # Slicer 'Preview' release
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.10 \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicer_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicer_preview_nightly.log
 
 # Slicer 'Preview' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-latest \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.10 \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
