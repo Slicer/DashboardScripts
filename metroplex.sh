@@ -28,8 +28,21 @@ echo "with_itk_dashboard [${with_itk_dashboard}]"
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/kitware/Dashboards/Slicer
 
-# Download up-to-date slicer/buildenv-qt5-centos7:latest image
-/home/kitware/bin/slicer-buildenv-qt5-centos7-latest update
+# Download and patch the slicer-buildenv-qt5-centos7-slicer-4.11-2018.10.17 image
+SLICER_PREVIEW_ENV_NAME=qt5-centos7
+SLICER_PREVIEW_ENV_VERSION=slicer-4.11-2018.10.17
+
+# Download build environment
+slicer_preview_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
+if [[ ! -f ${slicer_preview_script} ]]; then
+  docker run --rm slicer/buildenv-${SLICER_PREVIEW_ENV_NAME}:${SLICER_PREVIEW_ENV_VERSION} > $slicer_preview_script
+  chmod +x $slicer_preview_script
+fi
+
+# Update build environment
+$slicer_preview_script update
+# HACK: Workaround limitation of entrypoint.sh (see https://github.com/Slicer/SlicerBuildEnvironment/issues/16)
+sed -i ${slicer_preview_script} -e "s/slicer\/buildenv-${SLICER_PREVIEW_ENV_NAME}:latest/slicer\/buildenv-${SLICER_PREVIEW_ENV_NAME}:${SLICER_PREVIEW_ENV_VERSION}/"
 
 # Slicer dashboard settings
 docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}"
@@ -38,12 +51,12 @@ docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-ena
 docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
 
 # Slicer 'Preview' release
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.05.27 \
+time ${slicer_preview_script} \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicer_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicer_preview_nightly.log
 
 # Slicer 'Preview' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.05.27 \
+time ${slicer_preview_script} \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
@@ -61,18 +74,34 @@ if [ $with_itk_dashboard == 1 ]; then
 fi
 
 #-------------------------------------------------------------------------------
+# Download and patch the slicer-buildenv-qt5-centos7-slicer-4.11-2018.10.17 image
+SLICER_SALT_ENV_NAME=qt5-centos7
+SLICER_SALT_ENV_VERSION=slicer-4.11-2018.10.17
+
+# Download build environment
+slicer_salt_script=/home/kitware/bin/slicer-buildenv-${SLICER_SALT_ENV_NAME}-${SLICER_SALT_ENV_VERSION}
+if [[ ! -f ${slicer_salt_script} ]]; then
+  docker run --rm slicer/buildenv-${SLICER_SALT_ENV_NAME}:${SLICER_SALT_ENV_VERSION} > $slicer_salt_script
+  chmod +x $slicer_salt_script
+fi
+
+# Update build environment
+$slicer_salt_script update
+# HACK: Workaround limitation of entrypoint.sh (see https://github.com/Slicer/SlicerBuildEnvironment/issues/16)
+sed -i ${slicer_salt_script} -e "s/slicer\/buildenv-${SLICER_SALT_ENV_NAME}:latest/slicer\/buildenv-${SLICER_SALT_ENV_NAME}:${SLICER_SALT_ENV_VERSION}/"
+
 # SlicerSALT dashboard settings
 slicersalt_docker_args="-e run_ctest_with_disable_clean=${run_slicersalt_ctest_with_disable_clean-FALSE}"
 slicersalt_docker_args+=" -e run_ctest_with_update=${run_slicersalt_ctest_with_update-TRUE}"
 slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
 
 # SlicerSALT 'Preview' release
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.05.27 \
+time ${slicer_salt_script} \
   --args "${slicersalt_docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicersalt_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicersalt_preview_nightly.log
 
 # SlicerSALT 'Preview' release - generate package
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.05.27 \
+time ${slicer_salt_script} \
   cmake --build /work/Preview/SSALT-0-build/Slicer-build/ --target package --config Release > /home/kitware/Dashboards/Logs/metroplex-slicersalt-generate-package.txt 2>&1
 
 # SlicerSALT 'Preview' release - package upload
