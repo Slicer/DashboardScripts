@@ -108,6 +108,5 @@ time ${slicer_salt_script} \
 /home/kitware/.nix-profile/bin/cmake -P /home/kitware/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake > /home/kitware/Dashboards/Logs/metroplex-slicersalt-upload-package.txt 2>&1
 
 #Medical Team Dashboard
-/home/kitware/Dashboards/Medical/MedicalTeamDashboardScripts/metroplex.sh
-
+time /home/kitware/Dashboards/Medical/MedicalTeamDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Medical/Logs/metroplex.log 2>&1
 
