@@ -106,3 +106,8 @@ time ${slicer_salt_script} \
 
 # SlicerSALT 'Preview' release - package upload
 /home/kitware/.nix-profile/bin/cmake -P /home/kitware/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake > /home/kitware/Dashboards/Logs/metroplex-slicersalt-upload-package.txt 2>&1
+
+#Medical Team Dashboard
+/home/kitware/Dashboards/Medical/MedicalTeamDashboardScripts/metroplex.sh
+
+
