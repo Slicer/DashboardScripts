@@ -12,7 +12,7 @@ rm -rf /Users/kitware/.config/www.na-mic.org/
 /Volumes/Dashboards/Support/CMake-3.15.1.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicerextensions_preview_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicerextensions_preview_nightly.log
 
 # Slicer 'Stable' release extensions
-/Volumes/Dashboards/Support/CMake-3.15.1.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicerextensions_stable_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicerextensions_stable_nightly.log
+#/Volumes/Dashboards/Support/CMake-3.15.1.app/Contents/bin/ctest -S /Volumes/Dashboards/DashboardScripts/factory-south-macos-slicerextensions_stable_nightly.cmake -VV -O /Volumes/Dashboards/Logs/factory-south-macos-slicerextensions_stable_nightly.log
 
 # Clear SlicerSALT settings
 rm -rf /Users/kitware/.config/kitware.com/
