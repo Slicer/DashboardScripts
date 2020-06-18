@@ -10,7 +10,7 @@ dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "factory-south-macos")
 dashboard_set(OPERATING_SYSTEM      "macOS")
 dashboard_set(SCRIPT_MODE           "Experimental")        # Experimental, Continuous or Nightly
-dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)review or (S)table
+dashboard_set(Slicer_RELEASE_TYPE   "P")                   # (E)xperimental, (P)review or (S)table
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
 if(APPLE)

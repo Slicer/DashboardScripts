@@ -10,7 +10,7 @@ dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "factory-south-macos")
 dashboard_set(OPERATING_SYSTEM      "macOS")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
-dashboard_set(Slicer_RELEASE_TYPE   "Stable")         # (E)xperimental, (P)review or (S)table
+dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 dashboard_set(EXTENSIONS_INDEX_BRANCH "4.10")          # "master", X.Y, ...
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")

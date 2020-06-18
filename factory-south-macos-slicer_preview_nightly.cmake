@@ -10,7 +10,7 @@ dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "factory-south-macos")
 dashboard_set(OPERATING_SYSTEM      "macOS")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
-dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)review or (S)table
+dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 dashboard_set(GIT_TAG               "master")         # Specify a tag for Stable release
 if(APPLE)
