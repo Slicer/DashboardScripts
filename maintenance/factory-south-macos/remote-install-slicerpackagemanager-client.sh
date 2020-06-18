@@ -8,7 +8,7 @@ source $dashboard_dir/../common/remote_execute.sh
 #------------------------------------------------------------------------------
 # Set script properties
 #
-remote_support_dir="/Volumes/Dashboards/Support"
+remote_support_dir="/Volumes/D/Support"
 
 proj_name="slicer_package_manager"
 venv_name="${proj_name}-venv"

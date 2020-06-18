@@ -5,7 +5,7 @@ macro(dashboard_set var value)
   endif()
 endmacro()
 
-dashboard_set(DASHBOARDS_DIR        "/Volumes/Dashboards")
+dashboard_set(DASHBOARDS_DIR        "/Volumes/D")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "factory-south-macos")
 dashboard_set(OPERATING_SYSTEM      "macOS")

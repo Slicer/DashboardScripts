@@ -5,7 +5,7 @@ macro(dashboard_set var value)
   endif()
 endmacro()
 
-dashboard_set(DASHBOARDS_DIR        "/Volumes/Dashboards")
+dashboard_set(DASHBOARDS_DIR        "/Volumes/D")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "factory-south-macos")
 dashboard_set(OPERATING_SYSTEM      "macOS")
@@ -53,7 +53,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerSALTPackagesCredential.cmake")
-set(ENV{FC} "/Volumes/Dashboards/Support/miniconda3/envs/gfortran-env/bin/gfortran") # For LAPACKE
+set(ENV{FC} "/Volumes/D/Support/miniconda3/envs/gfortran-env/bin/gfortran") # For LAPACKE
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #

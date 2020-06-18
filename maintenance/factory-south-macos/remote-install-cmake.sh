@@ -20,7 +20,7 @@ cmake_xy=${cmake_x}.${cmake_y}  # 3.11
 echo "cmake_xy      [${cmake_xy}]"
 echo "cmake_version [${cmake_version}]"
 
-remote_support_dir="/Volumes/Dashboards/Support"
+remote_support_dir="/Volumes/D/Support"
 
 #------------------------------------------------------------------------------
 # Generate script

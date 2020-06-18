@@ -29,7 +29,7 @@ svn up
 On macOS:
 
 ```
-cd /Volumes/Dashboards/Preview/Slicer-0
+cd /Volumes/D/Preview/Slicer-0
 svn up
 ```
 
@@ -72,7 +72,7 @@ export run_ctest_with_update=FALSE
 Finally, on macOS
 
 ```
-/Volumes/Dashboards/DashboardScripts/factory-south-macos.sh > /Volumes/Dashboards/Logs/factory-south-macos.log 2>&1
+/Volumes/D/DashboardScripts/factory-south-macos.sh > /Volumes/D/Logs/factory-south-macos.log 2>&1
 ```
 
 and on Linux:

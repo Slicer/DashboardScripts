@@ -1,6 +1,6 @@
 set(package_prefix "SlicerSALT")
 if(APPLE)
-  set(DASHBOARDS_DIR "/Volumes/Dashboards")
+  set(DASHBOARDS_DIR "/Volumes/D")
   set(Slicer_RELEASE_TYPE "Preview")
   set(package_suffix "macosx-amd64.dmg")
 elseif(UNIX)
