@@ -26,7 +26,8 @@ rm -rf /Users/kitware/.config/kitware.com/
 # SlicerSALT 'Preview' release - package upload
 /Volumes/D/Support/CMake-3.15.1.app/Contents/bin/cmake -P /Volumes/D/DashboardScripts/scripts/slicersalt-upload-package.cmake > /Volumes/D/Logs/factory-south-macos-slicersalt-upload-package.txt 2>&1
 
-
+#Medical Team Dashboard
+/Volumes/D/Med/MedicalTeamDashboardScripts/factory-macos-south.sh > /Volumes/D/Med/Logs/factory-macos-south.log 2>&1
 
 
 
