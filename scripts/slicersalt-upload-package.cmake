@@ -1,7 +1,7 @@
 set(package_prefix "SlicerSALT")
 if(APPLE)
   set(DASHBOARDS_DIR "/Volumes/D")
-  set(Slicer_RELEASE_TYPE "Preview")
+  set(Slicer_RELEASE_TYPE "P")
   set(package_suffix "macosx-amd64.dmg")
 elseif(UNIX)
   set(DASHBOARDS_DIR "/home/kitware/Dashboards/Slicer")
