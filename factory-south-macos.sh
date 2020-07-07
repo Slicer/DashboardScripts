@@ -21,7 +21,7 @@ rm -rf /Users/kitware/.config/kitware.com/
 /Volumes/D/Support/CMake-3.15.1.app/Contents/bin/ctest -S /Volumes/D/DashboardScripts/factory-south-macos-slicersalt_preview_nightly.cmake -VV -O /Volumes/D/Logs/factory-south-macos-slicersalt_preview_nightly.log
 
 # SlicerSALT 'Preview' release - generate package
-/Volumes/D/Support/CMake-3.15.1.app/Contents/bin/cmake --build /Volumes/D/Preview/SSALT-0-build/Slicer-build --target package --config Release > /Volumes/D/Logs/factory-south-macos-slicersalt-generate-package.txt 2>&1
+/Volumes/D/Support/CMake-3.15.1.app/Contents/bin/cmake --build /Volumes/D/P/SSALT-0-build/Slicer-build --target package --config Release > /Volumes/D/Logs/factory-south-macos-slicersalt-generate-package.txt 2>&1
 
 # SlicerSALT 'Preview' release - package upload
 /Volumes/D/Support/CMake-3.15.1.app/Contents/bin/cmake -P /Volumes/D/DashboardScripts/scripts/slicersalt-upload-package.cmake > /Volumes/D/Logs/factory-south-macos-slicersalt-upload-package.txt 2>&1
