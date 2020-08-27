@@ -36,14 +36,14 @@ dashboard_set(Qt5_DIR             "D:/Support/Qt2/${QT_VERSION}/msvc2019_64/lib/
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
-dashboard_set(Slicer_DIRECTORY_BASENAME   "CL2")
+dashboard_set(Slicer_DIRECTORY_BASENAME   "CL")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 
 # Set GIT_REPOSITORY and GIT_TAG for the project
-dashboard_set(GIT_REPOSITORY "https://github.com/allemangd-forks/cell-locator")
-dashboard_set(GIT_TAG        "update-slicer")
+dashboard_set(GIT_REPOSITORY "https://github.com/BICCN/cell-locator")
+dashboard_set(GIT_TAG        "master")
 
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoConsole][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
