@@ -30,7 +30,7 @@ cd  /home/kitware/Dashboards/Slicer
 
 # Download and patch the slicer-buildenv-qt5-centos7-slicer-4.11-2018.10.17 image
 SLICER_PREVIEW_ENV_NAME=qt5-centos7
-SLICER_PREVIEW_ENV_VERSION=slicer-4.11-2018.10.17
+SLICER_PREVIEW_ENV_VERSION=latest
 
 # Download build environment
 slicer_preview_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
