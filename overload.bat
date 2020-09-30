@@ -34,7 +34,7 @@ call :fastdel "C:\Users\dashboard\AppData\Roaming\NA-MIC"
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Preview' release"
 call :fastdel "D:\D\P\Slicer-0-build"
-"C:\cmake-3.17.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2019-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2017-slicer_preview_nightly.txt
+"C:\cmake-3.17.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2019-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2019-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -59,7 +59,7 @@ call :fastdel "C:\Users\dashboard\AppData\Roaming\Kitware, Inc"
 :: ----------------------------------------------------------------------------
 ::echo "SlicerSALT 'Preview' release"
 call :fastdel "D:\D\P\SSALT-0-build"
-"C:\cmake-3.13.4\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2017-slicersalt_preview_nightly.txt
+"C:\cmake-3.13.4\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicersalt_preview_nightly.txt
 
 ::echo "SlicerSALT 'Preview' release - generate package"
 "C:\cmake-3.13.4\bin\cmake.exe" --build "D:\D\P\SSALT-0-build/Slicer-build" --target PACKAGE --config Release > D:\D\Logs\overload-slicersalt-generate-package.txt 2>&1
