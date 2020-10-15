@@ -61,7 +61,7 @@ time ${slicer_preview_script} \
   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
 # Slicer 'Stable' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11 \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-4.11-2020.09.30 \
    --args "${docker_args}" \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 

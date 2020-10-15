@@ -84,7 +84,7 @@ EXIT /B 0
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.15.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2015-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2015-slicerextensions_stable_nightly.txt
+"C:\cmake-3.17.2\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2019-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2019-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
