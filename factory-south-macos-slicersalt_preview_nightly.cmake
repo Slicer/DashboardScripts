@@ -46,6 +46,8 @@ dashboard_set(GIT_TAG        "master")
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
+set(run_ctest_with_test 0)
+
 set(TEST_TO_EXCLUDE_REGEX "")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
