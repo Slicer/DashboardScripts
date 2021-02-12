@@ -47,8 +47,9 @@ sed -i ${slicer_preview_script} -e "s/slicer\/buildenv-${SLICER_PREVIEW_ENV_NAME
 # Slicer dashboard settings
 docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}"
 docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
-docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
-docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
+docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-TRUE}" 
+docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-TRUE}" 
+docker_args+=" -e QT_QPA_PLATFORM=offscreen" #Allows headlesss testing with some graphics failures
 
 # Slicer 'Preview' release
 time ${slicer_preview_script} \
@@ -93,7 +94,8 @@ sed -i ${slicer_salt_script} -e "s/slicer\/buildenv-${SLICER_SALT_ENV_NAME}:late
 # SlicerSALT dashboard settings
 slicersalt_docker_args="-e run_ctest_with_disable_clean=${run_slicersalt_ctest_with_disable_clean-FALSE}"
 slicersalt_docker_args+=" -e run_ctest_with_update=${run_slicersalt_ctest_with_update-TRUE}"
-slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
+slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_test-TRUE}" 
+docker_args+=" -e QT_QPA_PLATFORM=offscreen"  #Allows headlesss testing with some graphics failures
 
 # SlicerSALT 'Preview' release
 time ${slicer_salt_script} \
