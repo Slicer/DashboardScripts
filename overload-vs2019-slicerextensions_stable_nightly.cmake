@@ -33,7 +33,7 @@ dashboard_set(QT_VERSION            "5.15.1")         # Used only to set the bui
 dashboard_set(Slicer_DIRECTORY_BASENAME   "Slicer")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
 # 0: 41120200930
-dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")      # Set to arbitrary integer to distinguish different Experimental/Preview release build
+dashboard_set(Slicer_DIRECTORY_IDENTIFIER "1")      # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 dashboard_set(Slicer_SOURCE_DIR "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${Slicer_DIRECTORY_BASENAME}-${Slicer_DIRECTORY_IDENTIFIER}")
 dashboard_set(Slicer_DIR        "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${Slicer_DIRECTORY_BASENAME}-${Slicer_DIRECTORY_IDENTIFIER}-build/Slicer-build")
