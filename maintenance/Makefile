@@ -1,5 +1,5 @@
 
-UNIX_DASHBOARDS = factory-south-macos metroplex
+UNIX_DASHBOARDS = computron factory-south-macos metroplex
 WIN_DASHBOARDS = overload
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)

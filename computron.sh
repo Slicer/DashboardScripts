@@ -1,3 +1,5 @@
+# CMAKE_VERSION=3.15.1 - This comment is used by the maintenance script to look up the cmake version
+
 # Clear Slicer settings
 rm -rf /Users/svc-dashboard/.config/www.na-mic.org/
 
