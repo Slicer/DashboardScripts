@@ -12,12 +12,6 @@ if [[ $# != 1 ]]; then
 fi
 
 cmake_version=$1  # 3.11.0-rc3
-
-cmake_x=$(echo $cmake_version | cut -d"." -f1)
-cmake_y=$(echo $cmake_version | cut -d"." -f2)
-cmake_xy=${cmake_x}.${cmake_y}  # 3.11
-
-echo "cmake_xy      [${cmake_xy}]"
 echo "cmake_version [${cmake_version}]"
 
 remote_support_dir="/Volumes/D/Support"
@@ -36,7 +30,7 @@ cd $remote_support_dir
 
 rm -rf CMake-${cmake_version}.app cmake-${cmake_version}-Darwin-x86_64*
 
-curl -LO "https://cmake.org/files/v${cmake_xy}/cmake-${cmake_version}-Darwin-x86_64.tar.gz"
+curl -LO "https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-${cmake_version}-Darwin-x86_64.tar.gz"
 tar -xvf cmake-${cmake_version}-Darwin-x86_64.tar.gz
 
 mv cmake-${cmake_version}-Darwin-x86_64/CMake.app CMake-${cmake_version}.app
