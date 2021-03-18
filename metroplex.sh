@@ -1,4 +1,3 @@
-export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 
 #-------------------------------------------------------------------------------
@@ -49,7 +48,6 @@ docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALS
 docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
 docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-TRUE}" 
 docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-TRUE}" 
-docker_args+=" -e QT_QPA_PLATFORM=offscreen" #Allows headlesss testing with some graphics failures
 
 # Slicer 'Preview' release
 time ${slicer_preview_script} \
