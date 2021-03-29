@@ -46,7 +46,7 @@ dashboard_set(EXTENSIONS_INDEX_GIT_REPOSITORY "git://github.com/Slicer/Extension
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
-set(run_extension_ctest_with_packages 0)
+set(ENV{run_extension_ctest_with_packages} 0)
 
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
