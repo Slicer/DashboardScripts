@@ -5,3 +5,6 @@ rm -rf /Users/svc-dashboard/.config/www.na-mic.org/
 
 # Slicer 'Preview' release
 /D/Support/CMake-3.17.2.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicer_preview_nightly.cmake -VV -O /D/Logs/computron-slicer_preview_nightly.log
+
+# Slicer 'Preview' release extensions
+/D/Support/CMake-3.17.2.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicerextensions_preview_nightly.cmake -VV -O /D/Logs/factory-south-macos-slicerextensions_preview_nightly.log
