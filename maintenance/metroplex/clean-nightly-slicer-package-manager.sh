@@ -66,18 +66,12 @@ done
 
 #-------------------------------------------------------------------------------
 
-server_ip_file=$dashboard_dir/REMOTE_IP
 api_key_file=/home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-ApiKey.txt
 
 export PATH=/home/kitware/Support/slicer_package_manager-venv/bin:$PATH
 
 #-------------------------------------------------------------------------------
 # Sanity checks
-
-# server_ip
-if [ ! -f ${server_ip_file} ]; then
-    die 'error: "${server_ip_file}" not found!'
-fi
 
 # api_key
 if [ ! -f ${api_key_file} ]; then
@@ -91,9 +85,8 @@ fi
 
 #-------------------------------------------------------------------------------
 # Set variables
-server_ip=$(head -n1 ${server_ip_file})
-server_port=8080
-api_url=http://${server_ip}:${server_port}/api/v1
+server_url=https://slicer-packages.kitware.com
+api_url=${server_url}/api/v1
 
 spmc="slicer_package_manager_client --api-url $api_url --api-key \$(head -n1 ${api_key_file})"
 
