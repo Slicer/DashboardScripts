@@ -27,7 +27,7 @@ echo "with_itk_dashboard [${with_itk_dashboard}]"
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/kitware/Dashboards/Slicer
 
-# Download and patch the slicer-buildenv-qt5-centos7-slicer-4.11-2018.10.17 image
+# Download and patch the slicer-buildenv-qt5-centos7:latest image
 SLICER_PREVIEW_ENV_NAME=qt5-centos7
 SLICER_PREVIEW_ENV_VERSION=latest
 
@@ -73,7 +73,7 @@ if [ $with_itk_dashboard == 1 ]; then
 fi
 
 #-------------------------------------------------------------------------------
-# Download and patch the slicer-buildenv-qt5-centos7-slicer-4.11-2018.10.17 image
+# Download and patch the slicer-buildenv-qt5-centos7:slicer-4.11-2018.10.17 image
 SLICER_SALT_ENV_NAME=qt5-centos7
 SLICER_SALT_ENV_VERSION=slicer-4.11-2018.10.17
 
