@@ -12,7 +12,7 @@ remote_support_dir="/Volumes/D/Support"
 
 proj_name="slicer_package_manager"
 venv_name="${proj_name}-venv"
-remote_python="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6"
+remote_python="/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7"
 remote_pip="${remote_support_dir}/${venv_name}/bin/pip"
 remote_client="${remote_support_dir}/${venv_name}/bin/slicer_package_manager_client"
 
