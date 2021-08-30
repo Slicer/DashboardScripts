@@ -24,7 +24,7 @@ dashboard_set(CTEST_BUILD_FLAGS     "-j5 -l4")        # Use multiple CPU cores t
 dashboard_set(CTEST_BUILD_CONFIGURATION "Release")
 dashboard_set(EXTENSIONS_BUILDSYSTEM_TESTING FALSE)   # If enabled, build <Slicer_SOURCE_DIR>/Extensions/*.s4ext
 
-dashboard_set(QT_VERSION            "5.15.1")         # Used only to set the build name
+dashboard_set(QT_VERSION            "5.15.2")         # Used only to set the build name
 
 #   Slicer_SOURCE_DIR: <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
