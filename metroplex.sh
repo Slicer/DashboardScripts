@@ -28,7 +28,7 @@ echo "with_itk_dashboard [${with_itk_dashboard}]"
 cd  /home/kitware/Dashboards/Slicer
 
 # Download and patch the slicer-buildenv-qt5-centos7:latest image
-SLICER_PREVIEW_ENV_NAME=qt5-centos7
+SLICER_PREVIEW_ENV_NAME=qt5-centos7-gcc7
 SLICER_PREVIEW_ENV_VERSION=latest
 
 # Download build environment
