@@ -17,7 +17,7 @@ if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Ninja")
-dashboard_set(COMPILER              "g++-5.3.1")      # Used only to set the build name
+dashboard_set(COMPILER              "g++-7.3.1")      # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "")               # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
