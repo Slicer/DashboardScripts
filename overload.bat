@@ -27,7 +27,7 @@ echo IS_WEEKEND[%IS_WEEKEND%]
 :: ----------------------------------------------------------------------------
 :: Clean Slicer settings
 :: ----------------------------------------------------------------------------
-call :fastdel "C:\Users\dashboard\AppData\Roaming\NA-MIC"
+call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer
@@ -52,7 +52,7 @@ if "%IS_WEEKEND%"=="1" (
 :: ----------------------------------------------------------------------------
 :: Clean SlicerSALT settings
 :: ----------------------------------------------------------------------------
-call :fastdel "C:\Users\dashboard\AppData\Roaming\Kitware, Inc"
+call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\Kitware, Inc"
 
 :: ----------------------------------------------------------------------------
 :: Build SlicerSALT
