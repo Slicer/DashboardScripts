@@ -34,7 +34,7 @@ call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Preview' release"
 call :fastdel "D:\D\P\Slicer-0-build"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2019-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2019-slicer_preview_nightly.txt
+"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -78,7 +78,7 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 :slicerextensions_preview_nightly
 ::echo "Slicer 'Preview' release extensions"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2019-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2019-slicerextensions_preview_nightly.txt
+"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------

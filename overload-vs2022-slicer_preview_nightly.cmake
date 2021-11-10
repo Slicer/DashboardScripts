@@ -16,10 +16,10 @@ dashboard_set(GIT_TAG               "master")         # Specify a tag for Stable
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
 endif()
-dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 16 2019")
+dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 17 2022")
 dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "x64")
-dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "v142")
-dashboard_set(COMPILER              "VS2019")         # Used only to set the build name
+dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "v143")
+dashboard_set(COMPILER              "VS2022")         # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "/maxcpucount:4") # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
