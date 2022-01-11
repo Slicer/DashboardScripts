@@ -29,7 +29,7 @@ set -ex
 cd $remote_support_dir
 
 if [[ ! -d ${proj_name} ]]; then
-  git clone git://github.com/girder/slicer_package_manager ${proj_name}
+  git clone https://github.com/girder/slicer_package_manager ${proj_name}
 fi
 
 pushd ${proj_name}
