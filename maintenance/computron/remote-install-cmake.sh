@@ -16,6 +16,19 @@ echo "cmake_version [${cmake_version}]"
 
 remote_support_dir="/D/Support"
 
+x=$(echo $cmake_version | cut -d- -f1 | cut -d. -f1)  # 3 given "3.11.0-rc3"
+y=$(echo $cmake_version | cut -d- -f1 | cut -d. -f2)  # 11 given "3.11.0-rc3"
+z=$(echo $cmake_version | cut -d- -f1 | cut -d. -f3)  # 0 given "3.11.0-rc3"
+
+# Starting with 3.19.2, "macos-universal" is distributed instead of "Darwin-x86_64"
+if [[ $x -ge 3 && $y -ge 19 && $z -ge 2 ]]; then
+  cmake_dirname=cmake-${cmake_version}-macos-universal
+else
+  cmake_dirname=cmake-${cmake_version}-Darwin-x86_64
+fi
+
+echo "cmake_dirname [${cmake_dirname}]"
+
 #------------------------------------------------------------------------------
 # Generate script
 #
@@ -28,13 +41,13 @@ set -ex
 
 cd $remote_support_dir
 
-rm -rf CMake-${cmake_version}.app cmake-${cmake_version}-Darwin-x86_64*
+rm -rf CMake-${cmake_version}.app \$(ls -1 | grep "^${cmake_dirname}")
 
-curl -LO "https://github.com/Kitware/CMake/releases/download/v${cmake_version}/cmake-${cmake_version}-Darwin-x86_64.tar.gz"
-tar -xvf cmake-${cmake_version}-Darwin-x86_64.tar.gz
+curl -LO "https://github.com/Kitware/CMake/releases/download/v${cmake_version}/${cmake_dirname}.tar.gz"
+tar -xvf ${cmake_dirname}.tar.gz
 
-mv cmake-${cmake_version}-Darwin-x86_64/CMake.app CMake-${cmake_version}.app
-rm -rf cmake-${cmake_version}-Darwin-x86_64*
+mv ${cmake_dirname}/CMake.app CMake-${cmake_version}.app
+rm -rf \$(ls -1 | grep "^${cmake_dirname}")
 
 ./CMake-${cmake_version}.app/Contents/bin/cmake --version
 
