@@ -10,8 +10,8 @@ cd  /home/kitware/Dashboards/Slicer
 # Slicer dashboard settings
 docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}"
 docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
-docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
-docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-FALSE}" # XXX Re-enable testing after slicer/slicer-test images have been updated
+docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-TRUE}"
+docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-TRUE}"
 
 # Slicer 'Stable' release
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
