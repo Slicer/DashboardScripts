@@ -43,7 +43,15 @@ dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
-set(TEST_TO_EXCLUDE_REGEX "")
+# Line 194 qSlicerSequencesModule widget has a minimum size hint width of 726px.
+# It is wider than the maximum allowed width of 500px. (maximum allowed width computed as: 500px or 30% of screen width of 1280px)
+set(TEST_TO_EXCLUDE_REGEX "qSlicerSequencesModuleWidgetGenericTest")
+
+# Test fails with "Couldn't mmap icu data file", the error is spcified to the build tree.
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_WebEngine")
+
+# FPE Exception occuring with this module for few years. See https://www.slicer.org/wiki/Developer_Meetings/20140826
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|N4ITKBiasFieldCorrectionTest")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
 ")
