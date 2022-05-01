@@ -16,7 +16,7 @@ docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-
 # Slicer 'Stable' release
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
   --args "${docker_args}" \
-  ctest -S /work/DashboardScripts/metroplex-slicer_500_release_package.cmake -VV -O /work/Logs/metroplex-slicer_500_release_package.log
+  ctest -S /work/DashboardScripts/metroplex-slicer_501_release_package.cmake -VV -O /work/Logs/metroplex-slicer_501_release_package.log
 
 time cp -rp \
   /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/ \

@@ -5,7 +5,7 @@
 :: Build Slicer
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Stable' release"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicer_500_release_package.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicer_500_release_package.txt
+"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicer_501_release_package.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicer_501_release_package.txt
 
 
 robocopy D:\D\S\S-0-build\python-install\Lib\site-packages D:\D\S\S-0-build\python-install\Lib\site-packages.bkp /COPYALL /E
