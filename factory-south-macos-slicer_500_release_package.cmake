@@ -13,6 +13,7 @@ dashboard_set(SCRIPT_MODE           "Experimental")   # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 dashboard_set(GIT_TAG               "v5.0.0") # Specify a tag for Stable release
+set(CTEST_UPDATE_VERSION_ONLY 1)
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
 endif()
