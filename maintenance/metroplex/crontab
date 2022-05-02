@@ -10,7 +10,7 @@
 50 22 * * * (cd /home/kitware/Dashboards/Slicer/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /home/kitware/Dashboards/Slicer/Logs/update-dashboardscripts.log 2>&1)
 
 # 23:00 EDT (4:00am UTC) every day
-0 23 * * * /home/kitware/Dashboards/Slicer/DashboardScripts/metroplex.sh --with-itk-dashboard > /home/kitware/Dashboards/Slicer/Logs/metroplex.log 2>&1
+#0 23 * * * /home/kitware/Dashboards/Slicer/DashboardScripts/metroplex.sh --with-itk-dashboard > /home/kitware/Dashboards/Slicer/Logs/metroplex.log 2>&1
 
 # XXX Disable on 2018.03.30 by Jc: This script is now called from "Slicer/DashboardScripts/metroplex.sh"
 # 00:10 EDT (5:10am UTC) every day

@@ -1,0 +1,5 @@
+#22:50 EDT (2:50 am UTC)- update dashboard scripts
+50 22 * * * (cd /D/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /D/Logs/update-dashboardscripts.log 2>&1)
+
+# 23:00 EDT (3:00 am UTC) - Slicer build and test
+#0 23 * * * /D/DashboardScripts/computron.sh > /D/Logs/computron.log 2>&1

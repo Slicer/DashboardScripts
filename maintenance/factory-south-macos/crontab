@@ -1,16 +1,18 @@
 MAILTO=""
 
-*/1 * * * * /Volumes/Dashboards/SVN2Github/lockrun --quiet --lockfile=/Volumes/Dashboards/SVN2Github/Slicer-SVN2GitHub.lockrun -- /bin/sh /Volumes/Dashboards/SVN2Github/Slicer-SVN2GitHub.sh
-#*/1 * * * * /Volumes/Dashboards/SVN2Github/lockrun --quiet --lockfile=/Volumes/Dashboards/SVN2Github/SlicerRT-SVN2GitHub.lockrun -- /bin/sh /Volumes/Dashboards/SVN2Github/SlicerRT-SVN2GitHub.sh
+# 2020.03.11: Slicer sync disabled by jcfr
+#*/1 * * * * /Volumes/D/SVN2Github/lockrun --quiet --lockfile=/Volumes/D/SVN2Github/Slicer-SVN2GitHub.lockrun -- /bin/sh /Volumes/D/SVN2Github/Slicer-SVN2GitHub.sh
+#*/1 * * * * /Volumes/D/SVN2Github/lockrun --quiet --lockfile=/Volumes/D/SVN2Github/SlicerRT-SVN2GitHub.lockrun -- /bin/sh /Volumes/D/SVN2Github/SlicerRT-SVN2GitHub.sh
 
 # 23:05 EDT (3:05am UTC) every day
-5 23 * * * /Volumes/Dashboards/SlicerGitPush/Slicer-nightly-master-slicerbot.sh
+# 2020.03.11: Slicer sync disabled by jcfr
+#5 23 * * * /Volumes/D/SlicerGitPush/Slicer-nightly-master-slicerbot.sh
 
 # 22:50 EDT (2:50am UTC) every day
-50 22 * * * (cd /Volumes/Dashboards/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /Volumes/Dashboards/Logs/update-dashboardscripts.log 2>&1)
+50 22 * * * (cd /Volumes/D/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /Volumes/D/Logs/update-dashboardscripts.log 2>&1)
 
 # 23:00 EDT (3:00am UTC) every day
-0 23 * * * /Volumes/Dashboards/DashboardScripts/factory-south-macos.sh > /Volumes/Dashboards/Logs/factory-south-macos.log 2>&1
+#0 23 * * * /Volumes/D/DashboardScripts/factory-south-macos.sh > /Volumes/D/Logs/factory-south-macos.log 2>&1
 
 # See https://stackoverflow.com/questions/2135478/how-to-simulate-the-environment-cron-executes-a-script-with#2546509
 #*/1 * * * * env > ~/cronenv
