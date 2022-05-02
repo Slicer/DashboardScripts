@@ -9,9 +9,11 @@ and associated extensions on Linux, macOS and Windows dashboard machines.
 Ultimately, these scripts and dashboards enable researchers across the world not only to [download](http://download.slicer.org)
 both stable and preview releases of 3D Slicer application but also to contribute or install more than hundred extensions.
 
-The overall build infrastructure composed of dashboard machines, CDash server used to collect continuous
-integration results, and also server to host and serve application and extension packages is made possible
-thanks to the on-going support of [Kitware, Inc](https://kitware.com).
+The overall build infrastructure, made possible thanks to the on-going support of [Kitware, Inc.](https://kitware.com), is
+composed of dashboard machines, a [CDash server](https://slicer.cdash.org) used to collect continuous integration results
+organized in two projects `SlicerStable` and `SlicerPreview`, a [backend server](https://slicer-packages.kitware.com/) to
+store & organize both application and extension packages, and a [web frontend](extensions.slicer.org) to present extensions
+to the user.
 
 Additionally, this project also provides tooling and instructions to (1) facilitate the maintenance of these script,
 (2) update and backup associated _job scheduling configuration_, and (3) update software installed on each dashboards.
