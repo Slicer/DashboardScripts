@@ -18,6 +18,7 @@ time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicer_501_release_package.cmake -VV -O /work/Logs/metroplex-slicer_501_release_package.log
 
+# Backup 'site-packages' directory associated with Slicer 'Stable' build
 time cp -rp \
   /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/ \
   /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/
