@@ -37,6 +37,12 @@ call :fastdel "D:\D\P\Slicer-0-build"
 "C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
+:: Restore 'site-packages' directory associated with Slicer 'Stable' build
+:: ----------------------------------------------------------------------------
+call :fastdel "D:\D\S\S-0-build\python-install\Lib\site-packages"
+robocopy D:\D\S\S-0-build\python-install\Lib\site-packages.bkp D:\D\S\S-0-build\python-install\Lib\site-packages /E
+
+:: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
 call :fastdel "D:\D\P\S-0-E-b"

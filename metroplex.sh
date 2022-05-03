@@ -59,6 +59,12 @@ time ${slicer_preview_script} \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
+# Restore 'site-packages' directory associated with Slicer 'Stable' build
+rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
+cp -rp \
+  /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/ \
+  /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
+
 # Slicer 'Stable' release extensions
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
    --args "${docker_args}" \
