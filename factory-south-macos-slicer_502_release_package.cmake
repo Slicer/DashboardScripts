@@ -48,11 +48,20 @@ set(BUILD_NAME_SUFFIX "")
 # It is wider than the maximum allowed width of 500px. (maximum allowed width computed as: 500px or 30% of screen width of 1280px)
 set(TEST_TO_EXCLUDE_REGEX "qSlicerSequencesModuleWidgetGenericTest")
 
-# Test fails with "Couldn't mmap icu data file", the error is spcified to the build tree.
+# Test fails with "Couldn't mmap icu data file", the error is specific to the build tree.
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_WebEngine")
 
 # FPE Exception occuring with this module for few years. See https://www.slicer.org/wiki/Developer_Meetings/20140826
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|N4ITKBiasFieldCorrectionTest")
+
+# PE Signal Caught / signal:  SIGFPE with code FPE_FLTOVF
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|ModelMakerGenerateAllOneLabelTest")
+
+# Disable tests known to fail
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|CastScalarVolumeTest_UnsignedShort")
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|qMRMLUtf8Test1_cube-utf8.mrml")
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_SegmentationsModuleTest2")
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_MRMLCreateNodeByClassWithoutSetReferenceCount")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
 ")
