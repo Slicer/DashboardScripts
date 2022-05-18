@@ -9,7 +9,7 @@ MAILTO=""
 #5 23 * * * /Volumes/D/SlicerGitPush/Slicer-nightly-master-slicerbot.sh
 
 # 22:50 EDT (2:50am UTC) every day
-50 22 * * * (cd /Volumes/D/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /Volumes/D/Logs/update-dashboardscripts.log 2>&1)
+50 22 * * * (cd /Volumes/D/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/main > /Volumes/D/Logs/update-dashboardscripts.log 2>&1)
 
 # 23:00 EDT (3:00am UTC) every day
 0 23 * * * /Volumes/D/DashboardScripts/factory-south-macos.sh > /Volumes/D/Logs/factory-south-macos.log 2>&1

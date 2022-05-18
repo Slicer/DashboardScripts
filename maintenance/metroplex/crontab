@@ -7,7 +7,7 @@
 0 21 * * 0 /home/kitware/Dashboards/Slicer/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh -y > /home/kitware/Dashboards/Slicer/Logs/clean-nightly-slicer-package-manager-log.txt 2>&1
 
 # 22:50 EDT (3:50am UTC) every day
-50 22 * * * (cd /home/kitware/Dashboards/Slicer/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /home/kitware/Dashboards/Slicer/Logs/update-dashboardscripts.log 2>&1)
+50 22 * * * (cd /home/kitware/Dashboards/Slicer/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/main > /home/kitware/Dashboards/Slicer/Logs/update-dashboardscripts.log 2>&1)
 
 # 23:00 EDT (4:00am UTC) every day
 0 23 * * * /home/kitware/Dashboards/Slicer/DashboardScripts/metroplex.sh --with-itk-dashboard > /home/kitware/Dashboards/Slicer/Logs/metroplex.log 2>&1
