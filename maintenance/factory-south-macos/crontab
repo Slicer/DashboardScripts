@@ -12,7 +12,7 @@ MAILTO=""
 50 22 * * * (cd /Volumes/D/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/master > /Volumes/D/Logs/update-dashboardscripts.log 2>&1)
 
 # 23:00 EDT (3:00am UTC) every day
-#0 23 * * * /Volumes/D/DashboardScripts/factory-south-macos.sh > /Volumes/D/Logs/factory-south-macos.log 2>&1
+0 23 * * * /Volumes/D/DashboardScripts/factory-south-macos.sh > /Volumes/D/Logs/factory-south-macos.log 2>&1
 
 # See https://stackoverflow.com/questions/2135478/how-to-simulate-the-environment-cron-executes-a-script-with#2546509
 #*/1 * * * * env > ~/cronenv
