@@ -28,13 +28,6 @@ source $dashboard_dir/../common/remote_execute.sh
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# Set script properties
-#
-remote_build_env_root_dir="/home/kitware/Dashboards/Slicer"
-remote_support_dir="$remote_build_env_root_dir/Support"
-proj_name="slicer_package_manager"
-
-#------------------------------------------------------------------------------
 # Generate script
 #
 script_name=$(basename $0)-download-source
@@ -43,17 +36,6 @@ cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 set -ex
 
 [[ \$(hostname) != "${remote_hostname}" ]] && exit 1
-
-cd $remote_support_dir
-
-if [[ ! -d ${proj_name} ]]; then
-  git clone https://github.com/girder/slicer_package_manager ${proj_name}
-fi
-
-pushd ${proj_name}
-git fetch origin
-git reset --hard origin/master
-popd
 
 REMOTE_SCRIPT_EOF
 
@@ -72,6 +54,10 @@ SLICER_PREVIEW_ENV_VERSION=latest
 #------------------------------------------------------------------------------
 # Set script properties
 #
+proj_name="slicer_package_manager"
+remote_build_env_root_dir="/home/kitware/Dashboards/Slicer"
+remote_support_dir="$remote_build_env_root_dir/Support"
+
 venv_name="${proj_name}-venv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}"
 remote_build_env_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
 
@@ -147,8 +133,7 @@ if [[ ! -d ${venv_name} ]]; then
   ${remote_python} -m venv ${venv_name}
 fi
 
-$remote_pip install -U bson girder_client
-$remote_pip install -U ${remote_support_dir}/${proj_name}/python_client
+$remote_pip install -U slicer-package-manager-client
 
 $remote_client --help
 

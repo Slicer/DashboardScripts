@@ -28,22 +28,11 @@ set -ex
 
 cd $remote_support_dir
 
-if [[ ! -d ${proj_name} ]]; then
-  git clone https://github.com/girder/slicer_package_manager ${proj_name}
-fi
-
-pushd ${proj_name}
-git fetch origin
-git reset --hard origin/master
-popd
-
-
 if [[ ! -d ${venv_name} ]]; then
   ${remote_python} -m venv ${venv_name}
 fi
 
-$remote_pip install -U bson girder_client
-$remote_pip install -U ${remote_support_dir}/${proj_name}/python_client
+$remote_pip install -U slicer-package-manager-client
 
 $remote_client --help
 
