@@ -56,7 +56,7 @@ done
 
 ```
 
-5. On metroplex and if it applies, create a new `slicer-buildenv-*` script corresponding to the [tagged build environment image](https://github.com/Slicer/SlicerBuildEnvironment/blob/master/README.rst#maintainers)
+5. On metroplex and if it applies, create a new `slicer-buildenv-*` script corresponding to the [tagged build environment image](https://github.com/Slicer/SlicerBuildEnvironment/blob/main/README.rst#maintainers)
 
 A new script must created for both major and minor Slicer release.
 For patch release, if the environment did not change, no new script is needed.

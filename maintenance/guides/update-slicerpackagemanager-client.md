@@ -39,7 +39,7 @@ make remote-install-slicerpackagemanager-client
 [[ ! -d /d/Support/slicer_package_manager ]] && cd /d/Support && git clone https://github.com/girder/slicer_package_manager
 cd /d/Support/slicer_package_manager
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 4. Open a command line terminal
