@@ -84,8 +84,8 @@ by [Kitware, Inc](https://kitware.com).
 If you would like to setup nighly build independently, templates used to create each build scripts are
 available in the Slicer source repository:
 
-* [SlicerDashboardScript.TEMPLATE.cmake](https://github.com/Slicer/Slicer/blob/master/CMake/SlicerDashboardScript.TEMPLATE.cmake)
-* [SlicerExtensionsDashboardScript.TEMPLATE.cmake](https://github.com/Slicer/Slicer/blob/master/Extensions/CMake/SlicerExtensionsDashboardScript.TEMPLATE.cmake)
+* [SlicerDashboardScript.TEMPLATE.cmake](https://github.com/Slicer/Slicer/blob/main/CMake/SlicerDashboardScript.TEMPLATE.cmake)
+* [SlicerExtensionsDashboardScript.TEMPLATE.cmake](https://github.com/Slicer/Slicer/blob/main/Extensions/CMake/SlicerExtensionsDashboardScript.TEMPLATE.cmake)
 
 Reading the [Dashboard Setup tutorial](https://www.slicer.org/wiki/Documentation/Nightly/Developers/Tutorials/DashboardSetup)
 and [Developers/FAQ/Dashboard](https://www.slicer.org/wiki/Documentation/Nightly/Developers/FAQ/Dashboard) can be helpful
