@@ -81,7 +81,7 @@ fi
 #-------------------------------------------------------------------------------
 # Download and patch the slicer-buildenv-qt5-centos7:slicer-4.11-2018.10.17 image
 SLICER_SALT_ENV_NAME=qt5-centos7
-SLICER_SALT_ENV_VERSION=slicer-4.11-2018.10.17
+SLICER_SALT_ENV_VERSION=latest
 
 # Download build environment
 slicer_salt_script=/home/kitware/bin/slicer-buildenv-${SLICER_SALT_ENV_NAME}-${SLICER_SALT_ENV_VERSION}

@@ -14,10 +14,10 @@ dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)revie
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Ninja")
-dashboard_set(COMPILER              "g++-5.3.1")      # Used only to set the build name
+dashboard_set(COMPILER              "g++-7.3.1")      # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "")               # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -52,6 +52,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 CMAKE_JOB_POOLS:STRING=compile=16;link=8
 CMAKE_JOB_POOL_COMPILE:STRING=compile
 CMAKE_JOB_POOL_LINK:STRING=link
+Slicer_VTK_VERSION_MAJOR:STRING=9
 ")
 
 # Custom settings
@@ -61,7 +62,7 @@ include("${DASHBOARDS_DIR}/Support/Kitware-SlicerSALTPackagesCredential.cmake")
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
 if(NOT DEFINED DRIVER_SCRIPT)
-  set(url http://svn.slicer.org/Slicer4/trunk/CMake/SlicerDashboardDriverScript.cmake)
+  set(url https://raw.githubusercontent.com/Slicer/Slicer/main/CMake/SlicerDashboardDriverScript.cmake)
   set(dest ${DASHBOARDS_DIR}/${EXTENSION_DASHBOARD_SUBDIR}/${CTEST_SCRIPT_NAME}.driver)
   file(DOWNLOAD ${url} ${dest} STATUS status)
   if(NOT status MATCHES "0.*")
