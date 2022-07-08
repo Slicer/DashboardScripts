@@ -16,7 +16,7 @@ docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-
 # Slicer 'Stable' release
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
   --args "${docker_args}" \
-  ctest -S /work/DashboardScripts/metroplex-slicer_502_release_package.cmake -VV -O /work/Logs/metroplex-slicer_502_release_package.log
+  ctest -S /work/DashboardScripts/metroplex-slicer_503_release_package.cmake -VV -O /work/Logs/metroplex-slicer_503_release_package.log
 
 # Backup 'site-packages' directory associated with Slicer 'Stable' build
 time cp -rp \
