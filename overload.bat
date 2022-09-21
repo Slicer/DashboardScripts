@@ -33,7 +33,7 @@ call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
 :: Build Slicer
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Preview' release"
-call :fastdel "D:\D\P\Slicer-0-build"
+call :fastdel "D:\D\P\S-0-build"
 "C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicer_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
