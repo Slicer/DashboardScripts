@@ -9,7 +9,7 @@ dashboard_set(DASHBOARDS_DIR        "D:/D/")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "overload")
 dashboard_set(OPERATING_SYSTEM      "Windows10")
-dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
+dashboard_set(SCRIPT_MODE           "Experimental")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages

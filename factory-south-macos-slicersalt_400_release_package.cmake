@@ -9,7 +9,7 @@ dashboard_set(DASHBOARDS_DIR        "/Volumes/D")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "factory-south-macos")
 dashboard_set(OPERATING_SYSTEM      "macOS")
-dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
+dashboard_set(SCRIPT_MODE           "Experimental")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
@@ -34,7 +34,7 @@ dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-build
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
-dashboard_set(Slicer_DIRECTORY_BASENAME   "SSALT")
+dashboard_set(Slicer_DIRECTORY_BASENAME   "SA")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build

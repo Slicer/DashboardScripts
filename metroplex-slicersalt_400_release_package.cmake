@@ -9,7 +9,7 @@ dashboard_set(DASHBOARDS_DIR        "/work")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
 dashboard_set(HOSTNAME              "metroplex")
 dashboard_set(OPERATING_SYSTEM      "Linux")
-dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
+dashboard_set(SCRIPT_MODE           "Experimental")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "Stable")        # (E)xperimental, (P)review or (S)table
 # TODO: Re-enable packaging when automatic upload to Girder will be implemented
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
