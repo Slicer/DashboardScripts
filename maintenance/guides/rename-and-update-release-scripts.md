@@ -92,8 +92,8 @@ gedit \
   factory-south-macos-slicerextensions_stable_nightly.cmake \
   metroplex-slicer_${TO_XYZ}_release_package.cmake \
   metroplex-slicerextensions_stable_nightly.cmake \
-  overload-vs2015-slicer_${TO_XYZ}_release_package.cmake \
-  overload-vs2015-slicerextensions_stable_nightly.cmake
+  overload-vs*-slicer_${TO_XYZ}_release_package.cmake \
+  overload-vs*-slicerextensions_stable_nightly.cmake
 ```
 
 * `GIT_TAG` should be set to the tag corresponding to Slicer version <TO_DOT>
