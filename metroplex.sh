@@ -66,7 +66,7 @@ cp -rp \
   /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
 
 # Slicer 'Stable' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.2 \
    --args "${docker_args}" \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 

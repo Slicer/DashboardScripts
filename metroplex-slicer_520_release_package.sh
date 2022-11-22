@@ -14,9 +14,9 @@ docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-TRUE}"
 docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-TRUE}"
 
 # Slicer 'Stable' release
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.2 \
   --args "${docker_args}" \
-  ctest -S /work/DashboardScripts/metroplex-slicer_503_release_package.cmake -VV -O /work/Logs/metroplex-slicer_503_release_package.log
+  ctest -S /work/DashboardScripts/metroplex-slicer_520_release_package.cmake -VV -O /work/Logs/metroplex-slicer_520_release_package.log
 
 # Backup 'site-packages' directory associated with Slicer 'Stable' build
 time cp -rp \
@@ -24,7 +24,7 @@ time cp -rp \
   /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/
 
 # Slicer 'Stable' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.0 \
+time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.2 \
    --args "${docker_args}" \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
