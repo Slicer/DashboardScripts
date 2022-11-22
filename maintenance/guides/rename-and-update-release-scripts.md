@@ -43,7 +43,6 @@ for script in \
     metroplex.sh \
     overload.bat \
     $(find -name "*slicerextensions_stable_nightly.cmake" -not -path ".git") \
-    $(find -name "*.*" -not -path ".git" | grep $TO_XY) \
     $(find -name "*.*" -not -path ".git" | grep $TO_XYZ) \
   ; do
   echo "Updating $script"
