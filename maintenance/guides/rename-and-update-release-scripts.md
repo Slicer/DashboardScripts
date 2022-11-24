@@ -15,8 +15,8 @@ cd DashboardScripts
 2. Update `FROM_DOT` and `TO_DOT` variables and execute the following statements:
 
 ```
-FROM_DOT=4.10.2
-TO_DOT=5.0.0
+FROM_DOT=5.2.0
+TO_DOT=5.2.1
 
 FROM_DOT_XY=${FROM_DOT%.*}
 TO_DOT_XY=${TO_DOT%.*}
@@ -30,11 +30,16 @@ TO_XY=$(echo $TO_DOT_XY | sed "s/\.//g")
 echo "FROM_DOT [$FROM_DOT] FROM_DOT_XY [$FROM_DOT_XY] FROM_XYZ [$FROM_XYZ] FROM_XY [$FROM_XY]"
 echo "  TO_DOT [$TO_DOT]   TO_DOT_XY [$TO_DOT_XY]   TO_XYZ [$TO_XYZ]   TO_XY [$TO_XY]"
 
-# Copy scripts <host>_slicer_<FROM_XYZ>.* to  <host>_slicer_<TO_XYZ>.*
-  new_script=$(echo $script | sed "s/$FROM_XYZ/$TO_XYZ/g");
-for script in $(find -not -path "./.git/*" -not -name ".git*" | grep "slicer\_" | grep $FROM_XYZ);  do
-  echo "Renamed $script to  $new_script"
-  mv $script $new_script
+# Copy scripts <host>_slicer_<FROM_XYZ|FROM_XY>.* to  <host>_slicer_<TO_XY>.*
+for script in $(find -not -path "./.git/*" -not -name ".git*" | grep "slicer\_" | grep $FROM_XY);  do
+  new_script=$(echo $script | sed "s/$FROM_XYZ/$TO_XY/g");
+  new_script=$(echo $new_script | sed "s/$FROM_XY/$TO_XY/g");
+  if [[ "$script" == "$new_script" ]]; then
+    echo "Found $new_script"
+  else
+    echo "Renamed $script to $new_script"
+    mv $script $new_script
+  fi
 done
 
 # Update version references in scripts
@@ -43,7 +48,7 @@ for script in \
     metroplex.sh \
     overload.bat \
     $(find -name "*slicerextensions_stable_nightly.cmake" -not -path "./.git/*" -not -name ".git*") \
-    $(find -not -path "./.git/*" -not -name ".git*" | grep $TO_XYZ) \
+    $(find -not -path "./.git/*" -not -name ".git*" | grep $TO_XY) \
   ; do
   echo "Updating $script"
   sed -i -e "s/$FROM_DOT/$TO_DOT/g" $script
@@ -51,8 +56,6 @@ for script in \
   sed -i -e "s/$FROM_XYZ/$TO_XYZ/g" $script
   sed -i -e "s/$FROM_XY/$TO_XY/g" $script
 done
-
-
 ```
 
 5. On metroplex and if it applies, create a new `slicer-buildenv-*` script corresponding to the [tagged build environment image](https://github.com/Slicer/SlicerBuildEnvironment/blob/main/README.rst#maintainers)
@@ -80,7 +83,7 @@ Finally, if it applies, update nightly and release scripts:
 ```
 gedit \
   metroplex.sh \
-  metroplex-slicer_${TO_XYZ}_release_package.sh
+  metroplex-slicer_${TO_XY}_release_package.sh
 ```
 
 
@@ -88,11 +91,11 @@ gedit \
 
 ```
 gedit \
-  factory-south-macos-slicer_${TO_XYZ}_release_package.cmake \
+  factory-south-macos-slicer_${TO_XY}_release_package.cmake \
   factory-south-macos-slicerextensions_stable_nightly.cmake \
-  metroplex-slicer_${TO_XYZ}_release_package.cmake \
+  metroplex-slicer_${TO_XY}_release_package.cmake \
   metroplex-slicerextensions_stable_nightly.cmake \
-  overload-vs*-slicer_${TO_XYZ}_release_package.cmake \
+  overload-vs*-slicer_${TO_XY}_release_package.cmake \
   overload-vs*-slicerextensions_stable_nightly.cmake
 ```
 
@@ -102,5 +105,9 @@ gedit \
 
 ```
 git add -A
-git commit -m "Rename and update Slicer release scripts from $FROM_DOT to $TO_DOT"
+if [[ "${TO_XY}" != "${FROM_XY}" ]]; then
+  git commit -m "Rename and update Slicer release scripts from $FROM_DOT to $TO_DOT"
+else
+  git commit -m "slicer $TO_DOT_XY: Update release scripts from $FROM_DOT to $TO_DOT"
+fi
 ```
