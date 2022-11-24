@@ -12,7 +12,7 @@ dashboard_set(OPERATING_SYSTEM      "Windows10")
 dashboard_set(SCRIPT_MODE           "Experimental")   # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
-dashboard_set(GIT_TAG               "v5.2.0")         # Specify a tag for Stable release
+dashboard_set(GIT_TAG               "v5.2.1")         # Specify a tag for Stable release
 set(CTEST_UPDATE_VERSION_ONLY 1)
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
@@ -39,7 +39,7 @@ dashboard_set(Qt5_DIR             "D:/Support/Qt2/${QT_VERSION}/msvc2019_64/lib/
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
 dashboard_set(Slicer_DIRECTORY_BASENAME   "S")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
-# 0: 520
+# 0: 521
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 
