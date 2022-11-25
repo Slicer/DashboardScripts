@@ -32,4 +32,4 @@ slicersalt_docker_args+=" -e run_ctest_with_test=${run_slicersalt_ctest_with_tes
 # Slicer 'Stable' release
 time ${slicer_salt_script} \
   --args "${slicersalt_docker_args}" \
-  ctest -S /work/DashboardScripts/metroplex-slicersalt_400_release_package.cmake -VV -O /work/Logs/metroplex-slicersalt_400_release_package.log
+  ctest -S /work/DashboardScripts/metroplex-slicersalt_40_release_package.cmake -VV -O /work/Logs/metroplex-slicersalt_40_release_package.log
