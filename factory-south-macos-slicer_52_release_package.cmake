@@ -61,7 +61,6 @@ set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|ModelMakerGenerateAllOneLabe
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|CastScalarVolumeTest_UnsignedShort")
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|qMRMLUtf8Test1_cube-utf8.mrml")
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_SegmentationsModuleTest2")
-set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_MRMLCreateNodeByClassWithoutSetReferenceCount")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
 ")
