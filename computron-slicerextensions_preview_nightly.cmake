@@ -13,10 +13,10 @@ dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
 dashboard_set(EXTENSIONS_INDEX_BRANCH "main")       # "main", X.Y, ...
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-dashboard_set(COMPILER              "clang-11.0.3")    # Used only to set the build name
+dashboard_set(COMPILER              "clang-14.0.0")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -24,7 +24,7 @@ dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores t
 dashboard_set(CTEST_BUILD_CONFIGURATION "Release")
 dashboard_set(EXTENSIONS_BUILDSYSTEM_TESTING FALSE)   # If enabled, build <Slicer_SOURCE_DIR>/Extensions/*.s4ext
 
-dashboard_set(QT_VERSION            "5.15.2")         # Used only to set the build name
+dashboard_set(QT_VERSION            "5.15.8")         # Used only to set the build name
 
 #   Slicer_SOURCE_DIR: <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build

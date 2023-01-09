@@ -12,12 +12,6 @@ rm -rf /Users/kitware/Library/Application\ Support/CrashReporter/*
 # Clear "Saved Application State" specific to Slicer
 rm -rf /Users/kitware/Library/Saved\ Application\ State/org.slicer.slicer.savedState/
 
-# Slicer 'Preview' release
-/Volumes/D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /Volumes/D/DashboardScripts/factory-south-macos-slicer_preview_nightly.cmake -VV -O /Volumes/D/Logs/factory-south-macos-slicer_preview_nightly.log
-
-# Slicer 'Preview' release extensions
-/Volumes/D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /Volumes/D/DashboardScripts/factory-south-macos-slicerextensions_preview_nightly.cmake -VV -O /Volumes/D/Logs/factory-south-macos-slicerextensions_preview_nightly.log
-
 # Restore 'site-packages' directory associated with Slicer 'Stable' build
 rm -rf /Volumes/D/S/S-0-build/python-install/lib/python3.9/site-packages
 cp -rp \
