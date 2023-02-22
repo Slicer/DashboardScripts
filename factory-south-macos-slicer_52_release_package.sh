@@ -9,6 +9,11 @@ rm -rf /Users/kitware/Library/Application\ Support/CrashReporter/*
 # Clear "Saved Application State" specific to Slicer
 rm -rf /Users/kitware/Library/Saved\ Application\ State/org.slicer.slicer.savedState/
 
+# Remove source and build directories
+rm -rf /Volumes/D/S/S-0
+rm -rf /Volumes/D/S/S-0-build
+rm -rf /Volumes/D/S/S-0-E-b
+
 # Slicer 'Stable' release
 /Volumes/D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /Volumes/D/DashboardScripts/factory-south-macos-slicer_52_release_package.cmake -VV -O /Volumes/D/Logs/factory-south-macos-slicer_52_release_package.log
 

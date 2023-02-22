@@ -13,6 +13,11 @@ docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
 docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-TRUE}"
 docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-TRUE}"
 
+# Remove source and build directories
+rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0
+rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build
+rm -rf /home/kitware/Dashboards/Slicer/Stable/S-0-E-b
+
 # Slicer 'Stable' release
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.2 \
   --args "${docker_args}" \

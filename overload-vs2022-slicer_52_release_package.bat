@@ -7,6 +7,13 @@
 call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
 
 :: ----------------------------------------------------------------------------
+:: Remove source and build directories
+:: ----------------------------------------------------------------------------
+call :fastdel "D:\D\S\S-0"
+call :fastdel "D:\D\S\S-0-build"
+call :fastdel "D:\D\S\S-0-E-b"
+
+:: ----------------------------------------------------------------------------
 :: Build Slicer
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Stable' release"
