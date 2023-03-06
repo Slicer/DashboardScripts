@@ -4,6 +4,7 @@
 
 # Clear Slicer settings
 rm -rf /Users/kitware/.config/www.na-mic.org/
+rm -rf /Users/kitware/.config/www.slicer.org/
 
 # Clear reports to help avoid "The last time you opened ... Do you want to try to reopen its windows again?" dialog
 rm -rf /Users/kitware/Library/Application\ Support/CrashReporter/*

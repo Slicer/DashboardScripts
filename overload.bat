@@ -28,6 +28,7 @@ echo IS_WEEKEND[%IS_WEEKEND%]
 :: Clean Slicer settings
 :: ----------------------------------------------------------------------------
 call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
+call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\Slicer"
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer
