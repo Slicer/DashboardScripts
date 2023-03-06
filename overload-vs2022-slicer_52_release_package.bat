@@ -5,6 +5,7 @@
 :: Clean Slicer settings
 :: ----------------------------------------------------------------------------
 call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
+call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\Slicer"
 
 :: ----------------------------------------------------------------------------
 :: Remove source and build directories
