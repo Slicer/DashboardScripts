@@ -46,14 +46,11 @@ dashboard_set(EXTENSIONS_INDEX_GIT_REPOSITORY "https://github.com/Slicer/Extensi
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
-set(ENV{run_extension_ctest_with_packages} 0)
-
-
 set(ADDITIONAL_CMAKECACHE_OPTION "
 ")
 
 # Custom settings
-# include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
+include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{FC} "/Users/svc-dashboard/D/Support/miniconda3/envs/gfortran-env/bin/gfortran") # For LAPACKE
 
 ##########################################
