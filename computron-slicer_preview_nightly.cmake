@@ -43,7 +43,6 @@ dashboard_set(CTEST_BINARY_DIRECTORY "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDI
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
 
-
 # Line 194 qSlicerSequencesModule widget has a minimum size hint width of 726px.
 # It is wider than the maximum allowed width of 5.2px. (maximum allowed width computed as: 5.2px or 30% of screen width of 1280px)
 set(TEST_TO_EXCLUDE_REGEX "qSlicerSequencesModuleWidgetGenericTest")
