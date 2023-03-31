@@ -66,6 +66,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
+set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
