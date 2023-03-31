@@ -11,7 +11,7 @@ dashboard_set(HOSTNAME              "computron")
 dashboard_set(OPERATING_SYSTEM      "macOS")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
-dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
+dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 dashboard_set(GIT_TAG               "main")         # Specify a tag for Stable release
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
