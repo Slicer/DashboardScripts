@@ -19,8 +19,5 @@ rm -rf /Users/svc-dashboard/Library/Saved\ Application\ State/org.slicer.slicer.
 # Slicer 'Preview' release extensions
 /D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicerextensions_preview_nightly.cmake -VV -O /D/Logs/factory-south-macos-slicerextensions_preview_nightly.log
 
-# Restore 'site-packages' directory associated with Slicer 'Stable' build
-# TODO
-
 # Slicer 'Stable' release extensions
-# TODO
+# TODO: See factory-south-macos.sh
