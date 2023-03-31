@@ -16,7 +16,7 @@ if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-dashboard_set(COMPILER              "clang-14.0.0")    # Used only to set the build name
+dashboard_set(COMPILER              "clang-14.0.6")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -47,12 +47,19 @@ dashboard_set(EXTENSIONS_INDEX_GIT_REPOSITORY "https://github.com/Slicer/Extensi
 set(BUILD_NAME_SUFFIX "")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
+CMAKE_C_COMPILER:FILEPATH=/D/Support/clang+llvm-14.0.6-x86_64-apple-darwin/bin/clang
+CMAKE_CXX_COMPILER:FILEPATH=/D/Support/clang+llvm-14.0.6-x86_64-apple-darwin/bin/clang++
 ")
 
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 set(ENV{FC} "/Users/svc-dashboard/D/Support/miniconda3/envs/gfortran-env/bin/gfortran") # For LAPACKE
+
+# This will ensure compiler paths specified using the cache variable are used
+# consistently.
+set(ENV{CC} "/dev/null")
+set(ENV{CXX} "/dev/null")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
