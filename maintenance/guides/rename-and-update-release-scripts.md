@@ -44,6 +44,7 @@ done
 
 # Update version references in scripts
 for script in \
+    computron.sh \
     factory-south-macos.sh \
     metroplex.sh \
     overload.bat \
@@ -57,6 +58,18 @@ for script in \
   sed -i -e "s/$FROM_XY/$TO_XY/g" $script
 done
 ```
+
+3. To account for transition from `factory-south-macos` to `computron`:
+
+  * Update `slicerextensions_stable_nightly.cmake` script:
+
+    ```
+    mv factory-south-macos-slicerextensions_stable_nightly.cmake computron-slicerextensions_stable_nightly.cmake
+    ```
+
+  * Update the script based on the content of `computron-slicerextensions_preview_nightly.cmake`
+
+  * Update `computron.sh` to also include build of `Stable` extensions.
 
 5. On metroplex and if it applies, create a new `slicer-buildenv-*` script corresponding to the [tagged build environment image](https://github.com/Slicer/SlicerBuildEnvironment/blob/main/README.rst#maintainers)
 
@@ -91,8 +104,8 @@ gedit \
 
 ```
 gedit \
-  factory-south-macos-slicer_${TO_XY}_release_package.cmake \
-  factory-south-macos-slicerextensions_stable_nightly.cmake \
+  computron-slicer_${TO_XY}_release_package.cmake \
+  computron-slicerextensions_stable_nightly.cmake \
   metroplex-slicer_${TO_XY}_release_package.cmake \
   metroplex-slicerextensions_stable_nightly.cmake \
   overload-vs*-slicer_${TO_XY}_release_package.cmake \
