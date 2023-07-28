@@ -98,7 +98,7 @@ Finally, on macOS
 rm -rf /D/P/S-0-E-b
 
 # Start build
-/Volumes/D/DashboardScripts/computron.sh > /D/Logs/computron.log 2>&1
+/D/DashboardScripts/computron.sh > /D/Logs/computron.log 2>&1
 ```
 
 and on Linux:
