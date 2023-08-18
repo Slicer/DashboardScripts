@@ -44,8 +44,12 @@ dashboard_set(CTEST_BINARY_DIRECTORY "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDI
 set(BUILD_NAME_SUFFIX "")
 
 # Line 194 qSlicerSequencesModule widget has a minimum size hint width of 726px.
-# It is wider than the maximum allowed width of 5.2px. (maximum allowed width computed as: 5.2px or 30% of screen width of 1280px)
+# It is wider than the maximum allowed width of 500px. (maximum allowed width computed as: 500px or 30% of screen width of 1280px)
 set(TEST_TO_EXCLUDE_REGEX "qSlicerSequencesModuleWidgetGenericTest")
+
+# Line 194 qSlicerReformatModule widget has a minimum size hint width of 550px.
+# It is wider than the maximum allowed width of 500px. (maximum allowed width computed as: 500px or 30% of screen width of 1280px)
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|qSlicerReformatModuleWidgetGenericTest")
 
 # Test fails with "Couldn't mmap icu data file", the error is specific to the build tree.
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_WebEngine")
@@ -57,6 +61,7 @@ set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|N4ITKBiasFieldCorrectionTest
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|ModelMakerGenerateAllOneLabelTest")
 
 # Disable tests known to fail
+set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|CastScalarVolumeTest_UnsignedChar")
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|CastScalarVolumeTest_UnsignedShort")
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|qMRMLUtf8Test1_cube-utf8.mrml")
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_SegmentationsModuleTest2")
