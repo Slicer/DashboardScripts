@@ -30,6 +30,7 @@ dashboard_set(QT_VERSION            "5.15.8")         # Used only to set the bui
 #   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
 dashboard_set(Slicer_DIRECTORY_BASENAME   "S")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
+
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 dashboard_set(Slicer_SOURCE_DIR "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${Slicer_DIRECTORY_BASENAME}-${Slicer_DIRECTORY_IDENTIFIER}")
@@ -45,6 +46,8 @@ dashboard_set(EXTENSIONS_INDEX_GIT_REPOSITORY "https://github.com/Slicer/Extensi
 
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
+
+#set(run_ctest_with_test 0)
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
 CMAKE_C_COMPILER:FILEPATH=/D/Support/clang+llvm-14.0.6-x86_64-apple-darwin/bin/clang

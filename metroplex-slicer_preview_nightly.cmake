@@ -13,6 +13,7 @@ dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "Preview")        # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
 dashboard_set(GIT_TAG               "main")         # Specify a tag for Stable release
+
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13")
 endif()
@@ -36,6 +37,7 @@ dashboard_set(Qt5_DIR             "$ENV{Qt5_DIR}")
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
 dashboard_set(Slicer_DIRECTORY_BASENAME   "Slicer")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
+
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 
