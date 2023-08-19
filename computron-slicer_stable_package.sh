@@ -11,8 +11,9 @@ rm -rf /Users/kitware/Library/Application\ Support/CrashReporter/*
 rm -rf /Users/kitware/Library/Saved\ Application\ State/org.slicer.slicer.savedState/
 
 # Remove source and build directories
+# Note: Hyper-short name required on computron (S-0-build -> A)
 rm -rf /D/S/S-0
-rm -rf /D/S/S-0-build
+rm -rf /D/S/A
 rm -rf /D/S/S-0-E-b
 
 # Slicer 'Stable' release
