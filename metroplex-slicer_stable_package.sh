@@ -21,7 +21,7 @@ rm -rf /home/kitware/Dashboards/Slicer/Stable/S-0-E-b
 # Slicer 'Stable' release
 time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.2 \
   --args "${docker_args}" \
-  ctest -S /work/DashboardScripts/metroplex-slicer_52_release_package.cmake -VV -O /work/Logs/metroplex-slicer_52_release_package.log
+  ctest -S /work/DashboardScripts/metroplex-slicer_stable_package.cmake -VV -O /work/Logs/metroplex-slicer_stable_package.log
 
 # Backup 'site-packages' directory associated with Slicer 'Stable' build
 time cp -rp \
