@@ -7,7 +7,7 @@ endmacro()
 
 dashboard_set(DASHBOARDS_DIR        "/D")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
-dashboard_set(HOSTNAME              "computron-macos-tests")
+dashboard_set(HOSTNAME              "computron")
 dashboard_set(OPERATING_SYSTEM      "macOS")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
