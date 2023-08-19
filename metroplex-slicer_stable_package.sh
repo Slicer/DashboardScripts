@@ -7,6 +7,16 @@ echo "Job started at: $(date +'%T %D %Z')"
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/kitware/Dashboards/Slicer
 
+SLICER_PREVIEW_ENV_NAME=qt5-centos7
+SLICER_PREVIEW_ENV_VERSION=slicer-5.4
+
+# Download build environment
+slicer_stable_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
+if [[ ! -f ${slicer_stable_script} ]]; then
+  docker run --rm slicer/buildenv-${SLICER_PREVIEW_ENV_NAME}:${SLICER_PREVIEW_ENV_VERSION} > $slicer_stable_script
+  chmod +x $slicer_stable_script
+fi
+
 # Slicer dashboard settings
 docker_args="-e run_ctest_with_disable_clean=${run_ctest_with_disable_clean-FALSE}"
 docker_args+=" -e run_ctest_with_update=${run_ctest_with_update-TRUE}"
@@ -19,7 +29,7 @@ rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build
 rm -rf /home/kitware/Dashboards/Slicer/Stable/S-0-E-b
 
 # Slicer 'Stable' release
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.4 \
+time ${slicer_stable_script} \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicer_stable_package.cmake -VV -O /work/Logs/metroplex-slicer_stable_package.log
 
@@ -29,7 +39,7 @@ time cp -rp \
   /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/
 
 # Slicer 'Stable' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.4 \
+time ${slicer_stable_script} \
    --args "${docker_args}" \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
