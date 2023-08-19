@@ -11,7 +11,11 @@ rm -rf /Users/svc-dashboard/Library/Application\ Support/CrashReporter/*
 rm -rf /Users/svc-dashboard/Library/Saved\ Application\ State/org.slicer.slicer.savedState/
 
 # Restore 'site-packages' directory associated with Slicer 'Stable' build
-# TODO: Add logic for restoring 'site-packages'. See factory-south-macos.sh
+# Note: Hyper-short name required on computron (S-0-build -> A)
+rm -rf /D/S/A/python-install/lib/python3.9/site-packages
+cp -rp \
+  /D/S/A/python-install/lib/python3.9/site-packages.bkp \
+  /D/S/A/python-install/lib/python3.9/site-packages
 
 # Slicer 'Preview' release
 /D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicer_preview_nightly.cmake -VV -O /D/Logs/computron-slicer_preview_nightly.log
@@ -20,4 +24,4 @@ rm -rf /Users/svc-dashboard/Library/Saved\ Application\ State/org.slicer.slicer.
 /D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicerextensions_preview_nightly.cmake -VV -O /D/Logs/computron-slicerextensions_preview_nightly.log
 
 # Slicer 'Stable' release extensions
-# TODO: See factory-south-macos.sh
+/D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicerextensions_stable_nightly.cmake -VV -O /D/Logs/computron-slicerextensions_stable_nightly.log

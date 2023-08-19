@@ -41,7 +41,7 @@ dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 
-# Hyper-short name required on computron
+# Note: Hyper-short name required on computron (S-0-build -> A)
 dashboard_set(CTEST_BINARY_DIRECTORY "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/A")
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
