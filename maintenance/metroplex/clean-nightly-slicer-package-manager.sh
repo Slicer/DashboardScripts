@@ -6,8 +6,6 @@ set -eo pipefail
 PROG=$(basename $0)
 script_dir=$(cd $(dirname $0) || exit 1; pwd)
 
-dashboard_dir=$script_dir
-
 app=Slicer
 offset=20
 
@@ -66,9 +64,11 @@ done
 
 #-------------------------------------------------------------------------------
 
-api_key_file=/home/kitware/Dashboards/Slicer/Support/Kitware-SlicerPackagesManager-ApiKey.txt
+api_key_file=/work/Support/Kitware-SlicerPackagesManager-ApiKey.txt
 
-export PATH=/home/kitware/Support/slicer_package_manager-venv/bin:$PATH
+SLICER_PREVIEW_ENV_NAME=qt5-centos7
+SLICER_PREVIEW_ENV_VERSION=latest
+export PATH=/work/Support/slicer_package_manager-venv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}/bin:$PATH
 
 #-------------------------------------------------------------------------------
 # Sanity checks
