@@ -4,8 +4,8 @@
 :: ----------------------------------------------------------------------------
 :: Clean Slicer settings
 :: ----------------------------------------------------------------------------
-call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\NA-MIC"
-call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\Slicer"
+:: See https://github.com/Slicer/Slicer/pull/6879 introduced in March 2023
+call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\slicer.org"
 
 :: ----------------------------------------------------------------------------
 :: Remove source and build directories

@@ -1,8 +1,8 @@
 # CMAKE_VERSION=3.22.1 - This comment is used by the maintenance script to look up the cmake version
 
 # Clear Slicer settings
-rm -rf /Users/svc-dashboard/.config/www.na-mic.org/
-rm -rf /Users/svc-dashboard/.config/www.slicer.org/
+# See https://github.com/Slicer/Slicer/pull/6879 introduced in March 2023
+rm -rf /Users/svc-dashboard/.config/slicer.org/
 
 # Clear reports to help avoid "The last time you opened ... Do you want to try to reopen its windows again?" dialog
 rm -rf /Users/svc-dashboard/Library/Application\ Support/CrashReporter/*
