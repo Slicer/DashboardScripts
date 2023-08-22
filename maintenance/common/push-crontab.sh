@@ -26,7 +26,7 @@ cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 
 set -ex
 
-[[ \$(hostname) != "${remote_hostname}" ]] && exit 1
+[[ \$(hostname) != "${remote_hostname}" ]] && exit 1 || true
 
 cat << REMOTE_CRONTAB_EOF > /tmp/crontab
 ${crontab_content}

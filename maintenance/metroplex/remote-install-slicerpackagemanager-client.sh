@@ -35,7 +35,7 @@ cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 
 set -ex
 
-[[ \$(hostname) != "${remote_hostname}" ]] && exit 1
+[[ \$(hostname) != "${remote_hostname}" ]] && exit 1 || true
 
 REMOTE_SCRIPT_EOF
 
@@ -75,7 +75,7 @@ cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 
 set -ex
 
-[[ \$(hostname) != "${remote_hostname}" ]] && exit 1
+[[ \$(hostname) != "${remote_hostname}" ]] && exit 1 || true
 
 cd $remote_build_env_root_dir
 
@@ -125,7 +125,7 @@ cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 
 set -ex
 
-[[ \$(hostname) != "${remote_hostname}" ]] && exit 1
+[[ \$(hostname) != "${remote_hostname}" ]] && exit 1 || true
 
 cd $remote_support_dir
 
