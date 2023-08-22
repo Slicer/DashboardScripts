@@ -20,7 +20,7 @@ cat << REMOTE_SCRIPT_EOF > /tmp/$script_name
 
 set -ex
 
-[[ \$(hostname) != "${remote_hostname}" ]] && exit 1
+[[ \$(hostname) != "${remote_hostname}" ]] && exit 1 || true
 
 crontab -l
 
