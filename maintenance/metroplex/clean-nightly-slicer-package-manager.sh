@@ -61,13 +61,6 @@ while [[ $# != 0 ]]; do
     esac
 done
 
-
-#-------------------------------------------------------------------------------
-
-SLICER_PREVIEW_ENV_NAME=qt5-centos7
-SLICER_PREVIEW_ENV_VERSION=latest
-export PATH=/work/Support/slicer_package_manager-venv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}/bin:$PATH
-
 #-------------------------------------------------------------------------------
 # Sanity checks
 
