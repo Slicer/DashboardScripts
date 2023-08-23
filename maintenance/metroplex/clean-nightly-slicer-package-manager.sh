@@ -21,11 +21,11 @@ help() {
     cat >&2 <<ENDHELP
 Usage: $PROG [options]
 
-Remove draft ${app} extensions for revisions older than the Nth most recent ones.
+Remove draft ${app} application packages and extensions for revisions older than the Nth most recent ones.
 
 Options:
   -h               this help text
-  -n N             allow to specify the number of N newest extension revisions to keep (default: $offset)
+  -n N             allow to specify the number of N newest revisions to keep (default: $offset)
   -l N             allow to limit the number of revision to delete (default: $limit)
   -v               display additional info useful for debugging
   -y               delete revisions without asking for confirmation
@@ -88,7 +88,7 @@ api_url=${server_url}/api/v1
 spmc="slicer_package_manager_client --api-url $api_url"
 
 #-------------------------------------------------------------------------------
-disp "Removing draft '${app}' extensions for revisions older than the ${offset}th most recent ones."
+disp "Removing draft '${app}' extensions for revisions older than the ${offset}th most recent ones and starting with the ${limit}th oldest ones."
 
 cmd="$spmc draft list ${app} --limit 0 --offset ${offset} | tail -n +3 | cut -d' ' -f1 | sort | head -n ${limit}"
 [[ $verbose == 1 ]] && disp "executing: $cmd"
