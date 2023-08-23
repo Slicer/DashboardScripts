@@ -93,7 +93,7 @@ spmc="slicer_package_manager_client --api-url $api_url --api-key \$(head -n1 ${a
 #-------------------------------------------------------------------------------
 disp "Removing draft '${app}' extensions for revisions older than the ${offset}th most recent ones."
 
-cmd="$spmc draft list ${app} --offset $offset | tail -n +3 | cut -d' ' -f1"
+cmd="$spmc draft list ${app} --limit 0 --offset $offset | tail -n +3 | cut -d' ' -f1"
 [[ $verbose == 1 ]] && disp "executing: $cmd"
 
 revisionToDelete=$(eval $cmd)
