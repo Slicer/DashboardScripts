@@ -64,8 +64,6 @@ done
 
 #-------------------------------------------------------------------------------
 
-api_key_file=/work/Support/Kitware-SlicerPackagesManager-ApiKey.txt
-
 SLICER_PREVIEW_ENV_NAME=qt5-centos7
 SLICER_PREVIEW_ENV_VERSION=latest
 export PATH=/work/Support/slicer_package_manager-venv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}/bin:$PATH
@@ -74,8 +72,8 @@ export PATH=/work/Support/slicer_package_manager-venv-${SLICER_PREVIEW_ENV_NAME}
 # Sanity checks
 
 # api_key
-if [ ! -f ${api_key_file} ]; then
-    die 'error: "${api_key_file}" not found!'
+if [ -z ${GIRDER_API_KEY} ]; then
+    die 'error: "GIRDER_API_KEY" env. variable is not set!'
 fi
 
 # slicer_package_manager_client
@@ -88,7 +86,7 @@ fi
 server_url=https://slicer-packages.kitware.com
 api_url=${server_url}/api/v1
 
-spmc="slicer_package_manager_client --api-url $api_url --api-key \$(head -n1 ${api_key_file})"
+spmc="slicer_package_manager_client --api-url $api_url"
 
 #-------------------------------------------------------------------------------
 disp "Removing draft '${app}' extensions for revisions older than the ${offset}th most recent ones."
