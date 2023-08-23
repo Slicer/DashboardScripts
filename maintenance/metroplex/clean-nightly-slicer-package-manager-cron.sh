@@ -22,5 +22,7 @@ cd /home/kitware/Dashboards/Slicer
 
 $build_env_script \
   --args "-e GIRDER_API_KEY=${api_key}" \
-  bash \
-    /work/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh -v
+  bash -c " \
+    PATH=/work/Support/${venv_name}/bin:\$PATH \
+    /work/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh -v \
+    "
