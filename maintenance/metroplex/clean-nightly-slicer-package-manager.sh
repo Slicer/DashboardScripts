@@ -8,6 +8,7 @@ script_dir=$(cd $(dirname $0) || exit 1; pwd)
 
 app=Slicer
 offset=20
+limit=10
 
 #-------------------------------------------------------------------------------
 # Convenience functions
@@ -84,7 +85,7 @@ spmc="slicer_package_manager_client --api-url $api_url"
 #-------------------------------------------------------------------------------
 disp "Removing draft '${app}' extensions for revisions older than the ${offset}th most recent ones."
 
-cmd="$spmc draft list ${app} --limit 0 --offset $offset | tail -n +3 | cut -d' ' -f1"
+cmd="$spmc draft list ${app} --limit 0 --offset ${offset} | tail -n +3 | cut -d' ' -f1 | sort | head -n ${limit}"
 [[ $verbose == 1 ]] && disp "executing: $cmd"
 
 revisionToDelete=$(eval $cmd)
