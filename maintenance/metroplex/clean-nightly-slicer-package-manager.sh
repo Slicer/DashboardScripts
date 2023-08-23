@@ -26,6 +26,7 @@ Remove draft ${app} extensions for revisions older than the Nth most recent ones
 Options:
   -h               this help text
   -n N             allow to specify the number of N newest extension revisions to keep (default: $offset)
+  -l N             allow to limit the number of revision to delete (default: $limit)
   -v               display additional info useful for debugging
   -y               delete revisions without asking for confirmation
 ENDHELP
@@ -49,6 +50,10 @@ while [[ $# != 0 ]]; do
             ;;
         -n)
             offset=$2
+            shift 2
+            ;;
+        -l)
+            limit=$2
             shift 2
             ;;
         -*)
