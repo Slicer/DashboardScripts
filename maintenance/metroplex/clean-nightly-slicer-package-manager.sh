@@ -7,7 +7,7 @@ PROG=$(basename $0)
 script_dir=$(cd $(dirname $0) || exit 1; pwd)
 
 app=Slicer
-offset=20
+offset=180 # Default to ~6 months
 limit=10
 
 #-------------------------------------------------------------------------------
