@@ -5,6 +5,7 @@ set -eo pipefail
 #-------------------------------------------------------------------------------
 PROG=$(basename $0)
 script_dir=$(cd $(dirname $0) || exit 1; pwd)
+script_args="$@"
 
 #-------------------------------------------------------------------------------
 # Read key outside of the build environment working directory
@@ -24,5 +25,5 @@ $build_env_script \
   --args "-e GIRDER_API_KEY=${api_key}" \
   bash -c " \
     PATH=/work/Support/${venv_name}/bin:\$PATH \
-    /work/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh -v \
+    /work/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh ${script_args} \
     "
