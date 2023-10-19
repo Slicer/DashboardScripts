@@ -25,3 +25,6 @@ cp -rp \
 
 # Slicer 'Stable' release extensions
 /D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicerextensions_stable_nightly.cmake -VV -O /D/Logs/computron-slicerextensions_stable_nightly.log
+
+# Medical Team Dashboard
+/D/Med/MedicalTeamDashboardScripts/computron.sh > /D/Med/Logs/computron.log 2>&1
