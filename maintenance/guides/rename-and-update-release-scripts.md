@@ -45,7 +45,6 @@ done
 # Update version references in scripts
 for script in \
     computron.sh \
-    factory-south-macos.sh \
     metroplex.sh \
     overload.bat \
     $(find -name "*slicerextensions_stable_nightly.cmake" -not -path "./.git/*" -not -name ".git*") \
