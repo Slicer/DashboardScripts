@@ -37,7 +37,7 @@ for script in \
     overload.bat \
     $(find -name "*slicerextensions_stable_nightly.cmake" -not -path "./.git/*" -not -name ".git*") \
     $(find -not -path "./.git/*" -not -name ".git*" | grep $TO_XY) \
-    $(find -name "*_stable_package.cmake" -not -path "./.git/*" -not -name ".git*") \
+    $(find -name "*_stable_package.*" -not -path "./.git/*" -not -name ".git*") \
   ; do
   echo "Updating $script"
   sed -i -e "s/$FROM_DOT/$TO_DOT/g" $script
