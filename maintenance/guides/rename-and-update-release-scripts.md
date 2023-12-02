@@ -30,18 +30,6 @@ TO_XY=$(echo $TO_DOT_XY | sed "s/\.//g")
 echo "FROM_DOT [$FROM_DOT] FROM_DOT_XY [$FROM_DOT_XY] FROM_XYZ [$FROM_XYZ] FROM_XY [$FROM_XY]"
 echo "  TO_DOT [$TO_DOT]   TO_DOT_XY [$TO_DOT_XY]   TO_XYZ [$TO_XYZ]   TO_XY [$TO_XY]"
 
-# Copy scripts <host>_slicer_<FROM_XYZ|FROM_XY>.* to  <host>_slicer_<TO_XY>.*
-for script in $(find -not -path "./.git/*" -not -name ".git*" | grep "slicer\_" | grep $FROM_XY);  do
-  new_script=$(echo $script | sed "s/$FROM_XYZ/$TO_XY/g");
-  new_script=$(echo $new_script | sed "s/$FROM_XY/$TO_XY/g");
-  if [[ "$script" == "$new_script" ]]; then
-    echo "Found $new_script"
-  else
-    echo "Renamed $script to $new_script"
-    mv $script $new_script
-  fi
-done
-
 # Update version references in scripts
 for script in \
     computron.sh \
