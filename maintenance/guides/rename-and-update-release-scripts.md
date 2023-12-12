@@ -47,18 +47,6 @@ for script in \
 done
 ```
 
-3. To account for transition from `factory-south-macos` to `computron`:
-
-  * Update `slicerextensions_stable_nightly.cmake` script:
-
-    ```
-    mv factory-south-macos-slicerextensions_stable_nightly.cmake computron-slicerextensions_stable_nightly.cmake
-    ```
-
-  * Update the script based on the content of `computron-slicerextensions_preview_nightly.cmake`
-
-  * Update `computron.sh` to also include build of `Stable` extensions.
-
 5. On metroplex and if it applies, create a new `slicer-buildenv-*` script corresponding to the [tagged build environment image](https://github.com/Slicer/SlicerBuildEnvironment/blob/main/README.rst#maintainers)
 
 A new script must created for both major and minor Slicer release.
