@@ -41,14 +41,16 @@ EXIT /B %ERRORLEVEL%
 
 :: ----------------------------------------------------------------------------
 :: a function to efficiently remove a large directory
-:: See http://mattpilz.com/fastest-way-to-delete-large-folders-windows/
+:: See https://mattpilz.com/fastest-way-to-delete-large-folders-windows/#comment-9340
 :fastdel
 if NOT EXIST %1 (
   EXIT /B 0
 )
 echo "Removing %1 [%time%]"
-del /f/s/q %1 > nul
-rmdir /s/q %1
+set empty_dir=%1-empty-%RANDOM%
+mkdir %empty_dir%
+robocopy %empty_dir% %1 /purge > nul
+rmdir /s/q %empty_dir%
 echo "Removing %1 - done [%time%]"
 :: Note:
 ::  * Using rm.exe (as suggested in link below) should be the fastest but it complains about path too long when deleting extension build directory.
