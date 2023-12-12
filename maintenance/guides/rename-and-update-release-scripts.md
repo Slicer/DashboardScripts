@@ -72,19 +72,18 @@ Finally, if it applies, update nightly and release scripts:
 ```
 gedit \
   metroplex.sh \
-  metroplex-slicer_${TO_XY}_release_package.sh
+  metroplex-slicer_stable_package.sh
 ```
-
 
 6. Edit and update `GIT_TAG` set in release scripts:
 
 ```
 gedit \
-  computron-slicer_${TO_XY}_release_package.cmake \
+  computron-slicer_stable_package.cmake \
   computron-slicerextensions_stable_nightly.cmake \
-  metroplex-slicer_${TO_XY}_release_package.cmake \
+  metroplex-slicer_stable_package.cmake \
   metroplex-slicerextensions_stable_nightly.cmake \
-  overload-vs*-slicer_${TO_XY}_release_package.cmake \
+  overload-vs*-slicer_stable_package.cmake \
   overload-vs*-slicerextensions_stable_nightly.cmake
 ```
 
