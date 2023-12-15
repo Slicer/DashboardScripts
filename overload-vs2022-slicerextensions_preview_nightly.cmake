@@ -55,6 +55,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 set(ENV{FC} "C:\\Miniconda3\\envs\\flang-env\\Library\\bin\\flang.exe") # For LAPACKE
+set(ENV{SlicerAutoscoperM_CUDA_PATH} "$ENV{CUDA_PATH_V11_8}")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
