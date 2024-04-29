@@ -31,41 +31,35 @@ echo IS_WEEKEND[%IS_WEEKEND%]
 call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\slicer.org"
 
 :: ----------------------------------------------------------------------------
+:: Build Slicer
+:: ----------------------------------------------------------------------------
+::echo "Slicer 'Preview' release"
+call :fastdel "C:\D\P\S-0-build"
+"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicer_preview_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicer_preview_nightly.txt
+
+:: ----------------------------------------------------------------------------
 :: Restore 'site-packages' directory associated with Slicer 'Stable' build
 :: ----------------------------------------------------------------------------
-call :fastdel "D:\D\S\S-0-build\python-install\Lib\site-packages"
-robocopy D:\D\S\S-0-build\python-install\Lib\site-packages.bkp D:\D\S\S-0-build\python-install\Lib\site-packages /E
+::call :fastdel "C:\D\S\S-0-build\python-install\Lib\site-packages"
+::robocopy C:\D\S\S-0-build\python-install\Lib\site-packages.bkp C:\D\S\S-0-build\python-install\Lib\site-packages /E
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
-call :fastdel "D:\D\P\S-0-E-b"
-call :fastdel "D:\D\S\S-0-E-b"
+call :fastdel "C:\D\P\S-0-E-b"
+call :fastdel "C:\D\S\S-0-E-b"
 if "%IS_WEEKEND%"=="1" (
-  call :slicerextensions_stable_nightly
-::  call :slicerextensions_preview_nightly
+::  call :slicerextensions_stable_nightly
+  call :slicerextensions_preview_nightly
 ) else (
-::  call :slicerextensions_preview_nightly
-  call :slicerextensions_stable_nightly
+  call :slicerextensions_preview_nightly
+::  call :slicerextensions_stable_nightly
 )
 
 :: ----------------------------------------------------------------------------
 :: Clean SlicerSALT settings
 :: ----------------------------------------------------------------------------
 call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\Kitware, Inc"
-
-:: ----------------------------------------------------------------------------
-:: Build SlicerSALT
-:: ----------------------------------------------------------------------------
-::echo "SlicerSALT 'Preview' release"
-call :fastdel "D:\D\P\SSALT-0-build"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicersalt_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicersalt_preview_nightly.txt
-
-::echo "SlicerSALT 'Preview' release - generate package"
-"C:\cmake-3.22.1\bin\cmake.exe" --build "D:\D\P\SSALT-0-build/Slicer-build" --target PACKAGE --config Release > D:\D\Logs\overload-slicersalt-generate-package.txt 2>&1
-
-::echo "SlicerSALT 'Preview' release - package upload"
-"C:\cmake-3.22.1\bin\cmake.exe" -P "D:\D\DashboardScripts\scripts\slicersalt-upload-package.cmake" > D:\D\Logs\overload-slicersalt-upload-package.txt 2>&1
 
 :: force execution to quit at the end of the "main" logic
 EXIT /B %ERRORLEVEL%
@@ -78,13 +72,13 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 :slicerextensions_preview_nightly
 ::echo "Slicer 'Preview' release extensions"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicerextensions_preview_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2022-slicerextensions_preview_nightly.txt
+"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_preview_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "D:\D\DashboardScripts\overload-vs2022-slicerextensions_stable_nightly.cmake" -C Release -VV -O D:\D\Logs\overload-vs2019-slicerextensions_stable_nightly.txt
+"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_stable_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2019-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
@@ -103,5 +97,5 @@ echo "Removing %1 - done [%time%]"
 :: Note:
 ::  * Using rm.exe (as suggested in link below) should be the fastest but it complains about path too long when deleting extension build directory.
 ::  * See http://serverfault.com/questions/12680/what-is-the-best-way-to-remove-100-000-files-from-a-windows-directory/12684#12684
-::  * "D:\Program Files (x86)\Git\bin\rm.exe" -rf %1
+::  * "C:\Program Files (x86)\Git\bin\rm.exe" -rf %1
 EXIT /B 0
