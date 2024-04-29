@@ -5,9 +5,9 @@ macro(dashboard_set var value)
   endif()
 endmacro()
 
-dashboard_set(DASHBOARDS_DIR        "D:/D/")
+dashboard_set(DASHBOARDS_DIR        "C:/D/")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
-dashboard_set(HOSTNAME              "overload")
+dashboard_set(HOSTNAME              "bluestreak")
 dashboard_set(OPERATING_SYSTEM      "Windows10")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
@@ -33,7 +33,7 @@ dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
 dashboard_set(QT_VERSION          "5.15.2")
-dashboard_set(Qt5_DIR             "D:/Support/Qt2/${QT_VERSION}/msvc2019_64/lib/cmake/Qt5")
+dashboard_set(Qt5_DIR             "C:/D/Support/Qt/${QT_VERSION}/msvc2019_64/lib/cmake/Qt5")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
@@ -56,7 +56,6 @@ ADDITIONAL_CXX_FLAGS:STRING=/MP4
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
-set(CTEST_SVN_COMMAND "C:/SlikSvn/bin/svn.exe")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #

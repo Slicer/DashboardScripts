@@ -5,9 +5,9 @@ macro(dashboard_set var value)
   endif()
 endmacro()
 
-dashboard_set(DASHBOARDS_DIR        "D:/D")
+dashboard_set(DASHBOARDS_DIR        "C:/D")
 dashboard_set(ORGANIZATION          "Kitware")        # One word, no ponctuation
-dashboard_set(HOSTNAME              "overload")
+dashboard_set(HOSTNAME              "bluestreak")
 dashboard_set(OPERATING_SYSTEM      "Windows10")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
@@ -54,7 +54,6 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
-set(ENV{FC} "C:\\Miniconda3\\envs\\flang-env\\Library\\bin\\flang.exe") # For LAPACKE
 set(ENV{SlicerAutoscoperM_CUDA_PATH} "$ENV{CUDA_PATH_V12_3}")
 
 ##########################################
