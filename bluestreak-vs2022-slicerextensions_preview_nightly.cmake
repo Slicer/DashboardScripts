@@ -54,7 +54,7 @@ set(ADDITIONAL_CMAKECACHE_OPTION "
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
-set(ENV{SlicerAutoscoperM_CUDA_PATH} "$ENV{CUDA_PATH_V12_3}")
+set(ENV{SlicerAutoscoperM_CUDA_PATH} "$ENV{CUDA_PATH_V12_4}")
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
