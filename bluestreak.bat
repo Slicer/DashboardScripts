@@ -48,15 +48,13 @@ call :fastdel "C:\D\P\S-0-build"
 :: ----------------------------------------------------------------------------
 call :fastdel "C:\D\P\S-0-E-b"
 call :fastdel "C:\D\S\S-0-E-b"
-::if "%IS_WEEKEND%"=="1" (
-::  call :slicerextensions_stable_nightly
-::  call :slicerextensions_preview_nightly
-::) else (
-::  call :slicerextensions_preview_nightly
-::  call :slicerextensions_stable_nightly
-::)
-
-call :slicerextensions_preview_nightly
+if "%IS_WEEKEND%"=="1" (
+  call :slicerextensions_stable_nightly
+  call :slicerextensions_preview_nightly
+) else (
+  call :slicerextensions_preview_nightly
+  call :slicerextensions_stable_nightly
+)
 
 :: ----------------------------------------------------------------------------
 :: Clean SlicerSALT settings
