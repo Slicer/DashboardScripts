@@ -41,13 +41,13 @@ robocopy D:\D\S\S-0-build\python-install\Lib\site-packages.bkp D:\D\S\S-0-build\
 :: ----------------------------------------------------------------------------
 call :fastdel "D:\D\P\S-0-E-b"
 call :fastdel "D:\D\S\S-0-E-b"
-if "%IS_WEEKEND%"=="1" (
-  call :slicerextensions_stable_nightly
+::if "%IS_WEEKEND%"=="1" (
+::  call :slicerextensions_stable_nightly
 ::  call :slicerextensions_preview_nightly
-) else (
+::) else (
 ::  call :slicerextensions_preview_nightly
-  call :slicerextensions_stable_nightly
-)
+::  call :slicerextensions_stable_nightly
+::)
 
 :: ----------------------------------------------------------------------------
 :: Clean SlicerSALT settings
