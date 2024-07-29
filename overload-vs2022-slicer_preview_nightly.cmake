@@ -11,7 +11,7 @@ dashboard_set(HOSTNAME              "overload")
 dashboard_set(OPERATING_SYSTEM      "Windows10")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
-dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
+dashboard_set(WITH_PACKAGES         FALSE)             # Enable to generate packages
 dashboard_set(GIT_TAG               "main")         # Specify a tag for Stable release
 
 if(APPLE)
@@ -57,9 +57,6 @@ ADDITIONAL_CXX_FLAGS:STRING=/MP4
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 set(CTEST_SVN_COMMAND "C:/SlikSvn/bin/svn.exe")
-
-set(run_ctest_with_packages FALSE)
-set(run_ctest_with_upload FALSE)
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
