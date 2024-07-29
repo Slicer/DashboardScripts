@@ -40,8 +40,8 @@ call :fastdel "D:\D\P\S-0-build"
 :: ----------------------------------------------------------------------------
 :: Restore 'site-packages' directory associated with Slicer 'Stable' build
 :: ----------------------------------------------------------------------------
-call :fastdel "D:\D\S\S-0-build\python-install\Lib\site-packages"
-robocopy D:\D\S\S-0-build\python-install\Lib\site-packages.bkp D:\D\S\S-0-build\python-install\Lib\site-packages /E
+::call :fastdel "D:\D\S\S-0-build\python-install\Lib\site-packages"
+::robocopy D:\D\S\S-0-build\python-install\Lib\site-packages.bkp D:\D\S\S-0-build\python-install\Lib\site-packages /E
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
