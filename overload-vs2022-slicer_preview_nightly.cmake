@@ -58,6 +58,9 @@ include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 set(CTEST_SVN_COMMAND "C:/SlikSvn/bin/svn.exe")
 
+set(run_ctest_with_packages FALSE)
+set(run_ctest_with_upload FALSE)
+
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
