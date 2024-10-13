@@ -13,7 +13,7 @@ dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
 dashboard_set(EXTENSIONS_INDEX_BRANCH "main")       # "main", X.Y, ...
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 dashboard_set(COMPILER              "clang-14.0.6")    # Used only to set the build name
