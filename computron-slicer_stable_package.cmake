@@ -15,7 +15,7 @@ dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packa
 dashboard_set(GIT_TAG               "v5.8.0") # Specify a tag for Stable release
 set(CTEST_UPDATE_VERSION_ONLY 1)
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 dashboard_set(COMPILER              "clang-14.0.6")    # Used only to set the build name
