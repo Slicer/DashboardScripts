@@ -8,7 +8,7 @@ echo "Job started at: $(date +'%T %D %Z')"
 cd  /home/kitware/Dashboards/Slicer
 
 SLICER_PREVIEW_ENV_NAME=qt5-centos7
-SLICER_PREVIEW_ENV_VERSION=slicer-5.6
+SLICER_PREVIEW_ENV_VERSION=slicer-5.8
 
 # Download build environment
 slicer_stable_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
