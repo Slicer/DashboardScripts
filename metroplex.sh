@@ -74,10 +74,6 @@ time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
 # See https://github.com/Slicer/SlicerDockerUpdate
 time /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
 
-if [ $with_itk_dashboard == 1 ]; then
-  time /home/kitware/Dashboards/KWDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Logs/metroplex.log 2>&1
-fi
-
 #-------------------------------------------------------------------------------
 # Download and patch the slicer-buildenv-qt5-centos7:slicer-4.11-2018.10.17 image
 SLICER_SALT_ENV_NAME=qt5-centos7
