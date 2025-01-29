@@ -1,10 +1,10 @@
 # m h  dom mon dow   command
 
 # 11:00 EDT (5:00pm UTC) every day
-0 12 * * * /bin/bash /home/kitware/bin/cronjob_docker_cleanup.sh > /home/kitware/bin/cronjob_docker_cleanup-log.txt
+0 12 * * * /bin/bash /home/kitware/bin/cronjob_docker_cleanup.sh > /home/kitware/bin/cronjob_docker_cleanup-log.txt 2>&1
 
 # 21:00 EDT (2:00am UTC) every week
-0 21 * * 0 /home/kitware/Dashboards/Slicer/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager.sh -y > /home/kitware/Dashboards/Slicer/Logs/clean-nightly-slicer-package-manager-log.txt 2>&1
+0 21 * * 0 /home/kitware/Dashboards/Slicer/DashboardScripts/maintenance/metroplex/clean-nightly-slicer-package-manager-cron.sh -v -y -l 10 > /home/kitware/Dashboards/Slicer/Logs/clean-nightly-slicer-package-manager-log.txt 2>&1
 
 # 22:50 EDT (3:50am UTC) every day
 50 22 * * * (cd /home/kitware/Dashboards/Slicer/DashboardScripts && /usr/bin/git fetch origin && /usr/bin/git reset --hard origin/main > /home/kitware/Dashboards/Slicer/Logs/update-dashboardscripts.log 2>&1)
