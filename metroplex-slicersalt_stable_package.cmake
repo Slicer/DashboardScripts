@@ -41,7 +41,7 @@ dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer
 
 # Set GIT_REPOSITORY and GIT_TAG for the project
 dashboard_set(GIT_REPOSITORY "https://github.com/Kitware/SlicerSALT")
-dashboard_set(GIT_TAG        "v5.0.0")
+dashboard_set(GIT_TAG        "v5.1.0")
 
 # Build Name: <OPERATING_SYSTEM>-<COMPILER>-<BITNESS>bits-QT<QT_VERSION>[-NoPython][-NoCLI][-NoVTKDebugLeaks][-<BUILD_NAME_SUFFIX>]-<CTEST_BUILD_CONFIGURATION
 set(BUILD_NAME_SUFFIX "")
