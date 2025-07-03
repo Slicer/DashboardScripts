@@ -5,7 +5,7 @@ echo "Job started at: $(date +'%T %D %Z')"
 
 #-------------------------------------------------------------------------------
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
-cd  /home/kitware/Dashboards/Slicer
+cd  /home/svc-dashboard/Dashboards/Slicer
 
 #-------------------------------------------------------------------------------
 # Download and patch the slicer-buildenv-qt5-centos7-latest as of 10/24/2022
@@ -13,7 +13,7 @@ SLICER_SALT_ENV_NAME=qt5-centos7
 SLICER_SALT_ENV_VERSION=latest 
 
 # Download build environment
-slicer_salt_script=/home/kitware/bin/slicer-buildenv-${SLICER_SALT_ENV_NAME}-${SLICER_SALT_ENV_VERSION}
+slicer_salt_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_SALT_ENV_NAME}-${SLICER_SALT_ENV_VERSION}
 if [[ ! -f ${slicer_salt_script} ]]; then
   docker run --rm slicer/buildenv-${SLICER_SALT_ENV_NAME}:${SLICER_SALT_ENV_VERSION} > $slicer_salt_script
   chmod +x $slicer_salt_script

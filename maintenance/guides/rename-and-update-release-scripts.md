@@ -52,7 +52,7 @@ done
 A new script must created for both major and minor Slicer release.
 For patch release, if the environment did not change, no new script is needed.
 
-Script are located in `/home/kitware/bin` directory.
+Script are located in `/home/svc-dashboard/bin` directory.
 
 Assuming the selected tag is `<name-of-tag>`, the following step will download the
 corresponding docker image and generate the script:

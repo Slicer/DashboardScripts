@@ -25,14 +25,14 @@ echo "with_itk_dashboard [${with_itk_dashboard}]"
 
 #-------------------------------------------------------------------------------
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
-cd  /home/kitware/Dashboards/Slicer
+cd  /home/svc-dashboard/Dashboards/Slicer
 
 # Download and patch the slicer-buildenv-qt5-centos7:latest image
 SLICER_PREVIEW_ENV_NAME=qt5-centos7
 SLICER_PREVIEW_ENV_VERSION=latest
 
 # Download build environment
-slicer_preview_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
+slicer_preview_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
 if [[ ! -f ${slicer_preview_script} ]]; then
   docker run --rm slicer/buildenv-${SLICER_PREVIEW_ENV_NAME}:${SLICER_PREVIEW_ENV_VERSION} > $slicer_preview_script
   chmod +x $slicer_preview_script
@@ -60,19 +60,19 @@ time ${slicer_preview_script} \
   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
 # Restore 'site-packages' directory associated with Slicer 'Stable' build
-rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
+rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
 cp -rp \
-  /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/ \
-  /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/ \
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
 
 # Slicer 'Stable' release extensions
-time /home/kitware/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
+time /home/svc-dashboard/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
    --args "${docker_args}" \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
 #-------------------------------------------------------------------------------
 # See https://github.com/Slicer/SlicerDockerUpdate
-time /bin/bash /home/kitware/Packaging/SlicerDockerUpdate/cronjob.sh >/home/kitware/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
+time /bin/bash /home/svc-dashboard/Packaging/SlicerDockerUpdate/cronjob.sh >/home/svc-dashboard/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
 
 #-------------------------------------------------------------------------------
 # Download and patch the slicer-buildenv-qt5-centos7:slicer-4.11-2018.10.17 image
@@ -80,7 +80,7 @@ SLICER_SALT_ENV_NAME=qt5-centos7
 SLICER_SALT_ENV_VERSION=latest
 
 # Download build environment
-slicer_salt_script=/home/kitware/bin/slicer-buildenv-${SLICER_SALT_ENV_NAME}-${SLICER_SALT_ENV_VERSION}
+slicer_salt_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_SALT_ENV_NAME}-${SLICER_SALT_ENV_VERSION}
 if [[ ! -f ${slicer_salt_script} ]]; then
   docker run --rm slicer/buildenv-${SLICER_SALT_ENV_NAME}:${SLICER_SALT_ENV_VERSION} > $slicer_salt_script
   chmod +x $slicer_salt_script
@@ -104,11 +104,11 @@ time ${slicer_salt_script} \
 
 # SlicerSALT 'Preview' release - generate package
 time ${slicer_salt_script} \
-  cmake --build /work/Preview/SSALT-0-build/Slicer-build/ --target package --config Release > /home/kitware/Dashboards/Logs/metroplex-slicersalt-generate-package.txt 2>&1
+  cmake --build /work/Preview/SSALT-0-build/Slicer-build/ --target package --config Release > /home/svc-dashboard/Dashboards/Logs/metroplex-slicersalt-generate-package.txt 2>&1
 
 # SlicerSALT 'Preview' release - package upload
-/home/kitware/.nix-profile/bin/cmake -P /home/kitware/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake > /home/kitware/Dashboards/Logs/metroplex-slicersalt-upload-package.txt 2>&1
+/home/svc-dashboard/.nix-profile/bin/cmake -P /home/svc-dashboard/Dashboards/Slicer/DashboardScripts/scripts/slicersalt-upload-package.cmake > /home/svc-dashboard/Dashboards/Logs/metroplex-slicersalt-upload-package.txt 2>&1
 
 #Medical Team Dashboard
-time /home/kitware/Dashboards/Medical/MedicalTeamDashboardScripts/metroplex.sh > /home/kitware/Dashboards/Medical/Logs/metroplex.log 2>&1
+time /home/svc-dashboard/Dashboards/Medical/MedicalTeamDashboardScripts/metroplex.sh > /home/svc-dashboard/Dashboards/Medical/Logs/metroplex.log 2>&1
 

@@ -33,11 +33,11 @@ SLICER_PREVIEW_ENV_VERSION=latest
 # Set script properties
 #
 proj_name="slicer_package_manager"
-remote_build_env_root_dir="/home/kitware/Dashboards/Slicer"
+remote_build_env_root_dir="/home/svc-dashboard/Dashboards/Slicer"
 remote_support_dir="$remote_build_env_root_dir/Support"
 
 venv_name="${proj_name}-venv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}"
-remote_build_env_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
+remote_build_env_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
 
 remote_in_build_env_root_dir=/work
 remote_in_build_env_support_dir="${remote_in_build_env_root_dir}/Support"

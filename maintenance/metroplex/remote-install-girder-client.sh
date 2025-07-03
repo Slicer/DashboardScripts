@@ -8,11 +8,11 @@ source $dashboard_dir/../common/remote_execute.sh
 #------------------------------------------------------------------------------
 # Set script properties
 #
-remote_support_dir="/home/kitware/Support"
+remote_support_dir="/home/svc-dashboard/Support"
 
 proj_name="girder_client"
 venv_name="${proj_name}-venv"
-remote_python="/home/kitware/.nix-profile/bin/python3.5"
+remote_python="/home/svc-dashboard/.nix-profile/bin/python3.5"
 remote_pip="${remote_support_dir}/${venv_name}/bin/pip"
 remote_client="${remote_support_dir}/${venv_name}/bin/girder-cli"
 

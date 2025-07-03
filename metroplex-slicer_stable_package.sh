@@ -5,13 +5,13 @@ echo "Job started at: $(date +'%T %D %Z')"
 
 #-------------------------------------------------------------------------------
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
-cd  /home/kitware/Dashboards/Slicer
+cd  /home/svc-dashboard/Dashboards/Slicer
 
 SLICER_PREVIEW_ENV_NAME=qt5-centos7
 SLICER_PREVIEW_ENV_VERSION=slicer-5.8
 
 # Download build environment
-slicer_stable_script=/home/kitware/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
+slicer_stable_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
 if [[ ! -f ${slicer_stable_script} ]]; then
   docker run --rm slicer/buildenv-${SLICER_PREVIEW_ENV_NAME}:${SLICER_PREVIEW_ENV_VERSION} > $slicer_stable_script
   chmod +x $slicer_stable_script
@@ -24,9 +24,9 @@ docker_args+=" -e run_ctest_with_test=${run_ctest_with_test-TRUE}"
 docker_args+=" -e run_extension_ctest_with_test=${run_extension_ctest_with_test-TRUE}"
 
 # Remove source and build directories
-rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0
-rm -rf /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build
-rm -rf /home/kitware/Dashboards/Slicer/Stable/S-0-E-b
+rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0
+rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build
+rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/S-0-E-b
 
 # Slicer 'Stable' release
 time ${slicer_stable_script} \
@@ -35,8 +35,8 @@ time ${slicer_stable_script} \
 
 # Backup 'site-packages' directory associated with Slicer 'Stable' build
 time cp -rp \
-  /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/ \
-  /home/kitware/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/ \
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/
 
 # Slicer 'Stable' release extensions
 time ${slicer_stable_script} \
