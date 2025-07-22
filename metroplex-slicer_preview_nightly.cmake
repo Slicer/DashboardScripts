@@ -55,6 +55,9 @@ CMAKE_JOB_POOL_LINK:STRING=link
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 
+set(ENV{SLICER_EXTENSION_MANAGER_CLIENT_EXECUTABLE} "/work/Support/slicer_package_manager-venv-qt5-almalinux8-gcc14-latest/bin/slicer_package_manager_client")
+set(ENV{SLICER_PACKAGE_MANAGER_CLIENT_EXECUTABLE} $ENV{SLICER_EXTENSION_MANAGER_CLIENT_EXECUTABLE})
+
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #
 ##########################################
