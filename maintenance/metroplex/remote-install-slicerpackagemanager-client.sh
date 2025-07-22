@@ -26,8 +26,8 @@ source $dashboard_dir/../common/remote_execute.sh
 #
 #------------------------------------------------------------------------------
 
-SLICER_PREVIEW_ENV_NAME=qt5-centos7
-SLICER_PREVIEW_ENV_VERSION=latest
+SLICER_PREVIEW_ENV_NAME=${SLICER_PREVIEW_ENV_NAME:-qt5-almalinux8-gcc14}
+SLICER_PREVIEW_ENV_VERSION=${SLICER_PREVIEW_ENV_VERSION:-latest}
 
 #------------------------------------------------------------------------------
 # Set script properties
@@ -62,7 +62,7 @@ if [[ ! -d ${remote_support_dir}/${venv_name} ]]; then
 fi
 
 $remote_build_env_script $remote_in_build_env_pip install --upgrade pip
-$remote_build_env_script $remote_in_build_env_pip install -U slicer-package-manager-client
+$remote_build_env_script $remote_in_build_env_pip install -U setuptools slicer-package-manager-client
 
 $remote_build_env_script $remote_in_build_env_client --help
 
@@ -72,6 +72,7 @@ REMOTE_SCRIPT_EOF
 # Execute script on remote
 #
 remote_execute /tmp/$script_name
+
 
 #------------------------------------------------------------------------------
 #
