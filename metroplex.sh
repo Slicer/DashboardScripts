@@ -24,11 +24,11 @@ echo "Job started at: $(date +'%T %D %Z')"
 echo "with_itk_dashboard [${with_itk_dashboard}]"
 
 #-------------------------------------------------------------------------------
-# Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
+# Changing directory is required by "slicer-buildenv-<ENV_NAME>-<ENV_VERSION>" script
 cd  /home/svc-dashboard/Dashboards/Slicer
 
-# Download and patch the slicer-buildenv-qt5-centos7:latest image
-SLICER_PREVIEW_ENV_NAME=qt5-centos7
+# Download and patch the slicer-buildenv-<ENV_NAME>-<ENV_VERSION> image
+SLICER_PREVIEW_ENV_NAME=qt5-almalinux8-gcc14
 SLICER_PREVIEW_ENV_VERSION=latest
 
 # Download build environment
@@ -59,6 +59,7 @@ time ${slicer_preview_script} \
   --args "${docker_args}" \
   ctest -S /work/DashboardScripts/metroplex-slicerextensions_preview_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_preview_nightly.log
 
+#-------------------------------------------------------------------------------
 # Restore 'site-packages' directory associated with Slicer 'Stable' build
 rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
 cp -rp \
@@ -75,7 +76,7 @@ time /home/svc-dashboard/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
 time /bin/bash /home/svc-dashboard/Packaging/SlicerDockerUpdate/cronjob.sh >/home/svc-dashboard/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
 
 #-------------------------------------------------------------------------------
-# Download and patch the slicer-buildenv-qt5-centos7:slicer-4.11-2018.10.17 image
+# Download and patch the slicer-buildenv-<ENV_NAME>-<ENV_VERSION> image
 SLICER_SALT_ENV_NAME=qt5-centos7
 SLICER_SALT_ENV_VERSION=latest
 
