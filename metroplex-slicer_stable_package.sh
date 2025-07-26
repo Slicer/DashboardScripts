@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export DISPLAY=:0.0 # just DISPLAY=:0.0 without export is not enough
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 

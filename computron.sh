@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # CMAKE_VERSION=3.22.1 - This comment is used by the maintenance script to look up the cmake version
 
 # Clear Slicer settings

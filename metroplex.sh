@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 
 #-------------------------------------------------------------------------------
