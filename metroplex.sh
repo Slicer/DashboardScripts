@@ -74,10 +74,6 @@ time /home/svc-dashboard/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
 #-------------------------------------------------------------------------------
-# See https://github.com/Slicer/SlicerDockerUpdate
-time /bin/bash /home/svc-dashboard/Packaging/SlicerDockerUpdate/cronjob.sh >/home/svc-dashboard/Packaging/SlicerDockerUpdate/cronjob-log.txt 2>&1
-
-#-------------------------------------------------------------------------------
 # Download and patch the slicer-buildenv-<ENV_NAME>-<ENV_VERSION> image
 SLICER_SALT_ENV_NAME=qt5-centos7
 SLICER_SALT_ENV_VERSION=latest
