@@ -2,28 +2,7 @@
 
 # CMAKE_VERSION=NA - This comment is used by the maintenance script to look up the cmake version
 
-#-------------------------------------------------------------------------------
-with_itk_dashboard=0
-
-while [[ $# != 0 ]]; do
-    case $1 in
-        --with-itk-dashboard)
-            with_itk_dashboard=1
-            shift 1
-            ;;
-        -*)
-            err Unknown option \"$1\"
-            help
-            exit 1
-            ;;
-        *)
-            break
-            ;;
-    esac
-done
-
 echo "Job started at: $(date +'%T %D %Z')"
-echo "with_itk_dashboard [${with_itk_dashboard}]"
 
 #-------------------------------------------------------------------------------
 # Changing directory is required by "slicer-buildenv-<ENV_NAME>-<ENV_VERSION>" script
