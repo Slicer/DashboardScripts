@@ -21,8 +21,6 @@ fi
 
 # Update build environment
 $slicer_salt_script update
-# HACK: Workaround limitation of entrypoint.sh (see https://github.com/Slicer/SlicerBuildEnvironment/issues/16)
-sed -i ${slicer_salt_script} -e "s/slicer\/buildenv-${SLICER_SALT_ENV_NAME}:latest/slicer\/buildenv-${SLICER_SALT_ENV_NAME}:${SLICER_SALT_ENV_VERSION}/"
 
 # SlicerSALT dashboard settings
 slicersalt_docker_args="-e run_ctest_with_disable_clean=${run_slicersalt_ctest_with_disable_clean-FALSE}"
