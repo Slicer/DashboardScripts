@@ -18,7 +18,7 @@ if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
-dashboard_set(COMPILER              "clang-14.0.6")    # Used only to set the build name
+dashboard_set(COMPILER              "clang-17.0.0")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -30,7 +30,7 @@ dashboard_set(WITH_DOCUMENTATION  FALSE)
 dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
-dashboard_set(QT_VERSION          "5.15.8")
+dashboard_set(QT_VERSION          "5.15.17")
 dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-build-${QT_VERSION}/lib/cmake/Qt5")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
@@ -70,8 +70,8 @@ set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|qMRMLUtf8Test1_cube-utf8.mrm
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_SegmentationsModuleTest2")
 
 set(ADDITIONAL_CMAKECACHE_OPTION "
-CMAKE_C_COMPILER:FILEPATH=/D/Support/clang+llvm-14.0.6-x86_64-apple-darwin/bin/clang
-CMAKE_CXX_COMPILER:FILEPATH=/D/Support/clang+llvm-14.0.6-x86_64-apple-darwin/bin/clang++
+CMAKE_C_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+CMAKE_CXX_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 ")
 
 # Custom settings
