@@ -18,6 +18,8 @@ if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
+# dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "")
+# dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "")
 dashboard_set(COMPILER              "clang-14.0.6")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
