@@ -30,7 +30,7 @@ dashboard_set(WITH_DOCUMENTATION  FALSE)
 dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
-dashboard_set(QT_VERSION          "5.15.17")
+dashboard_set(QT_VERSION          "5.15.18")
 dashboard_set(Qt5_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-build-${QT_VERSION}/lib/cmake/Qt5")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
