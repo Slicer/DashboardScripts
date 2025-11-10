@@ -9,13 +9,13 @@ echo "Job started at: $(date +'%T %D %Z')"
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/svc-dashboard/Dashboards/Slicer
 
-SLICER_PREVIEW_ENV_NAME=qt5-centos7
-SLICER_PREVIEW_ENV_VERSION=slicer-5.8
+SLICER_STABLE_ENV_NAME=qt5-centos7
+SLICER_STABLE_ENV_VERSION=slicer-5.8
 
 # Download build environment
-slicer_stable_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}
+slicer_stable_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_STABLE_ENV_NAME}-${SLICER_STABLE_ENV_VERSION}
 if [[ ! -f ${slicer_stable_script} ]]; then
-  docker run --rm slicer/buildenv-${SLICER_PREVIEW_ENV_NAME}:${SLICER_PREVIEW_ENV_VERSION} > $slicer_stable_script
+  docker run --rm slicer/buildenv-${SLICER_STABLE_ENV_NAME}:${SLICER_STABLE_ENV_VERSION} > $slicer_stable_script
   chmod +x $slicer_stable_script
 fi
 
