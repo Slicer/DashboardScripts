@@ -18,7 +18,7 @@ call :fastdel "C:\D\S\S-0-E-b"
 :: Build Slicer
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Stable' release"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicer_stable_package.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicer_stable_package.txt
+"C:\cmake-3.31.8\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicer_stable_package.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicer_stable_package.txt
 
 :: ----------------------------------------------------------------------------
 :: Backup 'site-packages' directory associated with 'Stable' build
@@ -29,7 +29,7 @@ robocopy C:\D\S\S-0-build\python-install\Lib\site-packages C:\D\S\S-0-build\pyth
 :: Build Slicer Extensions
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_stable_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicerextensions_stable_nightly.txt
+"C:\cmake-3.31.8\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_stable_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicerextensions_stable_nightly.txt
 
 :: force execution to quit at the end of the "main" logic
 EXIT /B %ERRORLEVEL%

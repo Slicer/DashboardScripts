@@ -24,8 +24,8 @@ rm -rf /D/S/S-0-E-b
 # Backup 'site-packages' directory associated with Slicer 'Stable' build
 # Note: Hyper-short name required on computron (S-0-build -> A)
 cp -rp \
-  /D/S/A/python-install/lib/python3.9/site-packages \
-  /D/S/A/python-install/lib/python3.9/site-packages.bkp
+  /D/S/A/python-install/lib/python3.12/site-packages \
+  /D/S/A/python-install/lib/python3.12/site-packages.bkp
 
 # Slicer 'Stable' release extensions
 /D/Support/CMake-3.22.1.app/Contents/bin/ctest -S /D/DashboardScripts/computron-slicerextensions_stable_nightly.cmake -VV -O /D/Logs/computron-slicerextensions_stable_nightly.log

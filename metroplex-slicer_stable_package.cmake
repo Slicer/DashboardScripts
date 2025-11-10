@@ -12,7 +12,7 @@ dashboard_set(OPERATING_SYSTEM      "Linux")
 dashboard_set(SCRIPT_MODE           "Experimental")   # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "Stable")         # (E)xperimental, (P)review or (S)table
 dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packages
-dashboard_set(GIT_TAG               "v5.8.1")         # Specify a tag for Stable release
+dashboard_set(GIT_TAG               "v5.10.0")         # Specify a tag for Stable release
 set(CTEST_UPDATE_VERSION_ONLY 1)
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
@@ -20,7 +20,7 @@ endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Ninja")
 # dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "")
 # dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "")
-dashboard_set(COMPILER              "g++-7.3.1")      # Used only to set the build name
+dashboard_set(COMPILER              "g++-14.2.1")      # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "")               # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
@@ -39,7 +39,7 @@ dashboard_set(Qt5_DIR             "$ENV{Qt5_DIR}")
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
 dashboard_set(Slicer_DIRECTORY_BASENAME   "Slicer")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
-# 0: 581
+# 0: 5100
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 
@@ -56,6 +56,9 @@ CMAKE_JOB_POOL_LINK:STRING=link
 
 # Custom settings
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
+
+set(ENV{SLICER_EXTENSION_MANAGER_CLIENT_EXECUTABLE} "/work/Support/slicer_package_manager-venv-qt5-almalinux8-gcc14-latest/bin/slicer_package_manager_client")
+set(ENV{SLICER_PACKAGE_MANAGER_CLIENT_EXECUTABLE} $ENV{SLICER_EXTENSION_MANAGER_CLIENT_EXECUTABLE})
 
 ##########################################
 # WARNING: DO NOT EDIT BEYOND THIS POINT #

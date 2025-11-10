@@ -1,6 +1,6 @@
 @ECHO OFF
 
-:: CMAKE_VERSION=3.22.1 - This comment is used by the maintenance script to look up the cmake version
+:: CMAKE_VERSION=3.31.8 - This comment is used by the maintenance script to look up the cmake version
 
 :: To facilitate execution of the command below by copy/paste, they do not include variables.
 
@@ -35,13 +35,13 @@ call :fastdel "C:\Users\svc-dashboard\AppData\Roaming\slicer.org"
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Preview' release"
 call :fastdel "C:\D\P\S-0-build"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicer_preview_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicer_preview_nightly.txt
+"C:\cmake-3.31.8\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicer_preview_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicer_preview_nightly.txt
 
 :: ----------------------------------------------------------------------------
 :: Restore 'site-packages' directory associated with Slicer 'Stable' build
 :: ----------------------------------------------------------------------------
-::call :fastdel "C:\D\S\S-0-build\python-install\Lib\site-packages"
-::robocopy C:\D\S\S-0-build\python-install\Lib\site-packages.bkp C:\D\S\S-0-build\python-install\Lib\site-packages /E
+call :fastdel "C:\D\S\S-0-build\python-install\Lib\site-packages"
+robocopy C:\D\S\S-0-build\python-install\Lib\site-packages.bkp C:\D\S\S-0-build\python-install\Lib\site-packages /E
 
 :: ----------------------------------------------------------------------------
 :: Build Slicer Extensions
@@ -72,13 +72,13 @@ EXIT /B %ERRORLEVEL%
 :: ----------------------------------------------------------------------------
 :slicerextensions_preview_nightly
 ::echo "Slicer 'Preview' release extensions"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_preview_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicerextensions_preview_nightly.txt
+"C:\cmake-3.31.8\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_preview_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicerextensions_preview_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------
 :slicerextensions_stable_nightly
 ::echo "Slicer 'Stable' release extensions"
-"C:\cmake-3.22.1\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_stable_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2019-slicerextensions_stable_nightly.txt
+"C:\cmake-3.31.8\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicerextensions_stable_nightly.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicerextensions_stable_nightly.txt
 EXIT /B 0
 
 :: ----------------------------------------------------------------------------

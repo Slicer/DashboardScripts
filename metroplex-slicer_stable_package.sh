@@ -9,8 +9,8 @@ echo "Job started at: $(date +'%T %D %Z')"
 # Changing directory is required by "slicer-buildenv-qt5-centos7-latest" script
 cd  /home/svc-dashboard/Dashboards/Slicer
 
-SLICER_STABLE_ENV_NAME=qt5-centos7
-SLICER_STABLE_ENV_VERSION=slicer-5.8
+SLICER_STABLE_ENV_NAME=qt5-almalinux8-gcc14
+SLICER_STABLE_ENV_VERSION=slicer-5.10
 
 # Download build environment
 slicer_stable_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_STABLE_ENV_NAME}-${SLICER_STABLE_ENV_VERSION}
@@ -39,8 +39,8 @@ time ${slicer_stable_script} \
 
 # Backup 'site-packages' directory associated with Slicer 'Stable' build
 time cp -rp \
-  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/ \
-  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.12/site-packages/ \
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.12/site-packages.bkp/
 
 # Slicer 'Stable' release extensions
 time ${slicer_stable_script} \
