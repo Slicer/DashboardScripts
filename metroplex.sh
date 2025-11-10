@@ -40,10 +40,10 @@ time ${slicer_preview_script} \
 
 #-------------------------------------------------------------------------------
 # Restore 'site-packages' directory associated with Slicer 'Stable' build
-rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
+rm -rf /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.12/site-packages/
 cp -rp \
-  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages.bkp/ \
-  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.9/site-packages/
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.12/site-packages.bkp/ \
+  /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.12/site-packages/
 
 # Slicer 'Stable' release extensions
 time /home/svc-dashboard/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
