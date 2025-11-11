@@ -46,7 +46,7 @@ cp -rp \
   /home/svc-dashboard/Dashboards/Slicer/Stable/Slicer-0-build/python-install/lib/python3.12/site-packages/
 
 # Slicer 'Stable' release extensions
-time /home/svc-dashboard/bin/slicer-buildenv-qt5-centos7-slicer-5.8 \
+time /home/svc-dashboard/bin/slicer-buildenv-qt5-almalinux8-gcc14-slicer-5.10 \
    --args "${docker_args}" \
    ctest -S /work/DashboardScripts/metroplex-slicerextensions_stable_nightly.cmake -VV -O /work/Logs/metroplex-slicerextensions_stable_nightly.log
 
