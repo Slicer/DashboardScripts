@@ -13,7 +13,7 @@ dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous
 dashboard_set(Slicer_RELEASE_TYPE   "P")              # (E)xperimental, (P)review or (S)table
 dashboard_set(EXTENSIONS_INDEX_BRANCH "main")       # "main", X.Y, ...
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "14.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 17 2022")
 dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "x64")

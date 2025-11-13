@@ -15,7 +15,7 @@ dashboard_set(WITH_PACKAGES         TRUE)             # Enable to generate packa
 dashboard_set(GIT_TAG               "main")         # Specify a tag for Stable release
 
 if(APPLE)
-  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
+  dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "14.0")
 endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 17 2022")
 dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "x64")
