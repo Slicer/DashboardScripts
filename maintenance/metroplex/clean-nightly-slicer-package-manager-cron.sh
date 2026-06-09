@@ -13,7 +13,7 @@ api_key_file=/home/svc-dashboard/Support/Kitware-SlicerPackagesManager-ApiKey
 api_key=$(head -n1 ${api_key_file})
 
 #-------------------------------------------------------------------------------
-SLICER_PREVIEW_ENV_NAME=qt5-centos7
+SLICER_PREVIEW_ENV_NAME=qt5-almalinux8-gcc14
 SLICER_PREVIEW_ENV_VERSION=latest
 
 venv_name="slicer_package_manager-venv-${SLICER_PREVIEW_ENV_NAME}-${SLICER_PREVIEW_ENV_VERSION}"
