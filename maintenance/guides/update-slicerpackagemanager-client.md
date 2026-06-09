@@ -29,15 +29,15 @@ make remote-install-slicerpackagemanager-client
 
 ### Window
 
-1. Connect to [overload](../overload/REMOTE_IP) using VNC
+1. Connect to bluestreak using NoMachine
 
 2. Open `Git Bash`
 
 3. Execute the following statements:
 
 ```
-[[ ! -d /d/Support/slicer_package_manager ]] && cd /d/Support && git clone https://github.com/girder/slicer_package_manager
-cd /d/Support/slicer_package_manager
+[[ ! -d /c/D/Support/slicer_package_manager ]] && cd /c/D/Support && git clone https://github.com/girder/slicer_package_manager
+cd /c/D/Support/slicer_package_manager
 git fetch origin
 git reset --hard origin/main
 ```
@@ -47,14 +47,12 @@ git reset --hard origin/main
 5. If needed, create the environment executing the following statements:
 
 ```
-D:
-C:\Python36-x64\Scripts\virtualenv.exe D:\Support\slicer_package_manager-venv
+C:\Python37-x64\Scripts\virtualenv.exe C:\D\Support\slicer_package_manager-venv
 ```
 
 6. Finally, execute the following statements:
 
 ```
-D:
-D:\Support\slicer_package_manager-venv\Scripts\pip install -U girder_client
-D:\Support\slicer_package_manager-venv\Scripts\pip install -U D:\Support\slicer_package_manager\python_client
+C:\D\Support\slicer_package_manager-venv\Scripts\pip install -U girder_client
+C:\D\Support\slicer_package_manager-venv\Scripts\pip install -U C:\D\Support\slicer_package_manager\python_client
 ```

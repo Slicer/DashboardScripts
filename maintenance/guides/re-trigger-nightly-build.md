@@ -23,7 +23,7 @@ On unix, identify the process id associated with the build job, and run `kill -s
 2. Execute the following statements:
 
 ```
-cd /d/D/P/S-0
+cd /c/D/P/S-0
 git fetch origin
 git reset --hard origin/main
 ```
@@ -61,7 +61,7 @@ git reset --hard origin/main
 
 ```
 # Explicitly remove previous extensions build directory
-rm -rf /d/D/P/S-0-E-b
+rm -rf /c/D/P/S-0-E-b
 ```
 
 2. Open `Command Prompt` and execute the following statements:
@@ -73,7 +73,7 @@ set run_ctest_with_update=FALSE
 echo %run_ctest_with_disable_clean%
 echo %run_ctest_with_update%
 
-D:\D\DashboardScripts\overload.bat
+C:\D\DashboardScripts\bluestreak.bat
 ```
 
 ### unix

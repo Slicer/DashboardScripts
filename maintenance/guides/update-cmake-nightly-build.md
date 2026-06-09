@@ -35,7 +35,7 @@ CMAKE_VERSION=X.Y.Z make remote-install-cmake
 
 ### Windows
 
-1. Connect to [overload](../overload/REMOTE_IP) using VNC
+1. Connect to bluestreak using NoMachine
 
 2. Open a command line terminal as Administrator
 

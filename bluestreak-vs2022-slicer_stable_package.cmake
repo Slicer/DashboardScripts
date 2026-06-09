@@ -17,6 +17,8 @@ set(CTEST_UPDATE_VERSION_ONLY 1)
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "14.0")
 endif()
+# Use 8.3 short path to avoid spaces in "Program Files" breaking ctest initial checkout
+set(CTEST_GIT_COMMAND "C:/PROGRA~1/Git/cmd/git.exe")
 dashboard_set(CTEST_CMAKE_GENERATOR "Visual Studio 17 2022")
 dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "x64")
 dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "v143")

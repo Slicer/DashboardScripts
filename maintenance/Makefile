@@ -1,6 +1,6 @@
 
 UNIX_DASHBOARDS = computron metroplex
-WIN_DASHBOARDS = overload
+WIN_DASHBOARDS = bluestreak
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
 

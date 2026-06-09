@@ -93,6 +93,7 @@ set empty_dir=%1-empty-%RANDOM%
 mkdir %empty_dir%
 robocopy %empty_dir% %1 /purge > nul
 rmdir /s/q %empty_dir%
+rmdir %1
 echo "Removing %1 - done [%time%]"
 :: Note:
 ::  * Using rm.exe (as suggested in link below) should be the fastest but it complains about path too long when deleting extension build directory.

@@ -34,7 +34,7 @@ echo "  TO_DOT [$TO_DOT]   TO_DOT_XY [$TO_DOT_XY]   TO_XYZ [$TO_XYZ]   TO_XY [$T
 for script in \
     computron.sh \
     metroplex.sh \
-    overload.bat \
+    bluestreak.bat \
     $(find -name "*slicerextensions_stable_nightly.cmake" -not -path "./.git/*" -not -name ".git*") \
     $(find -not -path "./.git/*" -not -name ".git*" | grep $TO_XY) \
     $(find -name "*_stable_package.*" -not -path "./.git/*" -not -name ".git*") \
@@ -83,8 +83,8 @@ gedit \
   computron-slicerextensions_stable_nightly.cmake \
   metroplex-slicer_stable_package.cmake \
   metroplex-slicerextensions_stable_nightly.cmake \
-  overload-vs*-slicer_stable_package.cmake \
-  overload-vs*-slicerextensions_stable_nightly.cmake
+  bluestreak-vs2022-slicer_stable_package.cmake \
+  bluestreak-vs2022-slicerextensions_stable_nightly.cmake
 ```
 
 * `GIT_TAG` should be set to the tag corresponding to Slicer version <TO_DOT>
