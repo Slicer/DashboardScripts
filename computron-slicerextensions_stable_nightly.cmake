@@ -11,7 +11,7 @@ dashboard_set(HOSTNAME              "computron")
 dashboard_set(OPERATING_SYSTEM      "macOS")
 dashboard_set(SCRIPT_MODE           "Nightly")        # Experimental, Continuous or Nightly
 dashboard_set(Slicer_RELEASE_TYPE   "S")              # (E)xperimental, (P)review or (S)table
-dashboard_set(EXTENSIONS_INDEX_BRANCH "5.10")          # "main", X.Y, ...
+dashboard_set(EXTENSIONS_INDEX_BRANCH "5.12")          # "main", X.Y, ...
 if(APPLE)
   dashboard_set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0")
 endif()
@@ -30,7 +30,7 @@ dashboard_set(QT_VERSION            "5.15.18")         # Used only to set the bu
 #   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
 dashboard_set(Slicer_DIRECTORY_BASENAME   "S")
 dashboard_set(Slicer_DASHBOARD_SUBDIR     "${Slicer_RELEASE_TYPE}")
-# 0: 5100
+# 0: 5120
 dashboard_set(Slicer_DIRECTORY_IDENTIFIER "0")        # Set to arbitrary integer to distinguish different Experimental/Preview release build
                                                       # Set to Slicer version XYZ for Stable release build
 dashboard_set(Slicer_SOURCE_DIR "${DASHBOARDS_DIR}/${Slicer_DASHBOARD_SUBDIR}/${Slicer_DIRECTORY_BASENAME}-${Slicer_DIRECTORY_IDENTIFIER}")

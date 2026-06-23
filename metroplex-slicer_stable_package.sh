@@ -10,7 +10,7 @@ echo "Job started at: $(date +'%T %D %Z')"
 cd  /home/svc-dashboard/Dashboards/Slicer
 
 SLICER_STABLE_ENV_NAME=qt5-almalinux8-gcc14
-SLICER_STABLE_ENV_VERSION=slicer-5.10
+SLICER_STABLE_ENV_VERSION=slicer-5.12
 
 # Download build environment
 slicer_stable_script=/home/svc-dashboard/bin/slicer-buildenv-${SLICER_STABLE_ENV_NAME}-${SLICER_STABLE_ENV_VERSION}
