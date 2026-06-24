@@ -19,6 +19,7 @@ call :fastdel "C:\D\S\S-0-E-b"
 :: ----------------------------------------------------------------------------
 ::echo "Slicer 'Stable' release"
 "C:\cmake-3.31.8\bin\ctest.exe" -S "C:\D\DashboardScripts\bluestreak-vs2022-slicer_stable_package.cmake" -C Release -VV -O C:\D\Logs\bluestreak-vs2022-slicer_stable_package.txt
+if ERRORLEVEL 1 EXIT /B %ERRORLEVEL%
 
 :: ----------------------------------------------------------------------------
 :: Backup 'site-packages' directory associated with 'Stable' build
