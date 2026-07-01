@@ -27,34 +27,38 @@ cd maintenance
 make remote-install-slicerpackagemanager-client
 ```
 
-### Window
+### Windows
 
-1. Connect to [overload](../overload/REMOTE_IP) using VNC
+1. Connect to bluestreak using VNC
 
-2. Open `Git Bash`
+2. Open a command line terminal
 
-3. Execute the following statements:
-
-```
-[[ ! -d /d/Support/slicer_package_manager ]] && cd /d/Support && git clone https://github.com/girder/slicer_package_manager
-cd /d/Support/slicer_package_manager
-git fetch origin
-git reset --hard origin/main
-```
-
-4. Open a command line terminal
-
-5. If needed, create the environment executing the following statements:
+3. Confirm the existing environment is available:
 
 ```
-D:
-C:\Python36-x64\Scripts\virtualenv.exe D:\Support\slicer_package_manager-venv
+C:
+dir C:\D\Support\slicer_package_manager-venv\Scripts\pip.exe
 ```
 
-6. Finally, execute the following statements:
+4. Install one of the following versions.
+
+Latest published release from PyPI:
 
 ```
-D:
-D:\Support\slicer_package_manager-venv\Scripts\pip install -U girder_client
-D:\Support\slicer_package_manager-venv\Scripts\pip install -U D:\Support\slicer_package_manager\python_client
+C:
+C:\D\Support\slicer_package_manager-venv\Scripts\pip install -U slicer-package-manager-client
+```
+
+Latest merged `main` from GitHub:
+
+```
+C:
+C:\D\Support\slicer_package_manager-venv\Scripts\pip install -U --force-reinstall "git+https://github.com/girder/slicer_package_manager.git@main#subdirectory=python_client"
+```
+
+5. Verify the client is available:
+
+```
+C:
+C:\D\Support\slicer_package_manager-venv\Scripts\slicer_package_manager_client --help
 ```

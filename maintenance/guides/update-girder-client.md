@@ -27,22 +27,22 @@ cd maintenance
 make remote-install-girder-client
 ```
 
-### Window
+### Windows
 
-1. Connect to [overload](../overload/REMOTE_IP) using VNC
+1. Connect to bluestreak using VNC
 
 2. Open a command line terminal
 
-3. If needed, create the environment executing the following statements:
+3. Confirm the existing environment is available:
 
 ```
-D:
-C:\Python36-x64\Scripts\virtualenv.exe D:\Support\girder_client-venv
+C:
+dir C:\D\Support\girder_client-venv\Scripts\pip.exe
 ```
 
 4. Finally, execute the following statements:
 
 ```
-D:
-D:\Support\girder_client-venv\Scripts\pip install -U girder_client
+C:
+C:\D\Support\girder_client-venv\Scripts\pip install -U girder_client
 ```
