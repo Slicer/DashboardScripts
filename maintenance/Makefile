@@ -1,6 +1,9 @@
 
 UNIX_DASHBOARDS = computron metroplex
-WIN_DASHBOARDS = overload
+
+# Windows dashboards are included by local script-editing targets. Remote
+# maintenance targets below intentionally operate only on UNIX_DASHBOARDS.
+WIN_DASHBOARDS = bluestreak
 
 DASHBOARDS = $(UNIX_DASHBOARDS) $(WIN_DASHBOARDS)
 
