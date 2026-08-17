@@ -1,5 +1,5 @@
 
-UNIX_DASHBOARDS = computron metroplex
+UNIX_DASHBOARDS = computron metroplex recoil
 
 # Windows dashboards are included by local script-editing targets. Remote
 # maintenance targets below intentionally operate only on UNIX_DASHBOARDS.
