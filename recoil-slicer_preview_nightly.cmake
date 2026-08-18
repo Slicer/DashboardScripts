@@ -20,7 +20,7 @@ endif()
 dashboard_set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 # dashboard_set(CTEST_CMAKE_GENERATOR_PLATFORM "")
 # dashboard_set(CTEST_CMAKE_GENERATOR_TOOLSET "")
-dashboard_set(COMPILER              "clang-17.0.0")    # Used only to set the build name
+dashboard_set(COMPILER              "clang-17.0.0-arm64")    # Used only to set the build name
 dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores to build. For example "-j -l4" on unix
 # By default, CMake auto-discovers the compilers
 #dashboard_set(CMAKE_C_COMPILER      "/path/to/c/compiler")
