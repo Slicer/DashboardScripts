@@ -26,4 +26,4 @@ cp -rp \
 /D/Support/CMake-3.31.8.app/Contents/bin/ctest -S /D/DashboardScripts/recoil-slicerextensions_preview_nightly.cmake -VV -O /D/Logs/recoil-slicerextensions_preview_nightly.log
 
 # Slicer 'Stable' release extensions
-/D/Support/CMake-3.31.8.app/Contents/bin/ctest -S /D/DashboardScripts/recoil-slicerextensions_stable_nightly.cmake -VV -O /D/Logs/recoil-slicerextensions_stable_nightly.log
+# /D/Support/CMake-3.31.8.app/Contents/bin/ctest -S /D/DashboardScripts/recoil-slicerextensions_stable_nightly.cmake -VV -O /D/Logs/recoil-slicerextensions_stable_nightly.log
