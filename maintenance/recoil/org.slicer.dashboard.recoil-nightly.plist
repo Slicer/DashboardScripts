@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Slicer nightly build and test, replacing the cron entry.
+       Processes started by cron run at a reduced priority (20 instead of 31),
+       which on Apple Silicon steers them to efficiency cores and throttles I/O. -->
+  <key>Label</key>
+  <string>org.slicer.dashboard.recoil-nightly</string>
+  <key>UserName</key>
+  <string>svc-dashboard</string>
+  <key>GroupName</key>
+  <string>staff</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>-c</string>
+    <string>/D/DashboardScripts/recoil.sh &gt; /D/Logs/recoil.log 2&gt;&amp;1</string>
+  </array>
+  <!-- 23:00 local time (EDT) -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>23</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+  <key>LowPriorityIO</key>
+  <false/>
+  <key>LowPriorityBackgroundIO</key>
+  <false/>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key>
+    <string>/Users/svc-dashboard</string>
+    <key>USER</key>
+    <string>svc-dashboard</string>
+    <key>LOGNAME</key>
+    <string>svc-dashboard</string>
+    <key>SHELL</key>
+    <string>/bin/sh</string>
+    <key>PATH</key>
+    <string>/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+</dict>
+</plist>
