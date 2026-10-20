@@ -80,6 +80,13 @@ CMAKE_CXX_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Tool
 include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 
+# Ensure Qt tool packages (e.g Qt6CoreTools providing qmake, moc, ...) are found
+# in the same Qt installation as Qt6_DIR and not in Homebrew ("/opt/homebrew" is
+# part of CMAKE_SYSTEM_PREFIX_PATH on macOS arm64). The environment variable is
+# used so that it also applies to all external projects (CTK, ...).
+# See https://github.com/Slicer/Slicer/issues/9484
+set(ENV{CMAKE_PREFIX_PATH} "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.1-arm64")
+
 # This will ensure compiler paths specified using the cache variable are used
 # consistently.
 set(ENV{CC} "/dev/null")
