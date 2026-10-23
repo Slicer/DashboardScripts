@@ -49,9 +49,12 @@ set(BUILD_NAME_SUFFIX "")
 
 #set(run_ctest_with_test 0)
 
+# Use GNU make 4.4 (Homebrew) instead of /usr/bin/make 3.81: make 3.81 passes the jobserver as file
+# descriptors that are closed by "ctest --launch", so every external project was built with -j1
 set(ADDITIONAL_CMAKECACHE_OPTION "
 CMAKE_C_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CMAKE_CXX_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+CMAKE_MAKE_PROGRAM:FILEPATH=/opt/homebrew/bin/gmake
 ")
 
 # Custom settings
