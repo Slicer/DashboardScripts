@@ -2,10 +2,13 @@
 
 # CMAKE_VERSION=3.31.8 - This comment is used by the maintenance script to look up the cmake version
 
-# Reset the Launch Services database. Each build and package registers new Slicer.app bundles,
-# and once tens of thousands accumulate lsd, Dock and tccd each spin a CPU core continuously.
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
-  -kill -r -domain local -domain system -domain user
+# Unregister app bundles left in the Launch Services database by previous builds. Each build and package
+# registers new Slicer.app bundles, and once tens of thousands accumulate lsd, Dock and tccd each spin a
+# CPU core continuously. "lsregister -kill" was removed in macOS 26, so unregister them individually.
+LSREGISTER=/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister
+"${LSREGISTER}" -dump \
+  | sed -n -E 's#^path: +(/Users/svc-dashboard/D/.*) \(0x[0-9a-f]+\)$#\1#p' \
+  | sort -u | tr '\n' '\0' | xargs -0 "${LSREGISTER}" -u
 
 # Clear Slicer settings
 # See https://github.com/Slicer/Slicer/pull/6879 introduced in March 2023
