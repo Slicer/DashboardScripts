@@ -71,9 +71,12 @@ set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|CastScalarVolumeTest_Unsigne
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|qMRMLUtf8Test1_cube-utf8.mrml")
 set(TEST_TO_EXCLUDE_REGEX "${TEST_TO_EXCLUDE_REGEX}|py_nomainwindow_SegmentationsModuleTest2")
 
+# Use GNU make 4.4 (Homebrew) instead of /usr/bin/make 3.81: make 3.81 passes the jobserver as file
+# descriptors that are closed by "ctest --launch", so every external project was built with -j1
 set(ADDITIONAL_CMAKECACHE_OPTION "
 CMAKE_C_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CMAKE_CXX_COMPILER:FILEPATH=/Applications/Xcode-26.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+CMAKE_MAKE_PROGRAM:FILEPATH=/opt/homebrew/bin/gmake
 ")
 
 # Custom settings
