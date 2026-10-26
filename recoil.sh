@@ -20,6 +20,11 @@ rm -rf /Users/svc-dashboard/Library/Application\ Support/CrashReporter/*
 # Clear "Saved Application State" specific to Slicer
 rm -rf /Users/svc-dashboard/Library/Saved\ Application\ State/org.slicer.slicer.savedState/
 
+# Disable window state restoration for Slicer. Otherwise a Slicer killed mid-run (for example a test
+# timeout) makes every later launch show the "reopen its windows?" dialog and hang until the test times out.
+defaults write org.slicer.slicer ApplePersistenceIgnoreState -bool YES
+defaults write org.slicer.slicer NSQuitAlwaysKeepsWindows -bool NO
+
 # Restore 'site-packages' directory associated with Slicer 'Stable' build
 # Note: Hyper-short name required on recoil (S-0-build -> A)
 rm -rf /D/S/A/python-install/lib/python3.12/site-packages
