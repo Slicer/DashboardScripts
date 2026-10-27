@@ -62,6 +62,12 @@ include("${DASHBOARDS_DIR}/Support/Kitware-SlicerPackagesCredential.cmake")
 set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 set(ENV{FC} "/Users/svc-dashboard/D/Support/miniconda3/envs/gfortran-env/bin/gfortran") # For LAPACKE
 
+# Ensure Qt tool packages (e.g Qt6CoreTools providing qmake, moc, ...) are found
+# in the same Qt installation used to build Slicer and not in Homebrew
+# ("/usr/local" is part of CMAKE_SYSTEM_PREFIX_PATH on macOS x86_64).
+# See https://github.com/Slicer/Slicer/issues/9484
+set(ENV{CMAKE_PREFIX_PATH} "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.2-x86_64")
+
 # This will ensure compiler paths specified using the cache variable are used
 # consistently.
 set(ENV{CC} "/dev/null")
