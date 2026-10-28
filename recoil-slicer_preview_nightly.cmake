@@ -32,8 +32,8 @@ dashboard_set(WITH_DOCUMENTATION  FALSE)
 dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
-dashboard_set(QT_VERSION          "6.11.1")
-dashboard_set(Qt6_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.1-arm64/lib/cmake/Qt6")
+dashboard_set(QT_VERSION          "6.11.2")
+dashboard_set(Qt6_DIR             "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.2-arm64/lib/cmake/Qt6")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
@@ -88,7 +88,7 @@ set(ENV{ExternalData_OBJECT_STORES} "${DASHBOARDS_DIR}/.ExternalData")
 # part of CMAKE_SYSTEM_PREFIX_PATH on macOS arm64). The environment variable is
 # used so that it also applies to all external projects (CTK, ...).
 # See https://github.com/Slicer/Slicer/issues/9484
-set(ENV{CMAKE_PREFIX_PATH} "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.1-arm64")
+set(ENV{CMAKE_PREFIX_PATH} "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.2-arm64")
 
 # This will ensure compiler paths specified using the cache variable are used
 # consistently.

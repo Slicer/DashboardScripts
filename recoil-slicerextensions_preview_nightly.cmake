@@ -24,7 +24,7 @@ dashboard_set(CTEST_BUILD_FLAGS     "-j9 -l8")        # Use multiple CPU cores t
 dashboard_set(CTEST_BUILD_CONFIGURATION "Release")
 dashboard_set(EXTENSIONS_BUILDSYSTEM_TESTING FALSE)   # If enabled, build <Slicer_SOURCE_DIR>/Extensions/*.s4ext
 
-dashboard_set(QT_VERSION            "6.11.1")          # Used only to set the build name
+dashboard_set(QT_VERSION            "6.11.2")          # Used only to set the build name
 
 #   Slicer_SOURCE_DIR: <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Slicer_DIR       : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
@@ -66,7 +66,7 @@ set(ENV{FC} "/Users/svc-dashboard/D/Support/miniconda3/envs/gfortran-env/bin/gfo
 # in the same Qt installation used to build Slicer and not in Homebrew
 # ("/opt/homebrew" is part of CMAKE_SYSTEM_PREFIX_PATH on macOS arm64).
 # See https://github.com/Slicer/Slicer/issues/9484
-set(ENV{CMAKE_PREFIX_PATH} "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.1-arm64")
+set(ENV{CMAKE_PREFIX_PATH} "${DASHBOARDS_DIR}/Support/qt-everywhere-install-6.11.2-arm64")
 
 # This will ensure compiler paths specified using the cache variable are used
 # consistently.
