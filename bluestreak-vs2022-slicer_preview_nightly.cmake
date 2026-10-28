@@ -33,8 +33,8 @@ dashboard_set(WITH_DOCUMENTATION  FALSE)
 dashboard_set(Slicer_BUILD_CLI    ON)
 dashboard_set(Slicer_USE_PYTHONQT ON)
 
-dashboard_set(QT_VERSION          "5.15.2")
-dashboard_set(Qt5_DIR             "C:/D/Support/Qt/${QT_VERSION}/msvc2019_64/lib/cmake/Qt5")
+dashboard_set(QT_VERSION          "6.11.2")
+dashboard_set(Qt6_DIR             "C:/D/Support/Qt2/${QT_VERSION}/msvc2022_64/lib/cmake/Qt6")
 
 #   Source directory : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>
 #   Build directory  : <DASHBOARDS_DIR>/<Slicer_DASHBOARD_SUBDIR>/<Slicer_DIRECTORY_BASENAME>-<Slicer_DIRECTORY_IDENTIFIER>-build
